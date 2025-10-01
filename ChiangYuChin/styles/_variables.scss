@@ -1,0 +1,36 @@
+// 顏色
+$primary:   #007acc !default;   // 主色
+$secondary: #ff7f50 !default;   // 次要色
+$success:   #28a745 !default;
+$danger:    #dc3545 !default;
+$warning:   #ffc107 !default;
+$info:      #17a2b8 !default;
+$light:     #f8f9fa !default;
+$dark:      #343a40 !default;
+
+
+// 
+$font-size-base: 1rem !default;
+$font-family-sans-serif: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !default;
+$font-family-monospace:  "Fira Code", monospace !default;
+
+$font-size-base: 0.75rem !default;     // 預設字級 (16px)
+$line-height-base: 1.5 !default;    // 行高
+$headings-font-weight: 600 !default; // 標題粗細
+
+
+// 按鈕 & 卡片圓角
+$border-radius: 0.5rem !default;
+
+
+// 客製化 card
+// 卡片背景、邊框、陰影 (文青風)
+$card-bg: #fdfcf7 !default;                 // 米白底，帶一點手感紙的感覺
+$card-color: #4a4a4a !default;              // 柔和深灰文字
+$card-border-radius: 0.75rem !default;      // 圓角不要太大，低調
+$card-border-color: rgba(120, 110, 100, .2) !default;  // 淺咖啡色邊框
+$card-box-shadow: 0 0.25rem 0.75rem rgba(90, 80, 70, .08) !default; // 微弱陰影，像自然光
+
+// 卡片間距
+$card-spacer-y: 1.5rem !default;
+$card-spacer-x: 2rem !default;

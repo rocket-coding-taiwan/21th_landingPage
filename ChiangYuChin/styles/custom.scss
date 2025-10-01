@@ -1,0 +1,27 @@
+// 1. 導入 Bootstrap 功能 (底層函式)
+@import "../bootstrap/scss/functions";
+
+// 2. 導入您自己的變數 (這會覆蓋 Bootstrap 的預設值)
+@import "variables"; 
+
+// 3. 導入 Bootstrap 核心 (包含變數、Mixins 等)
+// 現在它會使用您在上面定義的變數
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/root";
+@import "../bootstrap/scss/reboot";
+@import "../bootstrap/scss/type";
+// ... 根據您的需求導入其他 Bootstrap 組件 ...
+// 例如：
+@import "../bootstrap/scss/grid";
+@import "../bootstrap/scss/buttons";
+@import "../bootstrap/scss/card";
+@import "../bootstrap/scss/containers"; // 建議也加，container 定義都在這裡
+
+
+// 4. 導入您自己的覆蓋樣式
+// 此時，$primary 等變數已經被定義，所以這裡可以安全使用
+@import "overrides";
+
+// 5. 撰寫您自己的客製化組件樣式
+

@@ -1,0 +1,71 @@
+// scss/_overrides.scss
+
+// 按鈕
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:hover {
+    background-color: darken($primary, 10%);
+  }
+}
+
+// 卡片
+.card {
+  border-radius: $border-radius;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.5rem;
+}
+
+// 標題
+h1, h2, h3 {
+  color: $primary;
+}
+
+// RWD 調整
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+}
+
+.btn-tech {
+  // 基礎樣式
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  // 科技色系漸層
+  background: linear-gradient(135deg, #00d4ff, #007acc);
+  color: #fff;
+
+  // 光暈效果
+  box-shadow: 0 4px 15px rgba(0, 122, 204, 0.5);
+
+  // hover 效果
+  &:hover {
+    background: linear-gradient(135deg, #007acc, #00d4ff);
+    box-shadow: 0 6px 20px rgba(0, 122, 204, 0.6);
+    transform: translateY(-2px);
+  }
+
+  // active / 按下效果
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 10px rgba(0, 122, 204, 0.4);
+  }
+
+  // disabled
+  &:disabled {
+    background: #ccc;
+    color: #666;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+}
