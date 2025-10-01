@@ -1,0 +1,44 @@
+.font-title {
+  color: #2E406F;
+}
+
+.font-dark-b {
+  color: #2E406F;
+}
+
+.img-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header {
+  text-align: center;
+  background-color: #2E406F;
+  color: #fff;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+.work-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  height: 20px;
+  width: auto;
+}
+
+.edu-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.certi-lang {
+  background-color: #2E406F;
+  color: #fff;
+}/*# sourceMappingURL=all.css.map */
