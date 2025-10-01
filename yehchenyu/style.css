@@ -1,0 +1,65 @@
+＊{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;   
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--bg-color);
+  color: aliceblue;
+}
+
+:root {
+    --bg-color: #1F1F23;
+    --main-color:#FD6136;
+    --secondary-color: #5C7AEA;
+    --font-size: 16px;
+}
+
+
+.resume-cont{
+    height: 100vh; 
+    display: flex;
+    flex-direction: row;
+    gap: 20px; 
+}
+/*左-學歷*/
+
+.head-cont{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+.left-cont{
+    flex: 1;
+    gap: 10px;
+}
+work-item{
+    margin: 0;
+    gap: 15px;
+}
+
+
+.left-cont h3{
+    color: #5C7AEA;
+    margin-bottom: 1rem;
+}
+
+.item-retitle {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/*右-經歷*/
+.right-cont{
+    flex: 2;
+}
+
+.skill-cont{
+    display: flex;
+    flex-direction: row;
+}
+
