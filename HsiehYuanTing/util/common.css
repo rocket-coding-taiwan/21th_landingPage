@@ -1,0 +1,49 @@
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+  .mb-10 {
+    margin-bottom: 6px;
+  }
+  .mb-20 {
+    margin-bottom: 10px;
+  }
+  .mb-25 {
+    margin-bottom: 14px;
+  }
+  .mt-10 {
+    margin-top: 6px;
+  }
+  .mt-20 {
+    margin-top: 10px;
+  }
+}/*# sourceMappingURL=common.css.map */

@@ -1,0 +1,243 @@
+@charset "UTF-8";
+/* 
+   0) 全域 CSS 變數（純 CSS 用）
+   --page-max  ：版心最大寬度
+   --page-pad  ：頁面左右內距
+   --pair-gap  ：「專案 × Skills」兩欄之間的欄距
+   */
+:root {
+  --page-max: 980px;
+  --page-pad: 24px;
+  --pair-gap: 24px;
+}
+
+/* 
+   1) Sass 變數（顏色、尺寸、效果）
+*/
+/* 
+   2) Reset 
+*/
+*, *::before*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #f7f7fb;
+  color: #5d78b5;
+  font: 16px/1.6 "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+
+/* 
+   3) 版心（header 與 .card 共用）
+*/
+header,
+.card {
+  max-width: var(--page-max);
+  margin-inline: auto;
+  padding-inline: var(--page-pad);
+}
+
+/* 
+   4) Hero（頭像 + 名稱）
+*/
+header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-start;
+  margin-block: 12px;
+}
+
+header h2 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.avatar {
+  width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #5d78b5;
+  background: #fff;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+/* 
+   5) 卡片元件
+*/
+.card {
+  position: relative;
+  background: #fff;
+  border: 3px solid #5d78b5;
+  border-radius: 22px;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, 0.05);
+  padding: 28px;
+  margin-top: 28px;
+  /* 橢圓標籤（預設左上） */
+  /* 「專案 × Skills」這張卡 */
+}
+.card__body {
+  padding-top: 6px;
+}
+.card__label {
+  position: absolute;
+  top: -18px;
+  left: 22px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 3px solid #5d78b5;
+  font-weight: 700;
+  background: #eee;
+  line-height: 1;
+}
+.card__label--pink {
+  background: #f7b2c6;
+}
+.card__label--blue {
+  background: #7fb6ff;
+}
+.card__label--light-blue {
+  background: #70d6ff;
+}
+.card--two {
+  position: relative;
+}
+
+/* 窄卡：桌機 60% 寬（手機會回滿版） */
+.card--narrow {
+  width: 60%;
+  margin-inline: auto;
+}
+
+/* 左右各一顆標籤；右側標籤對齊到右欄起點（Excel/VBA 上方） */
+.card--two .card__label--left {
+  left: 10px;
+}
+
+.card--two .card__label--right {
+  right: auto;
+  left: calc(50% + var(--pair-gap) / 2);
+}
+
+/*
+   6) 單欄清單（一般用途）
+*/
+.line-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+}
+.line-list li {
+  padding: 24px 4px;
+  /* 除第一個外的每個 li 都有分隔線（在 pairs 卡片內會被關掉，見下） */
+}
+.line-list li + li {
+  border-top: 2px solid #5d78b5;
+}
+.line-list li .item-title {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+}
+.line-list li .item-desc, .line-list li .sub {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* 在「專案 × Skills」卡內避免疊線：關掉 line-list 的分隔線 */
+.card--xtwo .line-list li + li {
+  border-top: 0;
+}
+
+/* 
+   7) Pairs 版型（把左＋右成對放在同一列）
+*/
+.pairs {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  overflow-x: auto;
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--pair-gap);
+  padding: 14px 4px;
+  position: relative;
+}
+
+/* 列與列之間的橫線（整行一條；右端可留白）— 唯一權威版本 */
+.pair + .pair::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 32px;
+  top: 0;
+  height: 0;
+  border-top: 2px solid #5d78b5;
+}
+
+/* 文字樣式 */
+.pair__left .item-title,
+.pair__right .item-title {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+}
+
+.pair__left .item-desc,
+.pair__right .sub {
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* 
+   9) RWD（≤ 760px）
+*/
+@media (max-width: 760px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .avatar {
+    width: 160px;
+  }
+  .card {
+    padding: 22px;
+  }
+  .card--narrow {
+    width: 100%;
+  }
+  /* 手機：維持兩欄但允許滑動，避免上下分層 */
+  .pair {
+    grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr);
+    min-width: 540px;
+  }
+  /* 手機時讓橫線全寬，標籤改回靠右 */
+  .pair + .pair::before {
+    right: 0;
+  }
+  .card--two .card__label--right {
+    left: auto;
+    right: 10px;
+  }
+}
