@@ -1,5 +1,6 @@
 @use "./common.scss";
 @use "./color.scss" as *;
+@use "./variable.scss" as *;
 @use "./reset.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -22,12 +23,20 @@ a {
     box-sizing: border-box;
     padding: 0 10px;
     max-width: 900px;
+
+    @media (max-width: $breakpoint-tablet) {
+        padding: 0 20px;
+    }
 }
 
 .intro {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: $breakpoint-tablet) {
+        justify-content: space-around;
+    }
 
     .self {
         display: flex;
@@ -56,8 +65,9 @@ a {
     .self-detail {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
         padding-right: 15px;
     }
 }
@@ -67,6 +77,10 @@ a {
         color: $title_color;
         font-size: 24px;
         padding-left: 0px;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 25px;
+        }
     }
 
     .skillTree {
@@ -74,9 +88,15 @@ a {
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
+        padding: 10px;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 25px;
+        }
 
         .item {
-            width: 40%;
+            width: 50%;
+            max-width: 350px;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -95,21 +115,43 @@ a {
                     line-height: 1.5;
                 }
             }
+
+            @media (max-width: $breakpoint-tablet) {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+            }
         }
     }
 }
 
 .workExperience {
+    @media (max-width: $breakpoint-tablet) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: space-around;
+    }
+
     .workTitle {
         color: $title_color;
         font-size: 24px;
         padding-left: 0px;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 20px;
+        }
     }
 
     .workItem {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 20px;
+        }
 
         .workContent {
             .point {
@@ -120,6 +162,8 @@ a {
             ul {
                 line-height: 1.5;
             }
+
+
         }
 
         .workImg {
@@ -139,6 +183,10 @@ a {
         color: $title_color;
         font-size: 24px;
         padding-left: 0px;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 20px;
+        }
     }
 
     .guitar {
@@ -147,6 +195,10 @@ a {
         align-items: flex-start;
         border-bottom: 1px solid $border_color;
         padding: 10px 0 70px 0;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
 
         .guitarContent {
             display: flex;
@@ -191,6 +243,10 @@ a {
         border-bottom: 1px solid $border_color;
         padding: 10px 0 70px 0;
 
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
         .timerContent {
             display: flex;
             flex-direction: column;
@@ -224,6 +280,10 @@ a {
         align-items: flex-start;
         padding: 10px 0 70px 0;
 
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
         .mapContent {
             .point {
                 color: $title_color;
@@ -249,6 +309,10 @@ a {
         display: flex;
         justify-content: space-between;
 
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
         .noteContent {
             .link {
                 text-decoration: none;
@@ -262,6 +326,7 @@ a {
                 line-height: 2.0;
             }
         }
+
         .noteImg {
             width: 40%;
             max-width: 300px;
