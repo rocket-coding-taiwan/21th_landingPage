@@ -6,6 +6,26 @@
   margin-top: 10px;
 }
 
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-25 {
+  margin-top: 25px;
+}
+
 .mr-10 {
   margin-right: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-25 {
+  margin-bottom: 25px;
 }/*# sourceMappingURL=common.css.map */

@@ -5,16 +5,22 @@
 
 img {
     max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 p {
     font-family: "Roboto", sans-serif;
 }
 
+a {
+    color: $link_color;
+}
+
 .container {
     margin: 0 auto;
     box-sizing: border-box;
-    padding: 0 32px;
+    padding: 0 10px;
     max-width: 900px;
 }
 
@@ -22,11 +28,13 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     .self {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+
         .pic {
             width: 150px;
             height: 150px;
@@ -43,16 +51,13 @@ p {
                 font-size: 32px;
             }
         }
-
-        .born {}
-
-        .school {}
     }
 
     .self-detail {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         padding-right: 15px;
     }
 }
@@ -66,10 +71,10 @@ p {
 
     .skillTree {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
-        padding: 20px;
+
         .item {
             width: 40%;
             height: 100%;
@@ -84,11 +89,184 @@ p {
 
             ul {
                 padding: 10px;
+
                 li {
                     list-style-type: disc;
                     line-height: 1.5;
                 }
             }
+        }
+    }
+}
+
+.workExperience {
+    .workTitle {
+        color: $title_color;
+        font-size: 24px;
+        padding-left: 0px;
+    }
+
+    .workItem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .workContent {
+            .point {
+                color: $title_color;
+                font-size: 18px;
+            }
+
+            ul {
+                line-height: 1.5;
+            }
+        }
+
+        .workImg {
+            width: 50px;
+            height: 50px;
+            max-width: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.sideProject {
+    display: flex;
+    flex-direction: column;
+
+    .sideTitle {
+        color: $title_color;
+        font-size: 24px;
+        padding-left: 0px;
+    }
+
+    .guitar {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid $border_color;
+        padding: 10px 0 70px 0;
+
+        .guitarContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .point {
+                color: $title_color;
+                font-size: 20px;
+            }
+
+            .briefIntro {
+                font-weight: bold;
+                color: $content_color;
+                line-height: 2.0;
+            }
+
+            ul {
+                padding-left: 10px;
+
+                li {
+                    list-style-type: disc;
+                    line-height: 1.5;
+                    color: $content_color;
+                }
+            }
+        }
+
+        .guitarImg {
+            width: 40%;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .timer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        border-bottom: 1px solid $border_color;
+        padding: 10px 0 70px 0;
+
+        .timerContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .point {
+                color: $title_color;
+                font-size: 20px;
+            }
+
+            .briefIntro {
+                font-weight: bold;
+                color: $content_color;
+                line-height: 1.5;
+            }
+        }
+
+        .timerImg {
+            width: 40%;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+        }
+
+    }
+
+    .map {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 10px 0 70px 0;
+
+        .mapContent {
+            .point {
+                color: $title_color;
+                font-size: 20px;
+            }
+
+            .briefIntro {
+                font-weight: bold;
+                color: $content_color;
+                line-height: 2.0;
+            }
+        }
+
+        .mapImg {
+            width: 40%;
+            max-width: 400px;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .note {
+        display: flex;
+        justify-content: space-between;
+
+        .noteContent {
+            .link {
+                text-decoration: none;
+                color: $title_color;
+                font-size: 20px;
+            }
+
+            .briefIntro {
+                font-weight: bold;
+                color: $content_color;
+                line-height: 2.0;
+            }
+        }
+        .noteImg {
+            width: 40%;
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
         }
     }
 }
