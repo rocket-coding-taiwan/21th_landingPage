@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yu Chin 履歷</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>江昱嶔履歷</title>
+  <link href="styles/custom.css" rel="stylesheet">
 </head>
 <body>
-    <h2>Yu Chin 履歷</h2>
+  <div class="container my-5">
+    
+    <!-- Header / Contact -->
+    <header class="mb-4 text-center">
+      <h1 class="display-4">江昱嶔</h1>
+      <ul class="list-inline">
+        <li class="list-inline-item"><strong>Email:</strong> <a href="mailto:racingf1@gmail.com">racingf1@gmail.com</a></li>
+        <li class="list-inline-item"><strong>Phone:</strong> <a href="tel:0955073171">0955-073171</a></li>
+        <li class="list-inline-item"><strong>GitHub:</strong> <a href="https://github.com/TSFMAKKO/hexVue2025" target="_blank" rel="noreferrer">TSFMAKKO/hexVue2025</a></li>
+      </ul>
+      <p class="text-muted small">
+        技術短片集：即時通 網址 SPA/VUE Google Login | Vue3 體驗營: Vite + Vue | 六角課程: github、scss、2024資料庫體驗營、2025軟體工程師體驗營、vue3新手營
+      </p>
+    </header>
+
+    <!-- 簡介 -->
+    <section class="mb-5">
+      <h2 class="h3 mb-3">簡單自我介紹</h2>
+      <p>高雄人，就讀電子系畢業。國中自組電腦，高職擔任資訊股長寫過 FrontPage，大學寫過 VB。直到 30 歲在政府職訓上課後開始正式寫程式。</p>
+      <p>我比較偏好後端，喜歡把資料整體串起來並接雲端服務做功能；但也會前端切版（依 Figma），遇到瀏覽器相容性會花比較多心力處理。前端學過 2025 新手營，並手刻過 Google 登入的懸浮標籤。後端曾學 PHP、Python Django，2022 年能寫會員登入與短網址，2023 年自學 Laravel。</p>
+      <p>對我來說，把金流串接（曾串綠界測試帳號）、購物車上線有很大成就感；喜歡讓功能跑起來的成就感勝過追求花哨特效。</p>
+    </section>
+
+    <!-- 技能 -->
+    <section class="mb-5">
+      <h2 class="h3 mb-3">技能專長</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>前端語言：</strong>HTML5、CSS3、JavaScript (ES6+)</li>
+        <li class="list-group-item"><strong>前端框架：</strong>Vue.js</li>
+        <li class="list-group-item"><strong>UI / UX：</strong>RWD 響應式設計、SCSS</li>
+        <li class="list-group-item"><strong>版本控制：</strong>Git / GitHub / GitLab</li>
+        <li class="list-group-item"><strong>工具：</strong>VS Code、Figma</li>
+        <li class="list-group-item"><strong>其他：</strong>RESTful API 串接、JSON 處理</li>
+      </ul>
+    </section>
+
+    <!-- 專案 -->
+    <section class="mb-5">
+      <h2 class="h3 mb-3">作品專案</h2>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="card-title h5">專案一：便當訂購</h3>
+          <p class="card-text"><strong>技術：</strong>Laravel + MySQL</p>
+          <p class="card-text">(32) Laravel 蔬醒食堂便當訂購 admin管理員 每日結算 每日便當數目與飯包數 - 
+YouTube</p>
+          <a href="https://www.youtube.com/watch?v=BK_iNv43zzE&list=PLYHK7P17YjcuRWVPrCyc8TqF3kafDdmys&index=2" class="btn btn-tech" target="_blank" rel="noreferrer">觀看影片 (YouTube)</a>
+        </div>
+      </div>
+
+      <div class="card mb-3">
+        <div class="card-body">
+          <h3 class="card-title h5">專案二：即時通</h3>
+          <p class="card-text"><strong>技術：</strong>Vue2 + Express + Socket.IO</p>
+          <p class="card-text">實作購物車、會員登入/登出、商品搜尋與即時通訊功能，包含前後端串接與即時事件處理。</p>
+          <a href="https://www.youtube.com/watch?v=X7_C0yGZfv4&list=PLYHK7P17YjcuRWVPrCyc8TqF3kafDdmys&index=22" class="btn btn-tech" target="_blank" rel="noreferrer">觀看影片 (YouTube)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / 聲明 -->
+    <footer class="text-center mt-5">
+      <p class="text-muted">更多作品或課程經歷可於 GitHub 查看：<a href="https://github.com/TSFMAKKO" target="_blank" rel="noreferrer">TSFMAKKO</a></p>
+    </footer>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
