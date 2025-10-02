@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+h1ml, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 32px;
+  max-width: 900px;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.intro .self {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.intro .self .pic {
+  width: 150px;
+  height: 150px;
+  background-image: url("https://images.unsplash.com/photo-1555169062-013468b47731?w=1600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8cGFycm90fGVufDB8fDB8fHww");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  border: 1px solid #BDB7B7;
+}
+.intro .self .title p {
+  font-size: 32px;
+}
+.intro .self-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 15px;
+}
+
+.skills .skillsTitle {
+  color: #647B71;
+  font-size: 24px;
+  padding-left: 0px;
+}
+.skills .skillTree {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.skills .skillTree .item {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.skills .skillTree .item .itemTitle {
+  font-size: 18px;
+  border-bottom: 1px solid #BDB7B7;
+  padding: 0;
+}
+.skills .skillTree .item ul {
+  padding: 10px;
+}
+.skills .skillTree .item ul li {
+  list-style-type: disc;
+  line-height: 1.5;
+}/*# sourceMappingURL=resume.css.map */
