@@ -4,6 +4,14 @@
 @use "./reset.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+body {
+    box-sizing: border-box;
+    @media(max-width: $breakpoint-mobile) {
+        overflow-x: hidden;
+
+    }
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -23,9 +31,16 @@ a {
     box-sizing: border-box;
     padding: 0 10px;
     max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
     @media (max-width: $breakpoint-tablet) {
         padding: 0 20px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: 0 15px;
     }
 }
 
@@ -34,15 +49,12 @@ a {
     justify-content: space-between;
     align-items: center;
 
-    @media (max-width: $breakpoint-tablet) {
-        justify-content: space-around;
-    }
-
     .self {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+
 
         .pic {
             width: 150px;
@@ -60,6 +72,12 @@ a {
                 font-size: 32px;
             }
         }
+
+        @media (max-width: $breakpoint-mobile) {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
     }
 
     .self-detail {
@@ -69,7 +87,28 @@ a {
         align-items: flex-start;
         text-align: left;
         padding-right: 15px;
+
+        @media (max-width: $breakpoint-mobile) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.5;
+        }
     }
+
+
+    @media (max-width: $breakpoint-tablet) {
+        justify-content: space-around;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
 }
 
 .skills {
@@ -81,6 +120,10 @@ a {
         @media (max-width: $breakpoint-tablet) {
             padding: 25px 25px 0 25px;
         }
+
+        @media (max-width: $breakpoint-mobile) {
+            padding: 25px 0 0 0;
+        }
     }
 
     .skillTree {
@@ -90,16 +133,29 @@ a {
         flex-wrap: wrap;
         padding: 10px;
 
-        @media (max-width: $breakpoint-tablet) {
-            padding: 25px 25px 0 25px;
-        }
-
         .item {
             width: 50%;
             max-width: 350px;
             height: 100%;
             display: flex;
             flex-direction: column;
+
+            @media (max-width: $breakpoint-tablet) {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 0 20px 0;
+
+                .itemTitle {
+                    text-align: center;
+                }
+            }
 
             .itemTitle {
                 font-size: 18px;
@@ -115,25 +171,28 @@ a {
                     line-height: 1.5;
                 }
             }
-
-            @media (max-width: $breakpoint-tablet) {
-                width: 100%;
-                max-width: 100%;
-                margin-bottom: 20px;
-                flex-wrap: wrap;
-            }
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 25px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            padding: 0 0 20px 0;
+        }
+
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 20px 0;
     }
 }
 
 .workExperience {
-    @media (max-width: $breakpoint-tablet) {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: space-around;
-    }
-
     .workTitle {
         color: $title_color;
         font-size: 24px;
@@ -142,16 +201,16 @@ a {
         @media (max-width: $breakpoint-tablet) {
             padding: 25px 25px 0 20px;
         }
+
+        @media (max-width: $breakpoint-mobile) {
+            padding: 25px 0 0 0;
+        }
     }
 
     .workItem {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        @media (max-width: $breakpoint-tablet) {
-            padding: 25px 25px 0 20px;
-        }
 
         .workContent {
             .point {
@@ -162,8 +221,6 @@ a {
             ul {
                 line-height: 1.5;
             }
-
-
         }
 
         .workImg {
@@ -172,6 +229,42 @@ a {
             max-width: 100%;
             object-fit: cover;
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            align-items: center;
+            padding: 0 0 20px 0;
+
+            .workContent .point {
+                font-size: 16px;
+            }
+
+            .workContent ul {
+                line-height: 2.0;
+            }
+
+            .workImg {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: space-around;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 20px 0;
     }
 }
 
@@ -187,6 +280,11 @@ a {
         @media (max-width: $breakpoint-tablet) {
             padding: 25px 25px 0 20px;
         }
+
+        @media(max-width: $breakpoint-mobile) {
+            margin-bottom: 30px;
+            padding: 25px 0 0 0;
+        }
     }
 
     .guitar {
@@ -195,10 +293,6 @@ a {
         align-items: flex-start;
         border-bottom: 1px solid $border_color;
         padding: 10px 0 70px 0;
-
-        @media (max-width: $breakpoint-tablet) {
-            padding: 25px 25px 30px 20px;
-        }
 
         .guitarContent {
             display: flex;
@@ -226,6 +320,10 @@ a {
                     color: $content_color;
                 }
             }
+
+            @media(max-width: $breakpoint-mobile) {
+                padding: 0 5px;
+            }
         }
 
         .guitarImg {
@@ -233,6 +331,22 @@ a {
             max-width: 400px;
             height: auto;
             object-fit: cover;
+
+            @media(max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 0 20px 0;
         }
     }
 
@@ -242,10 +356,6 @@ a {
         align-items: flex-start;
         border-bottom: 1px solid $border_color;
         padding: 10px 0 70px 0;
-
-        @media (max-width: $breakpoint-tablet) {
-            padding: 25px 25px 30px 20px;
-        }
 
         .timerContent {
             display: flex;
@@ -270,8 +380,23 @@ a {
             max-width: 400px;
             height: auto;
             object-fit: cover;
+
+            @media(max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
         }
 
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 0 20px 0;
+        }
     }
 
     .map {
@@ -279,10 +404,6 @@ a {
         justify-content: space-between;
         align-items: flex-start;
         padding: 10px 0 70px 0;
-
-        @media (max-width: $breakpoint-tablet) {
-            padding: 25px 25px 30px 20px;
-        }
 
         .mapContent {
             .point {
@@ -302,16 +423,28 @@ a {
             max-width: 400px;
             height: auto;
             object-fit: cover;
+
+            @media(max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 0 20px 0;
         }
     }
 
     .note {
         display: flex;
         justify-content: space-between;
-
-        @media (max-width: $breakpoint-tablet) {
-            padding: 25px 25px 30px 20px;
-        }
 
         .noteContent {
             .link {
@@ -332,6 +465,27 @@ a {
             max-width: 300px;
             height: auto;
             object-fit: cover;
+
+            @media(max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 5px 10px 5px;
+        }
+    }
+
+    @media(max-width: $breakpoint-mobile) {
+        justify-content: center;
+        align-items: center;
     }
 }
