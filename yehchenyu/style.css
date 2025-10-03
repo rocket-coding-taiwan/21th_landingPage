@@ -77,10 +77,9 @@ img {
 }
 
 .intro{
-    overflow-wrap: break-word; /* 與上面效果相同，標準寫法 */
-    margin:0;
-    padding-right: 2rem;
-    padding-left: 2rem;
+    overflow-wrap: break-word; 
+    margin:1rem;
+    padding: 2rem;
     font-size: 12px;
     letter-spacing: 0.1rem; 
 
@@ -227,12 +226,13 @@ img {
     width: 25px;
     height: 25px;
     background-color: #313131;
+    border: 1.5px solid var(--secondary-color); 
     border-radius: 50%;
 } 
 .circle.emp{
     
     background-color: var(--text-primary);
-    border: 1.5px solid black; 
+    border: 1.5px solid var(--secondary-color); 
 }
 
 
@@ -247,11 +247,25 @@ img {
 
 }
 
+.work-wrapper{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.work-cont{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+
+}
 
 
 .right-bottom-cont .work-item{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    width: 150px;
+    white-space: nowrap; /*文字不換行 */
+    margin-top: 1.2rem;
 }
 
 
@@ -286,6 +300,23 @@ img {
 .right-bottom-cont .item-retitle {
     font-size: 12px;
     margin: 0;
+}
+
+.work-intro{
+    font-size: 12px;
+    margin-top:1.3rem; 
+    margin-bottom:0;
+}
+.work-intro strong{
+    display: inline-block; /* strong為行內元素，要將它轉為改成行內區塊（inline-block），才能讓上下 margin 生效 */
+    margin-bottom:  0.5rem;
+    
+}
+
+.work-intro p{
+    font-size: 12px;
+    margin: 0;
+    color: var(--text-muted);
 }
 
 /*響應式*/
