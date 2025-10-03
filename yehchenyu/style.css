@@ -224,15 +224,13 @@ img {
 }
 
 .circle{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     background-color: #313131;
     border-radius: 50%;
 } 
 .circle.emp{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    
     background-color: var(--text-primary);
     border: 1.5px solid black; 
 }
@@ -242,14 +240,14 @@ img {
 /*右下-經歷*/
 
 .right-bottom-cont{
-    gap: 100px;
+    
     flex: 2;
     padding: 0.8rem;
     padding-top: 2rem;
-    display: flex;
-    flex-direction: row;
 
 }
+
+
 
 .right-bottom-cont .work-item{
     margin-top: 1rem;
