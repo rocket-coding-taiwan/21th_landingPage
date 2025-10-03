@@ -1,0 +1,160 @@
+@import url('reset.css');
+.wrapper{
+    display: flex;
+    width: 900px;
+    margin: 0 auto;
+    
+}
+/* 左半部上方 */
+.left{
+    background-image: url('bg.jpg');
+    width: 300px;
+    height: 1000px;
+    margin: 0 auto;
+    text-align: center;
+
+    
+    
+}
+
+.left-top img{
+    border-radius: 50%;
+    width: 200px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    border: 8px solid white;
+}
+
+.name-cn{
+    color: rgb(89, 138, 229);
+    font-size: 40px;
+    margin-bottom: 10px;
+    
+}
+
+.name-en{
+    color: rgb(89, 138, 229);
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.job-title{
+    font-size: 20px;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+  
+  .tag {
+    display: inline-block;          
+    background-color: rgb(209, 218, 238);
+    color: #333;                 
+    padding: 6px 12px;             
+    border-radius: 6px;            
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .tags{
+    margin-bottom: 40px;
+  }
+
+
+/* 右半部下方 */
+  .left-bottom{
+    margin: 0 25px;
+    text-align: left;
+
+  }
+  .title{
+    display: flex;
+    height: 30px;
+    border-bottom: 1px solid rgb(89, 138, 229);
+    margin-bottom: 10px;
+  }
+  .title i{
+    font-size: 20px;
+    margin-right: 10px;
+     }
+
+  .title h2{
+    font-size: 22px;
+    font-family: 'Gill Sans'
+  }
+  .content{
+    text-decoration: dotted;
+    line-height: 1.5;
+    margin-bottom: 40px;
+  }
+  .content ul{
+    margin-left: 25px;
+    list-style:disc;
+    
+  }
+
+  /* 右半部 */
+  .right{
+    margin-left: 60px;
+    margin-top: 40px;
+  
+  }
+  .content p{
+    padding: 0 12px;
+    line-height: 1.6;
+    font-size: 15px;
+  }
+.content2-title{
+    margin-bottom: 6px;
+}
+
+  .content2 h3{
+    color: rgb(89, 138, 229);
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+  }
+
+  .content2 i{
+    display: inline-block;
+    color:rgb(89, 138, 229);
+    font-size: 12px;
+    padding-right: 6px;
+    
+  }
+  
+  .content2{
+    position: relative;
+    
+  }
+  .content2 span{
+    position: absolute;
+    right: 0;
+  }
+
+  .content2 h4{
+  padding-top: 5px;
+  font-size: 17px;
+  margin-bottom: 6px;
+  padding: 0 24px;
+  
+ 
+  }
+
+  .content2 p{
+    line-height: 1.6;
+    font-size: 15px;
+    margin-bottom: 15px;
+    padding: 0 24px;
+  }
+
+  .content2 ul{
+    margin-bottom: 25px;
+    padding: 0 24px;
+   
+  }
+  .content2 li{
+    margin-bottom: 10px;
+    
+    
+  }
+
+  
