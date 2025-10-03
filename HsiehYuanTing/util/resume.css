@@ -98,6 +98,15 @@ table {
   border-spacing: 0;
 }
 
+body {
+  box-sizing: border-box;
+}
+@media (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -118,10 +127,18 @@ a {
   box-sizing: border-box;
   padding: 0 10px;
   max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 @media (max-width: 768px) {
   .container {
     padding: 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .container {
+    padding: 0 15px;
   }
 }
 
@@ -129,11 +146,6 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-@media (max-width: 768px) {
-  .intro {
-    justify-content: space-around;
-  }
 }
 .intro .self {
   display: flex;
@@ -154,6 +166,13 @@ a {
 .intro .self .title p {
   font-size: 32px;
 }
+@media (max-width: 576px) {
+  .intro .self {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 .intro .self-detail {
   display: flex;
   flex-direction: column;
@@ -161,6 +180,28 @@ a {
   align-items: flex-start;
   text-align: left;
   padding-right: 15px;
+}
+@media (max-width: 576px) {
+  .intro .self-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
+  }
+}
+@media (max-width: 768px) {
+  .intro {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 576px) {
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
 }
 
 .skills .skillsTitle {
@@ -173,6 +214,11 @@ a {
     padding: 25px 25px 0 25px;
   }
 }
+@media (max-width: 576px) {
+  .skills .skillsTitle {
+    padding: 25px 0 0 0;
+  }
+}
 .skills .skillTree {
   display: flex;
   justify-content: space-between;
@@ -180,17 +226,30 @@ a {
   flex-wrap: wrap;
   padding: 10px;
 }
-@media (max-width: 768px) {
-  .skills .skillTree {
-    padding: 25px 25px 0 25px;
-  }
-}
 .skills .skillTree .item {
   width: 50%;
   max-width: 350px;
   height: 100%;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 768px) {
+  .skills .skillTree .item {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 576px) {
+  .skills .skillTree .item {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 20px 0;
+  }
+  .skills .skillTree .item .itemTitle {
+    text-align: center;
+  }
 }
 .skills .skillTree .item .itemTitle {
   font-size: 18px;
@@ -205,22 +264,25 @@ a {
   line-height: 1.5;
 }
 @media (max-width: 768px) {
-  .skills .skillTree .item {
-    width: 100%;
-    max-width: 100%;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
+  .skills .skillTree {
+    padding: 25px 25px 0 25px;
+  }
+}
+@media (max-width: 576px) {
+  .skills .skillTree {
+    padding: 0 0 20px 0;
+  }
+}
+@media (max-width: 576px) {
+  .skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 20px 0;
   }
 }
 
-@media (max-width: 768px) {
-  .workExperience {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: space-around;
-  }
-}
 .workExperience .workTitle {
   color: #647B71;
   font-size: 24px;
@@ -231,15 +293,15 @@ a {
     padding: 25px 25px 0 20px;
   }
 }
+@media (max-width: 576px) {
+  .workExperience .workTitle {
+    padding: 25px 0 0 0;
+  }
+}
 .workExperience .workItem {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-@media (max-width: 768px) {
-  .workExperience .workItem {
-    padding: 25px 25px 0 20px;
-  }
 }
 .workExperience .workItem .workContent .point {
   color: #647B71;
@@ -254,6 +316,43 @@ a {
   max-width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 768px) {
+  .workExperience .workItem {
+    padding: 25px 25px 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .workExperience .workItem {
+    align-items: center;
+    padding: 0 0 20px 0;
+  }
+  .workExperience .workItem .workContent .point {
+    font-size: 16px;
+  }
+  .workExperience .workItem .workContent ul {
+    line-height: 2;
+  }
+  .workExperience .workItem .workImg {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .workExperience {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+  }
+}
+@media (max-width: 576px) {
+  .workExperience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 20px 0;
+  }
 }
 
 .sideProject {
@@ -270,17 +369,18 @@ a {
     padding: 25px 25px 0 20px;
   }
 }
+@media (max-width: 576px) {
+  .sideProject .sideTitle {
+    margin-bottom: 30px;
+    padding: 25px 0 0 0;
+  }
+}
 .sideProject .guitar {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   border-bottom: 1px solid #BDB7B7;
   padding: 10px 0 70px 0;
-}
-@media (max-width: 768px) {
-  .sideProject .guitar {
-    padding: 25px 25px 30px 20px;
-  }
 }
 .sideProject .guitar .guitarContent {
   display: flex;
@@ -305,6 +405,11 @@ a {
   line-height: 1.5;
   color: #555555;
 }
+@media (max-width: 576px) {
+  .sideProject .guitar .guitarContent {
+    padding: 0 5px;
+  }
+}
 .sideProject .guitar .guitarImg {
   width: 40%;
   max-width: 400px;
@@ -312,17 +417,31 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 576px) {
+  .sideProject .guitar .guitarImg {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .sideProject .guitar {
+    padding: 25px 25px 30px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .sideProject .guitar {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 0 20px 0;
+  }
+}
 .sideProject .timer {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   border-bottom: 1px solid #BDB7B7;
   padding: 10px 0 70px 0;
-}
-@media (max-width: 768px) {
-  .sideProject .timer {
-    padding: 25px 25px 30px 20px;
-  }
 }
 .sideProject .timer .timerContent {
   display: flex;
@@ -346,16 +465,30 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 576px) {
+  .sideProject .timer .timerImg {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .sideProject .timer {
+    padding: 25px 25px 30px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .sideProject .timer {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 0 20px 0;
+  }
+}
 .sideProject .map {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 10px 0 70px 0;
-}
-@media (max-width: 768px) {
-  .sideProject .map {
-    padding: 25px 25px 30px 20px;
-  }
 }
 .sideProject .map .mapContent .point {
   color: #647B71;
@@ -373,14 +506,28 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
 }
+@media (max-width: 576px) {
+  .sideProject .map .mapImg {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .sideProject .map {
+    padding: 25px 25px 30px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .sideProject .map {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 0 20px 0;
+  }
+}
 .sideProject .note {
   display: flex;
   justify-content: space-between;
-}
-@media (max-width: 768px) {
-  .sideProject .note {
-    padding: 25px 25px 30px 20px;
-  }
 }
 .sideProject .note .noteContent .link {
   text-decoration: none;
@@ -398,4 +545,29 @@ a {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 576px) {
+  .sideProject .note .noteImg {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .sideProject .note {
+    padding: 25px 25px 30px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .sideProject .note {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 5px 10px 5px;
+  }
+}
+@media (max-width: 576px) {
+  .sideProject {
+    justify-content: center;
+    align-items: center;
+  }
 }/*# sourceMappingURL=resume.css.map */
