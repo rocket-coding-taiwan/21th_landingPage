@@ -1,5 +1,55 @@
-.font-title {
-  color: #2E406F;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 .font-dark-b {
@@ -11,20 +61,31 @@
      object-fit: cover;
 }
 
-header {
-  text-align: center;
+.bg-dark-blue {
   background-color: #2E406F;
-  color: #fff;
 }
 
 body {
   font-family: "Noto Sans TC", sans-serif;
+  color: #555555;
 }
 
 .work-title {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  gap: 20px;
+}
+.work-title .work-name {
+  display: flex;
+  flex-direction: column;
+}
+.work-title .work-name .work-text {
+  display: flex;
+  gap: 30px;
+}
+
+.list {
+  list-style: disc;
+  padding-left: 1rem;
 }
 
 .logo {
@@ -32,13 +93,15 @@ body {
   width: auto;
 }
 
-.edu-title {
+.edu-context {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  gap: 20px;
 }
-
-.certi-lang {
-  background-color: #2E406F;
-  color: #fff;
+.edu-context .edu-text {
+  display: flex;
+  flex-direction: column;
+}
+.edu-context .edu-logo {
+  height: 40px;
+  width: auto;
 }/*# sourceMappingURL=all.css.map */

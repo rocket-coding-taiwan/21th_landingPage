@@ -1,37 +1,46 @@
+@import "reset";
 @import "font";
+
 .img-cover{
     object-fit: cover
 }
-header{
-    text-align: center;
-    background-color: #2E406F;
-    color: #fff;
+.bg-dark-blue{
+  background-color: #2E406F;  
 }
 body{
     font-family: 'Noto Sans TC', sans-serif;
-
+    color: #555555;
 }
-// .work-context{
-//     display: flex;
-//     align-items: center;
-//     gap: 8px;
-// }
 .work-title{
     display: flex;
-    align-items: center;
-    gap: 8px;
+    gap: 20px;
+    .work-name{
+    display: flex;
+    flex-direction: column;
+    .work-text{
+        display: flex;
+        gap:30px
+    }
+    }
+}
 
+.list{
+    list-style: disc;
+    padding-left: 1rem;
 }
 .logo{
-        height: 20px;
+    height: 20px;
+    width: auto;
+    }
+.edu-context{
+    display: flex;
+    gap: 20px;
+    .edu-text{
+        display: flex;
+        flex-direction: column;
+    }
+    .edu-logo{
+        height: 40px;
         width: auto;
     }
-.edu-title{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.certi-lang{
-    background-color: #2E406F;
-    color: #fff;
 }

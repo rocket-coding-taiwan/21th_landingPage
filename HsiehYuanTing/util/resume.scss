@@ -1,7 +1,16 @@
 @use "./common.scss";
 @use "./color.scss" as *;
+@use "./variable.scss" as *;
 @use "./reset.scss";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    box-sizing: border-box;
+    @media(max-width: $breakpoint-mobile) {
+        overflow-x: hidden;
+
+    }
+}
 
 img {
     max-width: 100%;
@@ -22,6 +31,17 @@ a {
     box-sizing: border-box;
     padding: 0 10px;
     max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    @media (max-width: $breakpoint-tablet) {
+        padding: 0 20px;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        padding: 0 15px;
+    }
 }
 
 .intro {
@@ -34,6 +54,7 @@ a {
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+
 
         .pic {
             width: 150px;
@@ -51,15 +72,43 @@ a {
                 font-size: 32px;
             }
         }
+
+        @media (max-width: $breakpoint-mobile) {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
     }
 
     .self-detail {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
         padding-right: 15px;
+
+        @media (max-width: $breakpoint-mobile) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            line-height: 1.5;
+        }
     }
+
+
+    @media (max-width: $breakpoint-tablet) {
+        justify-content: space-around;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
 }
 
 .skills {
@@ -67,6 +116,14 @@ a {
         color: $title_color;
         font-size: 24px;
         padding-left: 0px;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 25px;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            padding: 25px 0 0 0;
+        }
     }
 
     .skillTree {
@@ -74,12 +131,31 @@ a {
         justify-content: space-between;
         align-items: flex-start;
         flex-wrap: wrap;
+        padding: 10px;
 
         .item {
-            width: 40%;
+            width: 50%;
+            max-width: 350px;
             height: 100%;
             display: flex;
             flex-direction: column;
+
+            @media (max-width: $breakpoint-tablet) {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+                flex-wrap: wrap;
+            }
+
+            @media (max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 0 20px 0;
+
+                .itemTitle {
+                    text-align: center;
+                }
+            }
 
             .itemTitle {
                 font-size: 18px;
@@ -96,6 +172,23 @@ a {
                 }
             }
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 25px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            padding: 0 0 20px 0;
+        }
+
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 20px 0;
     }
 }
 
@@ -104,6 +197,14 @@ a {
         color: $title_color;
         font-size: 24px;
         padding-left: 0px;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 20px;
+        }
+
+        @media (max-width: $breakpoint-mobile) {
+            padding: 25px 0 0 0;
+        }
     }
 
     .workItem {
@@ -128,6 +229,42 @@ a {
             max-width: 100%;
             object-fit: cover;
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            align-items: center;
+            padding: 0 0 20px 0;
+
+            .workContent .point {
+                font-size: 16px;
+            }
+
+            .workContent ul {
+                line-height: 2.0;
+            }
+
+            .workImg {
+                display: none;
+            }
+        }
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: space-around;
+    }
+
+    @media (max-width: $breakpoint-mobile) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 20px 0;
     }
 }
 
@@ -139,6 +276,15 @@ a {
         color: $title_color;
         font-size: 24px;
         padding-left: 0px;
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 0 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            margin-bottom: 30px;
+            padding: 25px 0 0 0;
+        }
     }
 
     .guitar {
@@ -174,6 +320,10 @@ a {
                     color: $content_color;
                 }
             }
+
+            @media(max-width: $breakpoint-mobile) {
+                padding: 0 5px;
+            }
         }
 
         .guitarImg {
@@ -181,6 +331,22 @@ a {
             max-width: 400px;
             height: auto;
             object-fit: cover;
+
+            @media(max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 0 20px 0;
         }
     }
 
@@ -214,8 +380,23 @@ a {
             max-width: 400px;
             height: auto;
             object-fit: cover;
+
+            @media(max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
         }
 
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 0 20px 0;
+        }
     }
 
     .map {
@@ -242,6 +423,22 @@ a {
             max-width: 400px;
             height: auto;
             object-fit: cover;
+
+            @media(max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 0 20px 0;
         }
     }
 
@@ -262,11 +459,33 @@ a {
                 line-height: 2.0;
             }
         }
+
         .noteImg {
             width: 40%;
             max-width: 300px;
             height: auto;
             object-fit: cover;
+
+            @media(max-width: $breakpoint-mobile) {
+                width: 100%;
+                max-width: 100%;
+            }
         }
+
+        @media (max-width: $breakpoint-tablet) {
+            padding: 25px 25px 30px 20px;
+        }
+
+        @media(max-width: $breakpoint-mobile) {
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 5px 10px 5px;
+        }
+    }
+
+    @media(max-width: $breakpoint-mobile) {
+        justify-content: center;
+        align-items: center;
     }
 }
