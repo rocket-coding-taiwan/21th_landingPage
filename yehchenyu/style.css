@@ -321,8 +321,8 @@ img {
 .right-bottom-cont .work-item{
     width: 150px;
     white-space: nowrap; /*文字不換行 */
-    padding: 1rem;
     margin-top: 1.2rem;
+    flex-shrink: 0; /*✨禁止彈性項目在父容器空間不足時縮小*/
 }
 
 
