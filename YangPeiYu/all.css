@@ -102,6 +102,16 @@ border-spacing: 0;
     line-height: 1.5;
 }
 
+@media(max-width:768px) {
+    .Info{
+        flex-direction: column;
+    }
+    .Info_context h1,h2 {
+        text-align: center;
+    }
+}
+
+
 .skills {
     width: 100%;
     background-color: #835f51;
@@ -157,6 +167,7 @@ border-spacing: 0;
     font-size: 24px;
     font-weight: bold;
     color: #835f51;
+    line-height: 1.2;
 }
 
 .work_Context {
@@ -193,6 +204,24 @@ border-spacing: 0;
     margin-left: 18px;
     list-style-type: disc;
     line-height: 1.5;
+}
+
+
+@media(max-width:768px){
+    .work{
+        flex-direction: column;
+        width: 70%;
+    }
+    .work_Title{
+        margin-bottom: 40px;
+        text-align: center;
+        border-bottom: 1px solid #835f51;
+    }
+    .work_Context{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 
@@ -287,6 +316,29 @@ border-spacing: 0;
 .project_01_text a:hover,.project_02_text a:hover {
     background-color: #b37f56;
 }
+
+@media(max-width:1024px){
+        .project_context{
+        flex-direction: column;
+        width: 70%;
+        align-items: center;
+    }
+    .project_01,.project_02 {
+        width: fit-content;
+    }
+}
+
+@media(max-width:768px) {
+    .project_context{
+        flex-direction: column;
+        width: 70%;
+        align-items: center;
+    }
+    .project_01,.project_02 {
+        width: fit-content;
+    }
+}
+
 
 .footer {
     background: #835f51;
