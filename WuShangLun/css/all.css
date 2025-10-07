@@ -347,6 +347,12 @@ html {
   font-size: 16px;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 .page {
   background-color: #202020;
   color: #E0E0E0;
