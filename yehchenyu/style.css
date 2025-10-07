@@ -439,6 +439,7 @@ img {
     .head-cont{
     align-items: center;  
     }
+}
 
 /* 手機（寬度 <=767x） */
 @media (max-width: 767px) {
@@ -680,5 +681,5 @@ img {
     background-color: #313131;
     color: var(--bg-color);
     
-     }
+    }
 }
