@@ -104,4 +104,25 @@ body {
 .edu-context .edu-logo {
   height: 40px;
   width: auto;
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0 auto;
+  }
+}
+@media (max-width: 375px) {
+  .work-title .work-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: left;
+  }
+  .work-title .work-name .work-text {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .work-title .work-name .work-text li {
+    margin-left: 1rem;
+  }
 }/*# sourceMappingURL=all.css.map */
