@@ -409,8 +409,10 @@ img {
 
     .left-cont{   
     justify-content: center;
-    margin-bottom: 0rem;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
     gap:0.5rem;
+    position: relative;
     }   
 
     .intro{
@@ -419,17 +421,21 @@ img {
 
 
 
-    .contact-cont::after {
+    .left-cont::after {
     content: "";
-    display:  inline-block;       /* 線條貼近元素底部 */
-    vertical-align:middle;
+    position: absolute;
+    display: inline-block;       /* 線條貼近元素底部 */
+    vertical-align: middle;
     height: 1.5px;
-    bottom: 0;
+    bottom: 0;        /* 線條貼近元素底部 */
+    width: 95%;
     background-color: var(--text-muted);
     }
 
     .right-top-cont p::after{
     content: "";
+    bottom: 0;
+    height: 1.5px;
     bottom: 0;
     display:  inline-block;       /* 線條貼近元素底部 */
     vertical-align:middle;
@@ -484,9 +490,10 @@ img {
     }
 
    .qr-wrapper{
-    position: fixed;      /* 固定在視窗 */
-    bottom: 0;   
-     z-index: 1000;        /* 避免被其他元素遮住 */
+    position: fixed;   /* 固定在視窗 */
+    right:1rem;   
+    bottom: 1rem;   
+    z-index: 1000;        /* 避免被其他元素遮住 */
    }
 
 
