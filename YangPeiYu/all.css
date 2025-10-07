@@ -47,20 +47,20 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 
-*,*:before,*:after {
+*,*::before,*::after {
     box-sizing: border-box;
 }
 
 
 .Info {
-    max-width: 940px;
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     padding-top: 40px;
     padding-bottom: 40px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 2%;
+    padding-left: 2%;
     align-items: center;
     justify-content: center;
 }
@@ -138,8 +138,9 @@ border-spacing: 0;
 }
 
 .skills_context {
-    width: 60%;
-    margin-left: 50%;
+    width: 40%;
+    margin-right: 40%;
+    transform: translatex(88%);
     padding-left: 10px;
     border-left: 1px solid white;
 }
@@ -213,6 +214,7 @@ border-spacing: 0;
         width: 70%;
     }
     .work_Title{
+        padding-bottom: 10px;
         margin-bottom: 40px;
         text-align: center;
         border-bottom: 1px solid #835f51;
@@ -224,10 +226,12 @@ border-spacing: 0;
     }
 }
 
+.project {
+    width: 100%;
+}
 
 .project_Title {
     width: 70%;
-    padding-right: 10px;
     padding-bottom: 10px;
     margin-right: auto;
     margin-left: auto;
@@ -341,6 +345,7 @@ border-spacing: 0;
 
 
 .footer {
+    width: 100%;
     background: #835f51;
     padding: 20px;
     text-align: center;
