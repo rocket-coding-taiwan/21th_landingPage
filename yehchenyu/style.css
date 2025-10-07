@@ -380,6 +380,7 @@ img {
 
 /*響應式*/
 
+
 /* 橫式螢幕過度 */
 @media (max-width: 1396px) {
 
@@ -437,6 +438,80 @@ img {
     
     .head-cont{
     align-items: center;  
+    }
+}
+
+/* 手機（寬度 <=767x） */
+@media (max-width: 767px) {
+
+
+  
+    .resume-cont{
+   
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    }
+    .name{
+    font-size: 70px;
+    }
+    .head-cont{
+    align-items: center;  
+    }
+
+    .left-cont{   
+    justify-content: center;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    gap:0.5rem;
+    position: relative;
+    }   
+
+    .intro{
+        padding: 0;
+        text-align: left;
+    }
+
+
+
+    .left-cont::after {
+    content: "";
+    position: absolute;
+    display: inline-block;       /* 線條貼近元素底部 */
+    vertical-align: middle;
+    height: 1.5px;
+    bottom: 0;        /* 線條貼近元素底部 */
+    width: 95%;
+    background-color: var(--text-muted);
+    }
+
+    .right-top-cont p::after{
+    content: "";
+    bottom: 0;
+    height: 1.5px;
+    bottom: 0;
+    display:  inline-block;       /* 線條貼近元素底部 */
+    vertical-align:middle;
+    }
+
+    .right-cont{
+    flex-direction: column;
+    width: 100%;
+    }
+
+    .right-top-cont{
+    flex-direction: column;
+    gap:3rem;
+    padding-top:0;
+    align-items: center;
+    }
+    .right-cont .work-item{
+    text-align: center;
+    }
+    .edu-wrapper{
+    margin-right: 0rem;
+    align-items: center; 
     }
 
     h3{
@@ -582,18 +657,7 @@ img {
         position: relative;
         margin: 1rem;
     }
-
-   
-    .right-top-cont .item-retitle,
-    .right-bottom-cont .item-subtitle,
-    .right-bottom-cont .item-retitle,
-    .work-intro strong{
-
-    font-size: clamp(12px, 2.5vw, 18px);
     
-    }
-    
-   
 
     .work-intro{
         text-align: center;
@@ -617,5 +681,5 @@ img {
     background-color: #313131;
     color: var(--bg-color);
     
-     }
+    }
 }
