@@ -139,6 +139,9 @@ img {
   height: auto;
 }
 /* --------------------------------------------- */
+body {
+  background: #fffafa;
+}
 .wrap {
   /* 頁面置中 */
   max-width: 850px;
@@ -146,12 +149,13 @@ img {
   margin-right: auto;
   padding: 32px 0 80px 0;
   font-family: "Noto Sans TC", sans-serif; /*sans-serif備選字體*/
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 .profile {
   display: flex;
   align-items: flex-start;
-  margin-right: 30px;
   margin-bottom: 40px;
   padding-top: 40px;
 }
@@ -332,7 +336,7 @@ a:hover {
   max-width: 20px;
 }
 .icon2 {
-  max-width: 50px;
+  max-width: 40px;
 }
 .skills {
   color: white;
@@ -373,12 +377,17 @@ a:hover {
     flex-wrap: wrap;
     font-size: 14px;
   }
+  /* .job {
+    display: flex;
+    flex-direction: column;
+  } */
   .line1,
   .line2,
   .background {
-    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
   }
   h2,
   .portfolio {
