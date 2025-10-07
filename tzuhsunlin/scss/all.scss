@@ -44,3 +44,25 @@ body{
         width: auto;
     }
 }
+@media(max-width:768px) {
+    body{
+        margin: 0 auto;
+    }
+}
+@media(max-width:375px){
+   .work-title{
+    .work-name{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: left  ;
+        .work-text{
+            flex-direction: column;
+            gap: 4px;;
+            li{
+                margin-left: 1rem;
+            }
+            }
+        }
+   }
+}
