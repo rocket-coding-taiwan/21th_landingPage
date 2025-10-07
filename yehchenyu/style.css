@@ -514,7 +514,7 @@ img {
     align-items: center; 
     }
 
-    h2{
+    h3{
     font-size: clamp(24px, 2.5vw, 28px);
     }
 
