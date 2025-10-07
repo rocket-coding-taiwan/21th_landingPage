@@ -1,24 +1,25 @@
 @charset "UTF-8";
-/* 
+/* ==========================================================================
    0) 全域 CSS 變數（純 CSS 用）
-   --page-max  ：版心最大寬度
-   --page-pad  ：頁面左右內距
-   --pair-gap  ：「專案 × Skills」兩欄之間的欄距
-   */
+   ========================================================================== */
 :root {
-  --page-max: 980px;
+  --page-max: 780px;
   --page-pad: 24px;
   --pair-gap: 24px;
 }
 
-/* 
+/* ==========================================================================
    1) Sass 變數（顏色、尺寸、效果）
-*/
-/* 
-   2) Reset 
-*/
-*, *::before*::after {
+   ========================================================================== */
+/* ==========================================================================
+   2) Reset / 基礎排版
+   ========================================================================== */
+html {
   box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 html, body {
@@ -32,9 +33,9 @@ body {
   font: 16px/1.6 "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
 }
 
-/* 
+/* ==========================================================================
    3) 版心（header 與 .card 共用）
-*/
+   ========================================================================== */
 header,
 .card {
   max-width: var(--page-max);
@@ -42,9 +43,9 @@ header,
   padding-inline: var(--page-pad);
 }
 
-/* 
+/* ==========================================================================
    4) Hero（頭像 + 名稱）
-*/
+   ========================================================================== */
 header {
   display: flex;
   align-items: center;
@@ -68,7 +69,6 @@ header h2 {
   border: 3px solid #5d78b5;
   background: #fff;
 }
-
 .avatar img {
   width: 100%;
   height: 100%;
@@ -78,9 +78,9 @@ header h2 {
      object-position: center;
 }
 
-/* 
+/* ==========================================================================
    5) 卡片元件
-*/
+   ========================================================================== */
 .card {
   position: relative;
   background: #fff;
@@ -89,7 +89,7 @@ header h2 {
   box-shadow: 0 10px 0 rgba(0, 0, 0, 0.05);
   padding: 28px;
   margin-top: 28px;
-  /* 橢圓標籤（預設左上） */
+  /* 膠囊標籤（預設左上） */
   /* 「專案 × Skills」這張卡 */
 }
 .card__body {
@@ -125,7 +125,11 @@ header h2 {
   margin-inline: auto;
 }
 
-/* 左右各一顆標籤；右側標籤對齊到右欄起點（Excel/VBA 上方） */
+.card__label {
+  font-size: 24px;
+}
+
+/* 左右大標籤（桌機） */
 .card--two .card__label--left {
   left: 10px;
 }
@@ -135,9 +139,9 @@ header h2 {
   left: calc(50% + var(--pair-gap) / 2);
 }
 
-/*
-   6) 單欄清單（一般用途）
-*/
+/* ==========================================================================
+   6) 一般單欄清單
+   ========================================================================== */
 .line-list {
   list-style: none;
   margin: 6px 0 0;
@@ -145,7 +149,7 @@ header h2 {
 }
 .line-list li {
   padding: 24px 4px;
-  /* 除第一個外的每個 li 都有分隔線（在 pairs 卡片內會被關掉，見下） */
+  /* 除第一個外，每個 li 都有分隔線（在 pairs 內會被關掉） */
 }
 .line-list li + li {
   border-top: 2px solid #5d78b5;
@@ -161,14 +165,14 @@ header h2 {
   opacity: 0.9;
 }
 
-/* 在「專案 × Skills」卡內避免疊線：關掉 line-list 的分隔線 */
-.card--xtwo .line-list li + li {
+/* 「專案 × Skills」卡內避免疊線 */
+.card--two .line-list li + li {
   border-top: 0;
 }
 
-/* 
-   7) Pairs 版型（把左＋右成對放在同一列）
-*/
+/* ==========================================================================
+   7) Pairs 版型（左＋右成對）
+   ========================================================================== */
 .pairs {
   list-style: none;
   margin: 6px 0 0;
@@ -179,12 +183,21 @@ header h2 {
 .pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas: "left right";
   gap: var(--pair-gap);
   padding: 14px 4px;
   position: relative;
 }
 
-/* 列與列之間的橫線（整行一條；右端可留白）— 唯一權威版本 */
+.pair__left {
+  grid-area: left;
+}
+
+.pair__right {
+  grid-area: right;
+}
+
+/* 列與列之間的橫線（右端留白） */
 .pair + .pair::before {
   content: "";
   position: absolute;
@@ -195,7 +208,12 @@ header h2 {
   border-top: 2px solid #5d78b5;
 }
 
-/* 文字樣式 */
+/* 每列右欄的小膠囊 Skills（桌機隱藏、手機顯示） */
+.card__label--mobile {
+  display: none;
+}
+
+/* 文字樣式（沿用規格） */
 .pair__left .item-title,
 .pair__right .item-title {
   margin: 0 0 4px;
@@ -210,9 +228,9 @@ header h2 {
   opacity: 0.9;
 }
 
-/* 
-   9) RWD（≤ 760px）
-*/
+/* ==========================================================================
+   8) RWD（≤760px）
+   ========================================================================== */
 @media (max-width: 760px) {
   header {
     flex-direction: column;
@@ -227,17 +245,41 @@ header h2 {
   .card--narrow {
     width: 100%;
   }
-  /* 手機：維持兩欄但允許滑動，避免上下分層 */
-  .pair {
-    grid-template-columns: minmax(260px, 1fr) minmax(260px, 1fr);
-    min-width: 540px;
+  /* Pairs 改單欄：右欄排在左欄下面 */
+  .pairs {
+    overflow-x: visible;
   }
-  /* 手機時讓橫線全寬，標籤改回靠右 */
+  .pair {
+    grid-template-columns: 1fr;
+    grid-template-areas: "left" "right";
+    min-width: 0;
+    gap: 12px;
+  }
+  .pair__right {
+    position: static;
+    padding-top: 0;
+    margin-top: 4px;
+    display: block;
+  }
+  /* 手機：桌機右上大顆 Skills 隱藏；改用每列右欄的小標籤 */
+  .card--two .card__label--right {
+    display: none;
+  }
+  .card__label--mobile {
+    display: inline-block;
+    position: static;
+    margin: 0 0 6px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #70d6ff;
+    border: 3px solid #5d78b5;
+    font-weight: 700;
+    font-size: 0.9rem;
+    line-height: 1;
+  }
+  /* 手機：分隔線全寬 */
   .pair + .pair::before {
     right: 0;
   }
-  .card--two .card__label--right {
-    left: auto;
-    right: 10px;
-  }
-}
+  /* （可選）如果你想第一列不顯示小標籤，開這行 */
+}/*# sourceMappingURL=all.css.map */
