@@ -125,6 +125,10 @@ header h2 {
   margin-inline: auto;
 }
 
+.card__label {
+  font-size: 24px;
+}
+
 /* 左右大標籤（桌機） */
 .card--two .card__label--left {
   left: 10px;

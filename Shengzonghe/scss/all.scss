@@ -120,6 +120,9 @@ header h2{
 /* 窄卡：桌機 60% 寬（手機會回滿版） */
 .card--narrow{ width: 60%; margin-inline: auto; }
 
+.card__label{
+  font-size: 24px;
+}
 /* 左右大標籤（桌機） */
 .card--two .card__label--left { left: 10px; }
 .card--two .card__label--right{
