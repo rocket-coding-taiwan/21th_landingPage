@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brand / Business Card | Hanni Lu</title>
+  <meta name="description" content="Brand / Business Card projects by Hanni Lu">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css" />
+  <style>
+    /* 內頁畫廊：桌機兩欄、手機一欄 */
+    .gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+    .gallery a{display:block;border-radius:14px;overflow:hidden;background:#f6f6f6}
+    .gallery img{width:100%;height:320px;object-fit:cover;display:block}
+    @media (max-width:768px){.gallery{grid-template-columns:1fr}.gallery img{height:240px}}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="logo" href="../index.html">
+        <img src="../assets/images/logo-antler.png" alt="Hanni Lu logo" />
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">開啟主選單</span>
+        <img class="nav-toggle-icon" src="../assets/icons/menu.svg" alt="Menu" width="28" height="28">
+      </button>
+      <nav id="site-nav" class="nav" aria-label="Primary">
+        <a href="../index.html#works">Works</a>
+        <a href="../index.html#about">About</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-head">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="../index.html#works">Selected Works</a> / Brand · Business Card
+      </div>
+      <h1 class="page-title">Brand / Business Card</h1>
+      <p class="page-sub">Logo、名片、CIS識別系統</p>
+    </div>
+  </section>
+
+  <main class="container section">
+    <div class="gallery" id="gallery">
+      <a href="../assets/images/works/business/business-01-full.jpg" data-caption="商標／名片設計">
+        <img src="../assets/images/works/business/business-01-thumbs.jpg" alt="商標／名片設計"></a>
+      <a href="../assets/images/works/business/business-02-full.jpg" data-caption="商標／名片設計">
+        <img src="../assets/images/works/business/business-02-thumbs.jpg" alt="商標／名片設計"></a>
+      <a href="../assets/images/works/business/business-03-full.jpg" data-caption="房地產CIS形象設計">
+        <img src="../assets/images/works/business/business-03-thumbs.jpg" alt="房地產CIS形象設計"></a>
+    
+    </div>
+  </main>
+
+  <footer class="site-footer">© 2025 Hanni Lu. All Rights Reserved</footer>
+
+  <script>
+    // 手機選單
+    (function(){
+      const btn=document.querySelector('.nav-toggle');
+      const nav=document.getElementById('site-nav');
+      const icon=btn?.querySelector('.nav-toggle-icon');
+      if(!btn||!nav) return;
+      btn.addEventListener('click',()=>{
+        const open=btn.getAttribute('aria-expanded')==='true';
+        btn.setAttribute('aria-expanded', String(!open));
+        nav.classList.toggle('is-open', !open);
+        document.body.classList.toggle('no-scroll', !open);
+        if(icon) icon.src = !open ? '../assets/icons/close.svg' : '../assets/icons/menu.svg';
+      });
+      function closeNav(){
+        btn.setAttribute('aria-expanded','false');
+        nav.classList.remove('is-open');
+        document.body.classList.remove('no-scroll');
+        if(icon) icon.src = '../assets/icons/menu.svg';
+      }
+      nav.addEventListener('click',e=>{ if(e.target.closest('a')) closeNav(); });
+      document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeNav(); });
+    })();
+
+    // 燈箱
+    (function(){
+      const g=document.getElementById('gallery'); if(!g) return;
+      const modal=document.createElement('div'); modal.className='modal';
+      modal.innerHTML=`<span class="close">&times;</span><img class="modal-content" alt=""><div id="caption"></div>`;
+      document.body.appendChild(modal);
+      const img=modal.querySelector('.modal-content'); const cap=modal.querySelector('#caption');
+      const closeBtn=modal.querySelector('.close');
+      function close(){ modal.style.display='none'; }
+      closeBtn.addEventListener('click',close);
+      modal.addEventListener('click',e=>{ if(e.target===modal) close(); });
+      document.addEventListener('keydown',e=>{ if(e.key==='Escape') close(); });
+      g.addEventListener('click',e=>{
+        const a=e.target.closest('a'); if(!a) return;
+        e.preventDefault(); img.src=a.href; cap.textContent=a.dataset.caption||''; modal.style.display='block';
+      });
+    })();
+  </script>
+</body>
+</html>
