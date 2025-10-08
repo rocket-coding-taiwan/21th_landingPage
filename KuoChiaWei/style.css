@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+  color: black;
+  background-color:rgb(255, 255, 255);
+}
+
+.container {
+  width: 794px;             
+  margin: 0 auto;           
+  padding: 36px;            
+  box-sizing: border-box;   
+  border: 1px solid #dddddd; 
+}
+
+h1 {
+  margin: 0 0 8px 0;
+  font-size: 24px;          
+  font-weight: bold;
+}
+.subtitle {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  color: #666666;
+}
+
+
+h2 {
+  font-size: 18px;
+  margin: 18px 0 8px 0;
+  border-bottom: 2px solid #1f5de4; 
+  padding-bottom: 4px;
+}
+
+/* 兩欄與頂部照片表格 */
+.table { width: 100%; border-collapse: collapse; }
+.td-top { vertical-align: top; }
+
+/* 大頭照 */
+.photo {
+  width: 120px; height: 160px; /*證件照格式*/
+  border: 1px solid #cccccc;
+  object-fit: cover;
+  display: block;
+}
+
+/* 左側欄的小標題與文字行距 */
+.small-title { font-weight: bold; margin: 10px 0 6px 0; }
+.kv { margin: 4px 0; }
+
+/* 工作內容 */
+ul { margin: 6px 0 10px 20px; }
+li { margin: 4px 0; }
+
+/* 表格式語言能力 */
+.simple-table { width: 100%; border-collapse: collapse; }
+.simple-table th, .simple-table td {
+  border: 1px solid #dddddd;
+  padding: 6px;
+  text-align: left;
+  font-size: 14px;
+}
+.simple-table th { background: #f6f6f6; }
+
+hr { border: none; border-top: 1px solid #dddddd; margin: 14px 0; }
+
