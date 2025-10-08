@@ -30,6 +30,8 @@ display: block;
 }
 body {
 line-height: 1;
+height: 100%;
+width: 100%;
 }
 ol, ul {
 list-style-type: none;
@@ -114,9 +116,15 @@ border-spacing: 0;
 
 .skills {
     width: 100%;
-    background-color: #835f51;
+    /*開始設定視差捲動效果*/
+    /*background-color: #835f51; 原背景色*/ 
+    background-image: url('圖片/Skills.background04.jpg'); /*替換成圖片檔*/
+    min-height: 300px; /*預留足夠高度呈現視差滾動效果*/
+    background-attachment: fixed; /*讓背景相對於視窗是固定的，才能產生視差滾動效果*/
+    background-size: cover; /*確保背景圖片涵蓋整個區塊*/
+    background-position: center; /*讓背景圖片置中*/
     padding-top: 20px;
-    padding-bottom: 15px; /* skills_context有設margin-bottom(5px) */
+    padding-bottom: 15px; /* skills_context li有設margin-bottom(5px) */
     color: white;
     display: flex;
     flex-direction: column;
@@ -228,6 +236,15 @@ border-spacing: 0;
 
 .project {
     width: 100%;
+    /*開始設定視差捲動效果*/
+    /*background-color: #835f51; 原背景色*/ 
+    background-image: url('圖片/Skills.background04.jpg'); /*替換成圖片檔*/
+    min-height: 300px; /*預留足夠高度呈現視差滾動效果*/
+    background-attachment: fixed; /*讓背景相對於視窗是固定的，才能產生視差滾動效果*/
+    background-size: cover; /*確保背景圖片涵蓋整個區塊*/
+    background-position: center; /*讓背景圖片置中*/
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .project_Title {
@@ -237,13 +254,13 @@ border-spacing: 0;
     margin-left: auto;
     margin-top: 40px;
     margin-bottom: 10px;
-    border-bottom: 1px solid #835f51;
+    border-bottom: 1px solid white;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: #835f51;
+    color: white;
 }
 
 .project_context {
@@ -278,12 +295,15 @@ border-spacing: 0;
 
 
 .project_01_text , .project_02_text {
-    background-color: #dfd7d3;
+    width: 80%;
+    background-color: white;
     padding: 20px;
     padding-top: 30%;
     margin-top: -25%;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
 }
 
 .project_01_text h1,.project_02_text h1 {
