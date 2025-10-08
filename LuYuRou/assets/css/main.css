@@ -1,0 +1,455 @@
+
+/* ==========================================================================
+   全站變數（顏色 / 尺寸 / 共同間距）
+   ========================================================================== */
+:root{
+  --bg:#ffffff; --text:#171717;
+  --muted:#6b7280; --brand:#b48a57;
+  --max:1200px; --gap:24px; --radius:16px;
+  --page-pad: clamp(20px, 5vw, 64px);
+  --header-h: 80px;      
+  --anchor-gap: 16px;    /* 標題與視窗頂多留一點空隙 */
+}
+
+/* 基礎 */
+*{ box-sizing:border-box; }
+body{ 
+  margin:0; 
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; 
+  color:var(--text); background:var(--bg); line-height:1.6; }
+.container{ 
+  max-width:var(--max); 
+  margin:0 auto; 
+  padding:0 24px; 
+}
+.section{ padding:40px 0; }
+.sub{ color:var(--muted); }
+
+/* 任何有 id 的區塊（錨點目標）在捲到頂時，往下留出 header 的高度 */
+section[id]{
+  scroll-margin-top: calc(var(--header-h) + var(--anchor-gap));
+}
+
+/* Header */
+.site-header{ position:sticky; top:0; background:#fff; border-bottom:1px solid #eee; z-index:10; }
+.site-header .inner{ display:flex; align-items:center; justify-content:space-between; padding:20px 20px; }
+.logo{ display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:800; color:inherit }
+.logo img{ height:48px; width:auto }
+.nav{ display:flex; gap:32px }
+.nav a{ 
+  position:relative; 
+  padding:6px 0; 
+  text-decoration:none; 
+  color:var(--text); 
+  opacity:.9; 
+  transition:.2s 
+}
+.nav a::after{ content:""; position:absolute; left:0; bottom:-2px; width:100%; height:2px; background:var(--brand); transform:scaleX(0); transform-origin:left; transition:transform .2s }
+.nav a:hover{ 
+  color:var(--brand); 
+  opacity:1; 
+  font-weight:600 
+}
+.nav a:hover::after{ transform:scaleX(1) }
+
+/* Cover */
+/* ===== Hero / Cover ===== */
+.cover{
+  position: relative;
+  min-height: 64vh;                 /* 視窗高度 64% */
+  background:
+    linear-gradient(                 /* 半透明遮罩，讓字在亮圖上也清楚 */
+      rgba(22,22,22,.8),
+      rgba(255, 255, 255, .90)
+    ),
+    url('../images/hero.png');  /* 背景圖 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #111;
+}
+
+
+.cover-inner{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  min-height: 80vh;                 /* 讓 Flex 真正吃到高度 */
+  padding: 80px 20px;               /* 與導覽列留距 */
+}
+
+/* 三種對齊：在 <section class="cover ..."> 上切換 */
+.cover.is-center .cover-inner{
+  justify-content: center;          /* 垂直置中 */
+  align-items: center;              /* 水平置中（文字會置中對齊）*/
+  text-align: center;
+}
+
+.cover.is-left .cover-inner{
+  justify-content: center;          /* 垂直置中 */
+  align-items: flex-start;          /* 靠左 */
+  text-align: left;
+}
+
+.cover.is-bottom-left .cover-inner{
+  justify-content: flex-end;        /* 靠底 */
+  align-items: flex-start;          /* 靠左 */
+  padding-bottom: 12vh;             /* 與下緣安全距 */
+  text-align: left;
+}
+
+/* 標題/副標尺寸 */
+.cover h1{ font-size: clamp(32px, 6vw, 56px); margin: 0; }
+.cover p { font-size: clamp(16px, 2.2vw, 20px); margin: 0px 0 0; color: #5e5e5e; }
+
+
+/* Works Cards */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:var(--gap) }
+.card{ border:1px solid #eee; border-radius:var(--radius); overflow:hidden; text-decoration:none; background:#fff; color:inherit; transition:.15s }
+.card:hover{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.06) }
+.card img{ width:100%; display:block; aspect-ratio:4/3; object-fit:cover }
+.card .content{ padding:14px 16px }
+.eyebrow{ font-size:12px; letter-spacing:.12em; color:var(--brand); text-transform:uppercase; font-weight:800 }
+.card h3{ margin:.3em 0 }
+.card p{ margin:0; color:var(--muted) }
+
+/* ==========================================================================
+   About — 第一列 Left(圖片)｜Right(Introduction)；
+   後面三列為「橫向卡片」且寬度與右側欄位完全對齊（右邊界同線）。
+   ========================================================================== */
+#about{ background:#f9f9f9; padding:60px 20px }
+.about-wrapper{
+  display:grid;
+  grid-template-columns:320px 1fr;
+  grid-template-areas:
+    "photo intro"
+    "photo card1"
+    "photo card2"
+    "photo card3";
+  column-gap:32px;
+  row-gap:0px;
+  align-items:start;
+}
+
+/* 讓內層的 .about-content / .about-info 子項可以直接填入外層 grid 區域 */
+.about-content{ 
+  grid-area:intro; 
+  display:block 
+}  /* 右側整塊占一格，不再拆散 */
+.about-info{  
+display:contents 
+}  /* 讓三張卡片成為 grid item */
+
+/* 區域佈局 */
+.about-photo{ 
+  grid-area:photo;
+  background:#ffffff00;
+  border:0px solid #eee;
+  border-radius:12px;       /* 圓角 */
+  padding:0px;              /* ← 和 .about-content 的 padding 相同 */
+  display:flex;
+  align-items:flex-start;     /* 圖片向上貼齊 */
+}
+.about-info .about-box:nth-child(1){ grid-area:card1 }
+.about-info .about-box:nth-child(2){ grid-area:card2 }
+.about-info .about-box:nth-child(3){ grid-area:card3 }
+
+/* 圖片樣式 */
+.about-photo img{ 
+  width:100%; 
+  height:auto; 
+  display:block; 
+  object-fit:cover; 
+  border-radius:8px }
+.about-content h2{ font-size:32px; margin:0 0 10px; color:var(--brand) }
+.about-content h3{ font-size:20px; margin:0 0 16px; font-weight:600; color:#555 }
+.about-content p{ margin:0 0 14px; }
+
+/* 橫向卡片（與右欄寬度一致） */
+.about-box{ 
+  margin-top: 24px; 
+  background:#fff; 
+  border:1px solid #eee; 
+  border-radius:12px; 
+  padding:32px 
+}
+.about-box h4{ margin:0 0 10px; color:var(--brand) }
+.about-box ul{ margin:0; padding-left:20px }
+
+/* Section headings (Works / Contact 與 Introduction 一致風格) */
+#works > h2, #contact > h2{ font-size:32px; margin:0 0 10px; color:var(--brand); font-weight:800; letter-spacing:.02em }
+
+/* Modal */
+.modal{ display:none; position:fixed; inset:0; z-index:100; padding-top:60px; overflow:auto; background:rgba(0,0,0,.9) }
+.modal-content{ margin:auto; display:block; }
+#caption{ margin:auto; text-align:center; color:#ccc; padding:10px }
+.modal .close{ position:absolute; top:20px; right:35px; color:#fff; font-size:40px; font-weight:bold; cursor:pointer }
+.modal .close:hover{ color:#bbb }
+
+
+/* ========== Contact（三欄） ========== */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 480px 1fr 1fr; /* 左稍寬：文字／中：清單／右：社群 */
+  padding-top:24px;
+  min-height: 260px;        /* 可依視覺改：220~360px 都行 */
+  justify-items: center;    /* 預設置中（中間欄會被拉開） */
+  column-gap: clamp(24px, 3.2vw, 48px);
+  padding:0px 24px;
+}
+.contact-intro h2{ font-size:32px; margin:0 0 10px; color:var(--brand); font-weight:800; }
+.contact-intro p{ margin:0; color:var(--muted); }
+
+.contact-list{        
+  align-self: stretch;            
+  display: flex;                /* 用 flex 來控制內部垂直置中 */
+  flex-direction: row;
+  gap: 12px;
+  max-width: 560px;       /* 與原本 clamp 上限一致的最大寬 */
+}
+
+/* 左/右欄維持靠上（避免被跟著置中） */
+.contact-intro,
+.contact-follow{
+  align-self: start;
+}
+
+/* 列表：圖片 icon + 內容 */
+.icon-list{ list-style:none; margin:0; padding:0; }
+.icon-list li{
+  display:flex; align-items:center; gap:10px;
+  padding:10px 0; border-bottom:1px dashed #eee;
+}
+.icon-list li:last-child{ border-bottom:0; }
+.icon-list .ico{
+  width:22px; height:22px; object-fit:contain; flex:0 0 22px;
+  filter: grayscale(20%);               /* 視覺一致 */
+}
+.icon-list a{ color:var(--text); text-decoration:none; }
+.icon-list a:hover{ text-decoration:underline; }
+
+/* 右側 Follow（圖片 icon） */
+.contact-follow h3{ margin:0 0 12px; color:var(--brand); }
+.social-icons{ display:flex; gap:14px; align-items:center; }
+.social{
+  width:64px; height:64px; display:grid; place-items:center;
+  transition: transform .15s ease, border-color .15s ease;
+}
+.social:hover{ transform: translateY(-2px); }
+.social img{ width:48px; height:48px; object-fit:contain; }
+
+/* RWD：平板以下改 1 欄堆疊 */
+@media (max-width: 900px){
+
+  .contact-grid{ min-height: unset; 
+.nav.is-open{ opacity:1; pointer-events:auto }
+
+.nav-toggle{ display:inline-flex; align-items:center; justify-content:center; z-index:130 }
+
+}
+  .contact-list{ 
+    align-self: start; 
+    justify-content: flex-start;
+  }  /* 小螢幕就一律靠上 */
+}
+
+
+/* Footer */
+.site-footer{ text-align:center; color:var(--muted); padding:40px 0; border-top:1px solid #eee; margin-top:60px }
+
+/* RWD */
+@media (max-width:1024px){
+  .about-wrapper{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "photo"
+      "intro"
+      "card1"
+      "card2"
+      "card3";
+    column-gap:0; row-gap:0px;
+  }
+
+   .contact-grid{
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .contact-intro, .contact-list, .contact-follow{
+    grid-column: 1 / -1; justify-self: start;
+  }
+  .contact-list{
+    width: 100%;
+    align-self: start;
+    justify-content: flex-start;
+    max-width: none;
+  }
+   .container { padding: 0 24px; } 
+}
+@media (max-width:640px){
+  .cover h1{ font-size:34px }
+  .container { padding: 0 24px; } 
+}
+
+/* 手機/平板：Contact 區塊加左右安全內距，不再貼邊 */
+@media (max-width: 768px){
+  /* 你的 Contact 外層如果是 section#contact */
+  #contact{
+    --side: clamp(20px, 6vw, 28px);
+    padding-left: var(--side);
+    padding-right: var(--side);
+  }
+
+  /* Contact 內部網格改成單欄，並增加欄與欄的垂直間距 */
+  .contact-grid{
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+
+  /* 三塊都滿版靠左 */
+  .contact-intro,
+  .contact-list,
+  .contact-follow{
+    grid-column: 1 / -1;
+    justify-self: start;
+    align-self: start;
+  }
+   .container { padding: 0 24px; } 
+}
+
+/* 讓螢幕閱讀器可讀、但視覺上隱藏的文字（給按鈕用） */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0
+}
+
+/* 按鈕基礎樣式（預設不顯示；在手機 media query 裡才顯示） */
+.nav-toggle{
+  display:none;appearance:none;border:0;background:transparent;cursor:pointer;
+  width:36px;height:32px;padding:0;margin-left:auto
+}
+.nav-toggle-icon{ width:28px;height:28px;display:block }
+
+.no-scroll{ overflow:hidden }
+
+
+
+
+@media (max-width: 900px){
+  /* 將 nav 變成全螢幕覆蓋層 */
+  .nav{
+    position:fixed; inset:0;
+    width:100vw; height:100dvh;             /* iOS Safari 友善高度 */
+    background:rgba(255,255,255,.86);        /* 半透明白 */
+    backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); /* 背景模糊 */
+    display:flex; flex-direction:column; justify-content:center; align-items:flex-start;
+    gap:24px;                                /* 選單間距 */
+    padding:min(15vh,140px) clamp(24px,8vw,40px) 40px;  /* 上方空間＋左右安全距 */
+    opacity:0; pointer-events:none; transition:opacity .2s ease; z-index:120;
+  }
+  .nav.is-open{ opacity:1; pointer-events:auto }  /* 加上 .is-open 才顯示 */
+  .nav a{ font-size:clamp(22px,5.8vw,28px); font-weight:600; padding:6px 0 }
+
+  /* 手機才顯示漢堡按鈕（在 header 裡） */
+  .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; z-index:130 }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ animation: none !important; transition: none !important; }
+}
+
+@media (min-width:1200px){
+  .about-photo img{ width:104%; }
+}
+
+
+html { scroll-behavior: smooth; }
+
+
+
+/* ============== Inner Page Head（內頁標頭） ============== */
+/* 簡潔的內頁抬頭：米色背景＋細分隔線，與首頁風格一致 */
+.page-head{
+  background:#fafafa;
+  border-bottom:1px solid #eee;
+  padding:48px 0 24px;
+}
+.page-head .page-title{
+  margin:6px 0 8px;
+  font-size:clamp(28px, 3.2vw, 40px);
+  line-height:1.2;
+  color:var(--brand);
+  font-weight:800;
+}
+.page-head .page-sub{
+  color:var(--muted);
+  margin:0;
+}
+.breadcrumbs{
+  font-size:14px;
+  color:var(--muted);
+  letter-spacing:.02em;
+  margin-bottom:6px;
+}
+.breadcrumbs a{
+  color:inherit;
+  text-decoration:none;
+  border-bottom:1px dotted currentColor;
+}
+.breadcrumbs a:hover{
+  color:var(--text);
+}
+
+/* ============== Gallery（圖片畫廊） ============== */
+/* 使用 CSS Grid；可自動流動欄位，維持漂亮間距與圓角 */
+.gallery{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:24px; }
+.gallery a{
+  display:block;
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  background:#f1f1f1;
+  border:1px solid #eee;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.gallery a:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+.gallery img{ width:100%; height:auto; display:block; object-fit:cover; }
+
+/* 大圖預覽（Lightbox） */
+
+.modal .modal-content{
+  display:block;
+  max-width:min(1200px, 96vw);
+  height: auto;
+  max-height: none;  /* 取消高的限制 */
+  margin:64px auto 16px;
+  border-radius:12px;
+  box-shadow:0 12px 36px rgba(0,0,0,.35);
+}
+.modal #caption{
+  color:#fff; text-align:center; margin:8px 16px 24px; font-size:14px;
+}
+.modal .close{
+  position:fixed; right:20px; top:14px;
+  color:#fff; font-size:36px; line-height:1; cursor:pointer;
+}
+
+/* 讓錨點捲動時避開固定 header（桌機／手機皆適用） */
+:root{
+  --anchor-gap: 8px;          /* 想多留一點空間可加大這裡 */
+}
+section[id]{
+  scroll-margin-top: calc(var(--header-h,64px) + var(--anchor-gap));
+}
+
+/* 窄螢幕微調：畫廊間距與邊距更寬鬆 */
+@media (max-width: 520px){
+  
+}
+
+@media (max-width: 900px){
+  .gallery{ grid-template-columns: 1fr; gap:20px; }
+}
