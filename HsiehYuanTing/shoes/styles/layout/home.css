@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+p, a {
+  font-family: "Noto Sans TC";
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+}
+.header .menu .items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.header .user {
+  height: auto;
+  width: 100%;
+  max-width: 48px;
+}/*# sourceMappingURL=home.css.map */

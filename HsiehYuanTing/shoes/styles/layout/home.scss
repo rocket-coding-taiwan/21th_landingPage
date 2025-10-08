@@ -1,0 +1,35 @@
+@use "common.scss" as *;
+@use "../font/font" as *;
+p,a{
+    font-family: $unified_font;
+}
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include p-8-12;
+
+        .logo {
+        }
+
+        .items {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+    }
+    .user {
+        height: auto;
+        width: 100%;
+        max-width: 48px;
+    }
+}
+
+
+
+//data.json

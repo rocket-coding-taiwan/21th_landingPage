@@ -1,0 +1,14 @@
+@use "reset" as *;
+@use "./layout/home.scss" as *;
+
+body{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
