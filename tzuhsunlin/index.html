@@ -3,94 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My resume</title>
-    <link rel="stylesheet" href="scss/all.css"> <!--自己設計的css-->
+    <title>林子勛-履歷</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet"> <!--字體-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  <!--bootstrap-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"> <!--bootstrap icon-->
+    <script src="https://cdn.tailwindcss.com"></script> <!--tailwind-->
+    <!-- <link href="css/components.css" rel="stylesheet" type="text/tailwindcss"> tailwind自訂樣式 -->
+    <script> 
+        tailwind.config = {
+            theme: {
+            extend: {
+                colors: { primary: '#2E406F', body: '#000' }
+            }
+            }
+        }
+    </script> <!--設定網頁樣式-->
+    <style type="text/tailwindcss">
+        /* eslint-disable */
+        @layer components {
+            /* 整頁外框 */
+            .container-page { @apply max-w-[960px] mx-auto px-4 mt-12 shadow-lg rounded-lg overflow-hidden; }
+
+            /* 一般章節容器 */
+            .section { @apply max-w-[960px] mx-auto px-4 mt-3 mb-10; }
+
+            /* 章節標題（主色 + RWD 字級） */
+            .section-title { @apply text-primary text-xl md:text-2xl font-bold; }
+
+            /* 卡片（左側色條 + 淡灰底） */
+            .card-leftbar { @apply p-4 border-l-4 border-primary bg-gray-50 rounded-md shadow-sm; }
+
+            /* 清單（手機左對齊，md 以上才左右對齊） */
+            .list-default { @apply list-disc pl-6 leading-relaxed break-words text-left md:text-justify; }
+            .list-default-spaced { @apply list-default space-y-2; }
+
+            /* 頁首（藍底 + 置中）與頭像 */
+            .header-card { @apply bg-primary text-white text-center p-6 md:p-10 rounded-2xl mt-2; }
+            .avatar { @apply mx-auto rounded-full w-[210px] h-[210px] object-cover; }
+
+            /* 文章段落（縮排 + 行距；手機 left、md 以上 justify） */
+            .prose-paragraphs { @apply text-body leading-relaxed space-y-4 mt-2 pl-6 break-words text-left md:text-justify; }
+
+            /* 工作/學歷卡片：圖文橫排 */
+            .media-card { @apply mb-6 p-4 flex items-start gap-5 border-l-4 border-primary bg-gray-50 rounded-md shadow-sm; }
+
+            /* 小字色系/強調 */
+            .muted { @apply text-gray-700; }
+            .brand-strong { @apply font-semibold text-primary; }
+        }
+        body { font-family: "Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif; }
+    </style>
+
 </head>
 <body>
-    <div class="container">
+    <div class="container-page">
         <!--頭像和聯絡資訊-->
-        <header class="mt-2 text-white bg-dark-blue text-center">
-            <img src="img/手繪 logo.png" alt="頭像" class="img-cover rounded-circle mt-4" style="width:210px; height:210px ;">
-            <h3 class="fw-bold mt-2">林子勛</h3>
-            <div class="container pb-2">
-                <p>Email：wfqsx58037@gmail.com</p>
-                <p>Phone：0966396337</p>
-                <p><i class="bi bi-geo-alt-fill"></i>Kaohsiung City, Taiwan</p>
-            </div>
+        <header class="header-card">
+            <img src="img/手繪 logo.png" alt="頭像" class="avatar">
+            <h3 class="mt-4 text-2xl font-bold">林子勛</h3>
+                <p class="mt-1">Email：wfqsx58037@gmail.com</p>
+                <p class="mt-1">Phone：0966396337</p>
+                <p class="mt-1 flex items-center justify-center gap-2">Kaohsiung City, Taiwan</p>
         </header>
         <!--個人簡介-->
-        <div class="container mt-3 mb-5">
-            <div class="container">
-                <h4 class="font-dark-b fw-bold">🎯個人簡介</h4>
-                <div class="profile-text lh-base">
+        <section class="section">
+                <h4 class="section-title">🎯個人簡介</h4>
+                <div class="prose-paragraphs">
                     <p>您好，我是林子勛，我是一名
-                    <strong>活潑、熱情並樂於與人交流的人</strong>，喜歡學習新技術並積極解決問題。在上一份工作中，曾在專案中
-                    <strong>指導新進同事熟悉流程</strong>，並建立共享文件整理常見問題與解法，讓同事在遇到問題時能快速找到答案，因此同事們也樂於主動向我請教，合作過程融洽。</p>
+                    <span class="font-bold">活潑、熱情並樂於與人交流的人</span>，喜歡學習新技術並積極解決問題。在上一份工作中，曾在專案中
+                    <span class="font-bold">指導新進同事熟悉流程</span>，並建立共享文件整理常見問題與解法，讓同事在遇到問題時能快速找到答案，因此同事們也樂於主動向我請教，合作過程融洽。</p>
                     <p>目前正轉職成為前端工程師，具備自動化系統與資料庫管理的實務經驗，曾協助專案建立
-                    <strong>SOP 流程與資料驗證機制</strong>，提升測試效率並強化跨部門協作。大學期間曾開發
-                    <strong>LINE Bot 校園資訊系統</strong>，累積將需求轉化為實際產品的經驗。</p>
-                    <p>現在透過<strong>六角學院 Vue 課程</strong>
+                    <span class="font-bold">SOP 流程與資料驗證機制</span>，提升測試效率並強化跨部門協作。大學期間曾開發
+                    <span class="font-bold">LINE Bot 校園資訊系統</span>，累積將需求轉化為實際產品的經驗。</p>
+                    <p>現在透過<span>六角學院 Vue 課程</span>
                     系統化學習前端開發，並持續強化
-                    <strong>JavaScript、Vue.js 與 React</strong>的技能，搭配
-                    <strong>FreeCodeCamp、YouTube 教程與實作練習</strong>，逐步深化對
-                    <strong>CSS、Bootstrap、RWD</strong>的理解。近期目標是完成
-                    <strong>To-DoList 專案</strong>，未來希望能結合既有的系統思維與前端開發能力，打造結構清晰、可重複利用的元件與產品，為團隊貢獻價值。</p>
+                    <span class="font-bold">JavaScript、Vue.js 與 React</span>的技能，搭配
+                    <span class="font-bold">FreeCodeCamp、YouTube 教程與實作練習</span>，逐步深化對
+                    <span class="font-bold">CSS、Bootstrap、RWD</span>的理解。近期目標是完成
+                    <span class="font-bold">To-DoList 專案</span>，未來希望能結合既有的系統思維與前端開發能力，打造結構清晰、可重複利用的元件與產品，為團隊貢獻價值。</p>
                 </div>
-            </div>
-        </div>
+        </section>
         <!--技能專長-->
-        <div class="container mb-5">
-            <h4 class="font-dark-b fw-bold">💻 技能專長</h4>
-            <ul class="list">
-                <li><strong>Frontend:</strong>JavaScript (ES6+), Vue.js, React, HTML5, CSS3, RWD</li>
-                <li><strong>Backend & Database:</strong>Python, PostgreSQL, MySQL, Microsoft Access</li>
-                <li><strong>Tools & Workflow:</strong>Git, GitHub Pages, Vite, Linux</li>
-                <li><strong>Learning Path:</strong>TypeScript, Tailwind CSS, Testing (Vitest/Playwright)</li>
-            </ul>
-        </div>
-        <!--專案經驗-->
-        <div class="container mb-5">
-            <h4 class="font-dark-b fw-bold">🧪 專案經驗</h4>
-            <div class="container pt-3">
-                <div class="container">
-                    <h5 class="fw-bold">日檢倒數進度追蹤工具 | React 學習專案</h5>
-                    <ul class="list">
-                        <li>使用<strong>React、JavaScript、LocalStorage</strong>開發倒數計時與待辦清單功能，並解決 Vite 部署路徑問題。</li>
-                        <li>成功部署至 GitHub Pages，支援跨裝置使用，強化前端專案實作與響應式設計能力。</li>
-                    </ul>
-                </div>
-                <div class="container">
-                    <h5 class="fw-bold">資管快易通 LINE Bot 系統 | 大學畢業專題</h5>
-                    <ul class="list">
-                        <li>擔任組長，負責系統架構設計與 80% 核心程式開發，使用<strong>Python、LINE Messaging API、PostgreSQL</strong>整合 8 項資訊模組。</li>
-                        <li>成功部署至 GitHub Pages，支援跨裝置使用，強化前端專案實作與響應式設計能力。</li>
-                    </ul>
-                </div>
-                <div class="container">
-                    <h5 class="fw-bold">Vue.js 練習專案 | 線上課程實作</h5>
-                    <ul class="list">
-                        <li>完成註冊登入驗證、動態菜單操作等功能，熟悉 Props/Emit 父子組件通訊機制。</li>
-                        <li>建立可延伸的應用基礎，規劃 TodoList 與完整認證流程。</li>
-                    </ul>
-                </div>
+        <section class="section">
+            <h4 class="section-title">💻 技能專長</h4>
+            <div class="card-leftbar">
+                <ul class="list-default leading-relaxed">
+                    <li><strong>Frontend:</strong>JavaScript (ES6+), Vue.js, React, HTML5, CSS3, RWD</li>
+                    <li><strong>Backend & Database:</strong>Python, PostgreSQL, MySQL, Microsoft Access</li>
+                    <li><strong>Tools & Workflow:</strong>Git, GitHub Pages, Vite, Linux</li>
+                    <li><strong>Learning Path:</strong>TypeScript, Tailwind CSS, Testing (Vitest/Playwright)</li>
+                </ul>
             </div>
-        </div>
+        </section>
+        <!--專案經驗-->
+        <section class="section">
+            <h4 class="section-title">🧪 專案經驗</h4>
+            <div class="mb-6 card-leftbar">
+                <h5 class="font-bold text-lg">日檢倒數進度追蹤工具 | React 學習專案</h5>
+                <ul class="list-default leading-relaxed mt-2">
+                    <li>使用<strong>React、JavaScript、LocalStorage</strong>開發倒數計時與待辦清單功能，並解決 Vite 部署路徑問題。</li>
+                    <li>成功部署至 GitHub Pages，支援跨裝置使用，強化前端專案實作與響應式設計能力。</li>
+                </ul>
+            </div>
+            <div class="mb-6 card-leftbar">
+                <h5 class="font-bold text-lg">資管快易通 LINE Bot 系統 | 大學畢業專題</h5>
+                <ul class="list-default leading-relaxed mt-2">
+                    <li>擔任組長，負責系統架構設計與 80% 核心程式開發，使用<strong>Python、LINE Messaging API、PostgreSQL</strong>整合 8 項資訊模組。</li>
+                    <li>成功部署至 GitHub Pages，支援跨裝置使用，強化前端專案實作與響應式設計能力。</li>
+                </ul>
+            </div>
+            <div class="mb-6 card-leftbar">
+                <h5 class="font-bold text-lg">Vue.js 練習專案 | 線上課程實作</h5>
+                <ul class="list-default leading-relaxed mt-2">
+                    <li>完成註冊登入驗證、動態菜單操作等功能，熟悉 Props/Emit 父子組件通訊機制。</li>
+                    <li>建立可延伸的應用基礎，規劃 TodoList 與完整認證流程。</li>
+                </ul>
+            </div>
+        </section>
 
         <!--工作經驗-->
-        <div class="container mb-5">
-            <h4 class="font-dark-b fw-bold">💻 工作經驗</h4>
-            <div class="work-title mt-4">
-                <img src="img/company_icon.png" alt="" class="logo mt-3">
-                <div class="work-name">
-                    <div class="work-text">
-                        <h5 class="fw-bold">助理工程師</h5>
-                        <li class="font-dark-b fw-bold">祥正電機股份有限公司</li>
+        <section class="section">
+            <h4 class="section-title">💻 工作經驗</h4>
+            <div class="media-card">
+                <img src="img/company_icon.png" alt="" class="w-12 h-12 object-contain mt-1 ml-2">
+                <div class="flex flex-col flex-1">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:gap-3">
+                        <h5 class="font-bold text-lg">助理工程師</h5>
+                        <span class="text-primary font-semibold">祥正電機股份有限公司</span>
                     </div>
-                    <span class="fw-bold font-dark-b">Sept. 2023 - May. 2024</span>
-                    <ul class="list mt-2">
+                    <span class="text-sm text-primary mt-1 font-medium">Sept. 2023 - May. 2024</span>
+                    <ul class="list-default break-words">
                         <li>使用 Microsoft Access 輸入並驗證 50+ 筆資料，匯入至 Linux 系統後進行現場測試。</li>
                         <li>撰寫 SOP 與錯誤紀錄，提升測試精確度與流程效率。</li>
                         <li>與應服部、業務部及承包商協作，優化跨部門溝通。</li>
@@ -99,50 +139,49 @@
                 </div>
                 
             </div>
-        </div>
+        </section>
 
         <!--教育背景-->
-        <div class="container mb-5">
-            <h4 class="font-dark-b fw-bold">🎓教育背景</h4>
-            <div class="edu-context mt-4">
-                <img src="img/college_icon.png" alt="" class="edu-logo" >
-                <div class="edu-text">
-                    <h5 class="fw-bold">資訊管理系 學士學位</h5>
-                    <h5 class="fw-bold">南臺科技大學｜2019 - 2023｜（GPA 3.66/4.3）</h5>
-                    <ul class="list">
-                        <li><span class="fw-bold">相關課程：</span>資訊安全概論、資料庫管理、程式設計與資料結構</li>
+        <section class="section">
+            <h4 class="section-title">🎓教育背景</h4>
+            <div class="media-card">
+                <img src="img/college_icon.png" alt="" class="w-12 h-12 object-contain mt-1 ml-2" >
+                <div class="flex flex-col flex-1">
+                    <h5 class="font-bold text-lg text-gray-800">資訊管理系 學士學位</h5>
+                    <h5 class="font-semibold text-primary text-base mt-1">南臺科技大學｜2019 - 2023｜（GPA 3.66/4.3）</h5>
+                    <ul class="list-disc pl-6 mt-3 text-gray-700 leading-relaxed">
+                        <li><span class="font-semibold text-gray-800">相關課程：</span>資訊安全概論、資料庫管理、程式設計與資料結構</li>
                     </ul>
                 </div>     
             </div>
-        </div>
+        </section>
 
         <!--證照與語言能力-->
-        <div class="container bg-dark-blue text-white pt-4">
-            <h4 class="fw-bold">🏆 證照與語言能力</h4>
-            <hr class="border-1 border-white opacity-100">
-            <p class="fw-bold">專業認證</p>
-            <ul class="list">
-                <li class="fw-bold">CompTIA Security+（資訊安全認證）</li>
-                <li class="fw-bold">ICDL Computing（運算思維 & Python 程式設計）</li>
-                <li class="fw-bold">TQC Project Management Fundamentals（專案管理基礎認證）</li>
+        <div class="bg-primary text-white pt-6 pb-8 px-6 rounded-md mb-8">
+            <h4 class="font-bold text-xl mb-2 md:text-2xl">🏆 證照與語言能力</h4>
+            <hr class="border-t border-white opacity-100 mb-4">
+            <p class="font-bold text-lg mb-2">專業認證</p>
+            <ul class="list-disc pl-6 mb-4">
+                <li class="font-semibold">CompTIA Security+（資訊安全認證）</li>
+                <li class="font-semibold">ICDL Computing（運算思維 & Python 程式設計）</li>
+                <li class="font-semibold">TQC Project Management Fundamentals（專案管理基礎認證）</li>
             </ul>
-            <p class="fw-bold">語言認證</p>
-            <ul class="list">
-                <li class="fw-bold ">中文：母語</li>
-                <li class="fw-bold">英文：TOEIC 625（Intermediate）</li>
-                <li class="fw-bold">日文：JLPT N5（Beginner）</li>
+            <p class="font-bold text-lg mb-2">語言認證</p>
+            <ul class="list-disc pl-6 mb-4">
+                <li class="font-semibold ">中文：母語</li>
+                <li class="font-semibold">英文：TOEIC 625（Intermediate）</li>
+                <li class="font-semibold">日文：JLPT N5（Beginner）</li>
             </ul>
-            <div class="personality-learn mt-4 pb-1">
-                <h4>🌟 個人特質與學習方向</h4>
-                <hr class="border-1 border-white opacity-100">
-                <ul class="list">
-                    <li><span class="fw-bold">核心優勢:</span>自學力強、問題解決能力佳，具備跨部門協作與專案推進經驗。</li>
-                    <li><span class="fw-bold">學習方式</span>線上課程、技術文件研讀與專案實作，持續精進前端技能。</li>
-                    <li><span class="fw-bold">未來目標：</span>專注於現代前端開發流程、響應式設計與使用者體驗優化。</li>
+            <div class="mt-8">
+                <h4 class="text-xl">🌟 個人特質與學習方向</h4>
+                <hr class="border-t border-white opacity-100 my-3">
+                <ul class="list-disc pl-6 space-y-3 leading-relaxed">
+                    <li><span class="font-semibold">核心優勢:</span>自學力強、問題解決能力佳，具備跨部門協作與專案推進經驗。</li>
+                    <li><span class="font-semibold">學習方式</span>線上課程、技術文件研讀與專案實作，持續精進前端技能。</li>
+                    <li><span class="font-semibold">未來目標：</span>專注於現代前端開發流程、響應式設計與使用者體驗優化。</li>
                 </ul>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
