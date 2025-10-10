@@ -1,35 +1,77 @@
-@use "common.scss" as *;
-@use "../font/font" as *;
-p,a{
-    font-family: $unified_font;
+@use "common.scss" as common;
+@use "../font/font" as font;
+@use "../colors/colors" as colors;
+
+p,
+a {
+    font-family: font.$unified_font;
+    font-size: 16px;
 }
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0; // 移除所有 padding
+    margin: 0;
+}
+
 .header {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    @include common.p-8-12;
 
     .menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @include p-8-12;
+        @include common.p-8-12;
 
         .logo {
+            @include common.p-8-12;
         }
 
         .items {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
+            margin-left: auto;
+            margin-right: 60px;
+            @include common.p-8-12;
+
+            a {
+                @include common.p-8-12;
+                color: colors.$neutral_900;
+            }
         }
     }
-    .user {
-        height: auto;
-        width: 100%;
-        max-width: 48px;
-    }
+
 }
 
+.banner {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden; 
+    position: relative;
+    .bgc {
+        width: 100%;
+        max-width: 100%;
+        display: block; 
+        z-index:-1;
+    }
 
-
-//data.json
+    .ad {
+        position: absolute;
+        z-index:10;
+        top:50%;
+        left: 20%;
+        color: colors.$neutral_0;
+        .btn{
+            background-color: colors.$primary_300;
+            color: colors.$neutral_900;
+        }
+    }
+}

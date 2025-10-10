@@ -130,14 +130,24 @@ table {
   border-spacing: 0;
 }
 
-p, a {
+p,
+a {
   font-family: "Noto Sans TC";
+  font-size: 16px;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 8px 12px;
 }
 .header .menu {
   display: flex;
@@ -145,19 +155,55 @@ p, a {
   align-items: center;
   padding: 8px 12px;
 }
+.header .menu .logo {
+  padding: 8px 12px;
+}
 .header .menu .items {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  margin-left: auto;
+  margin-right: 60px;
+  padding: 8px 12px;
 }
-.header .user {
-  height: auto;
-  width: 100%;
-  max-width: 48px;
+.header .menu .items a {
+  padding: 8px 12px;
+  color: #212529;
 }
 
-body {
+.banner {
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.banner .bgc {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  z-index: -1;
+}
+.banner .ad {
+  position: absolute;
+  z-index: 10;
+  top: 50%;
+  left: 20%;
+  color: #FFFFFF;
+}
+
+* {
   box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 a {
