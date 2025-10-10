@@ -133,7 +133,6 @@ table {
 p,
 a {
   font-family: "Noto Sans TC";
-  font-size: 16px;
 }
 
 .container {
@@ -145,57 +144,27 @@ a {
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
+  padding: 16px 312px;
 }
 .header .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
-}
-.header .menu .logo {
-  padding: 8px 12px;
+  gap: 48px;
 }
 .header .menu .items {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-left: auto;
-  margin-right: 60px;
-  padding: 8px 12px;
+  gap: 40px;
 }
-.header .menu .items a {
-  padding: 8px 12px;
-  color: #212529;
-}
-
-.banner {
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-}
-.banner .bgc {
-  width: 100%;
-  max-width: 100%;
-  display: block;
-  z-index: -1;
-}
-.banner .ad {
-  position: absolute;
-  z-index: 10;
-  top: 50%;
-  left: 20%;
-  color: #FFFFFF;
-}
-
-* {
-  box-sizing: border-box;
+.header .menu .items .item {
+  padding: 16px 0;
+  font-size: 16px;
+  line-height: 150%;
+  font-weight: 500;
 }
 
 body,
@@ -204,6 +173,7 @@ html {
   padding: 0;
   overflow-x: hidden;
   width: 100%;
+  box-sizing: border-box;
 }
 
 a {

@@ -1,0 +1,41 @@
+@use "../layout//layout" as layout;
+@use "../font/font" as font;
+@use "../colors/colors" as colors;
+
+p,
+a {
+    font-family: font.$unified_font;
+}
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: layout.$spacing-m 312px;
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: layout.$spacing-3xl;
+
+        .items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: layout.$spacing-2xl;
+            .item {
+                padding: layout.$spacing-s 0;
+                @include font.label_md;
+                font-weight: 500;
+            }
+        }
+    }
+}

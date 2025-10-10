@@ -1,9 +1,7 @@
 @use "reset" as *;
-@use "./layout/home.scss" as *;
+@use "./pages/home.scss" as *;
 
-* {
-    box-sizing: border-box;
-}
+
 
 body,
 html {
@@ -11,6 +9,7 @@ html {
     padding: 0;
     overflow-x: hidden;
     width: 100%;
+    box-sizing: border-box;
 }
 
 a {

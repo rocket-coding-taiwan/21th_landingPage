@@ -1,0 +1,8 @@
+@use "./primary" as p;
+@use "./neutral" as n;
+
+$text_primary: n.$neutral_900;
+$text_secondary: n.$neutral_600;
+$text_meted: n.$neutral_500;
+$text_highlight: p.$primary_400;
+$text_dark: #FFFFFF;
