@@ -1,6 +1,7 @@
 @use "../layout//layout" as layout;
 @use "../font/font" as font;
 @use "../colors/colors" as colors;
+@use "../layout/breakPoint" as break;
 
 p,
 a {
@@ -20,21 +21,84 @@ a {
     align-items: center;
     padding: layout.$spacing-m 312px;
 
+    @media(max-width: break.$breakpoint_mobile) {
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        @include layout.p-0;
+    }
+
     .menu {
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: layout.$spacing-3xl;
 
+        @media(max-width: break.$breakpoint_mobile) {
+            justify-content: flex-start;
+            @include layout.p-8-12;
+            width: 50%;
+        }
+
         .items {
             display: flex;
             justify-content: space-between;
             align-items: center;
             gap: layout.$spacing-2xl;
+
+            @media(max-width: break.$breakpoint_mobile) {
+                display: none;
+            }
+
             .item {
                 padding: layout.$spacing-s 0;
                 @include font.label_md;
                 font-weight: 500;
+                color: colors.$neutral_900;
+            }
+        }
+    }
+
+    .user {
+        @media(max-width: break.$breakpoint_mobile) {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 50%;
+        }
+    }
+
+    .mobile-items {
+        display: none;
+
+        @media(max-width: break.$breakpoint_mobile) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            .item-product {
+                width: 50%;
+                background-color: colors.$primary_200;
+                padding-top: layout.$spacing-s;
+                padding-right: layout.$spacing-l;
+                padding-bottom: layout.$spacing-s;
+                padding-left: layout.$spacing-l;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .item-brand {
+                width: 50%;
+                background-color: colors.$primary_100;
+                padding-top: layout.$spacing-s;
+                padding-right: layout.$spacing-l;
+                padding-bottom: layout.$spacing-s;
+                padding-left: layout.$spacing-l;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
     }
