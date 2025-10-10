@@ -1,0 +1,23 @@
+@use "reset" as *;
+@use "./pages/home.scss" as *;
+
+
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
