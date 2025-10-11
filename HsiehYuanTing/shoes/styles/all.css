@@ -247,7 +247,9 @@ a {
 }
 .banner .banner-bg {
   width: 100%;
+  max-width: 100%;
   height: 100%;
+  max-height: 800px;
 }
 .banner .ad {
   position: absolute;
@@ -306,6 +308,76 @@ a {
 }
 .banner .ad .ad-btn a {
   color: #212529;
+}
+
+.newArrival {
+  width: 100%;
+  max-width: 1296px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  gap: 12px;
+}
+@media (max-width: 576px) {
+  .newArrival {
+    max-width: 351px;
+  }
+}
+.newArrival .new-title {
+  text-align: center;
+}
+.newArrival .new-title h2 {
+  font-size: 48px;
+  line-height: 120%;
+  color: #212529;
+  font-weight: 700;
+}
+@media (max-width: 576px) {
+  .newArrival .new-title h2 {
+    font-size: 32px;
+    line-height: 120%;
+  }
+}
+.newArrival .new-title h3 {
+  font-size: 32px;
+  line-height: 120%;
+  color: #212529;
+  font-weight: 700;
+}
+@media (max-width: 576px) {
+  .newArrival .new-title h3 {
+    font-size: 24px;
+    line-height: 120%;
+  }
+}
+.newArrival .new-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.newArrival .new-items .new-item img {
+  max-width: 636px;
+}
+@media (max-width: 576px) {
+  .newArrival .new-items .new-item img {
+    max-width: 169px;
+  }
+}
+.newArrival .new-items .new-item .new-item-title {
+  font-size: 20px;
+  line-height: 120%;
+}
+@media (max-width: 576px) {
+  .newArrival .new-items .new-item .new-item-title {
+    font-size: 16px;
+    line-height: 120%;
+  }
+}
+.newArrival .new-items .new-item .new-item-price {
+  font-size: 16px;
+  line-height: 150%;
 }
 
 body,
