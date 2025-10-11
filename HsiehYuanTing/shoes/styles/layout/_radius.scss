@@ -1,0 +1,19 @@
+@use "../colors/colors" as colors;
+
+@mixin redius_sm {
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+@mixin radius_md{
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    border-radius: 12px;
+}
+
+@mixin redius_rounded {
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 1000px;
+}

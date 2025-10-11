@@ -1,0 +1,11 @@
+@use './radius' as radius;
+@use './spacing' as spacing;
+@use "../colors/colors" as colors;
+@mixin primary-text-large{
+    @include radius.redius_sm;
+    padding-top: spacing.$spacing-s;
+    padding-right: spacing.$spacing-l;
+    padding-bottom: spacing.$spacing-s;
+    padding-left: spacing.$spacing-l;
+    background-color: colors.$primary_300;
+}
