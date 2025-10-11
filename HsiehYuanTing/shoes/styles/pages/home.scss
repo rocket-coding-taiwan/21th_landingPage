@@ -1,7 +1,7 @@
 @use "../layout//layout" as layout;
 @use "../font/font" as font;
 @use "../colors/colors" as colors;
-@use "../layout/breakPoint" as break;
+@use "../layout/btn" as btn;
 
 p,
 a {
@@ -21,7 +21,7 @@ a {
     align-items: center;
     padding: layout.$spacing-m 312px;
 
-    @media(max-width: break.$breakpoint_mobile) {
+    @media(max-width: layout.$breakpoint_mobile) {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
@@ -34,7 +34,7 @@ a {
         align-items: center;
         gap: layout.$spacing-3xl;
 
-        @media(max-width: break.$breakpoint_mobile) {
+        @media(max-width: layout.$breakpoint_mobile) {
             justify-content: flex-start;
             @include layout.p-8-12;
             width: 50%;
@@ -46,7 +46,11 @@ a {
             align-items: center;
             gap: layout.$spacing-2xl;
 
-            @media(max-width: break.$breakpoint_mobile) {
+            a {
+                color: colors.$text_primary;
+            }
+
+            @media(max-width: layout.$breakpoint_mobile) {
                 display: none;
             }
 
@@ -54,13 +58,12 @@ a {
                 padding: layout.$spacing-s 0;
                 @include font.label_md;
                 font-weight: 500;
-                color: colors.$neutral_900;
             }
         }
     }
 
     .user {
-        @media(max-width: break.$breakpoint_mobile) {
+        @media(max-width: layout.$breakpoint_mobile) {
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -71,7 +74,7 @@ a {
     .mobile-items {
         display: none;
 
-        @media(max-width: break.$breakpoint_mobile) {
+        @media(max-width: layout.$breakpoint_mobile) {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -99,6 +102,78 @@ a {
                 display: flex;
                 justify-content: center;
                 align-items: center;
+            }
+
+            a {
+                color: colors.$text_primary;
+            }
+        }
+    }
+}
+
+.banner {
+    overflow: hidden;
+    max-height: 800px;
+    position: relative;
+
+    @media(max-width:layout.$breakpoint_mobile) {
+        height: 60vh;
+        max-height: 480px;
+    }
+
+    .banner-bg {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        max-height: 800px;
+    }
+
+    .ad {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: layout.$spacing-3xl;
+
+        .ad-title {
+            display: flex;
+            flex-direction: column;
+            gap: layout.$spacing-m;
+
+            h1 {
+                @include font.display_1;
+                color: colors.$text_dark;
+
+                @media(max-width:layout.$breakpoint_mobile) {
+                    @include font.display_2;
+                }
+            }
+
+            h3 {
+                @include font.headings_h3;
+                color: colors.$text_dark;
+
+                @media(max-width:layout.$breakpoint_mobile) {
+                    @include font.headings_h5;
+                }
+            }
+        }
+
+        .ad-btn {
+            background-color: #fff;
+            max-width: 115px;
+            @include layout.primary-text-large;
+            @include font.label_md;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: layout.$spacing-xs;
+
+            a {
+                color: colors.$text_primary;
             }
         }
     }
