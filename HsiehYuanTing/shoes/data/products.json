@@ -1,0 +1,67 @@
+[
+    {
+        "id": 1,
+        "pic": "../image/Product-Card1",
+        "product_name": "",
+        "price": 0,
+        "description": "",
+        "colors": [
+            "blue",
+            "lightBrown"
+        ],
+        "focus": false,
+        "Material": ""
+    },
+    {
+        "id": 1,
+        "pic": "../image/Product-Card2",
+        "product_name": "",
+        "price": 0,
+        "description": "",
+        "colors": [
+            "blue",
+            "lightBrown"
+        ],
+        "focus": false,
+        "Material": ""
+    },
+    {
+        "id": 1,
+        "pic": "../image/Product-Card3",
+        "product_name": "",
+        "price": 0,
+        "description": "",
+        "colors": [
+            "blue",
+            "lightBrown"
+        ],
+        "focus": false,
+        "Material": ""
+    },
+    {
+        "id": 1,
+        "pic": "../image/Product-Card4",
+        "product_name": "",
+        "price": 0,
+        "description": "",
+        "colors": [
+            "blue",
+            "lightBrown"
+        ],
+        "focus": false,
+        "Material": ""
+    },
+    {
+        "id": 1,
+        "pic": "../image/Product-Card5",
+        "product_name": "",
+        "price": 0,
+        "description": "",
+        "colors": [
+            "blue",
+            "lightBrown"
+        ],
+        "focus": false,
+        "Material": ""
+    }
+]
