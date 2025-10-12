@@ -1,7 +1,6 @@
 @use "../layout//layout" as layout;
 @use "../font/font" as font;
 @use "../colors/colors" as colors;
-@use "../layout/btn" as btn;
 
 p,
 a {
@@ -307,5 +306,132 @@ a {
                 }
             }
         }
+    }
+}
+
+.coop {
+    position: relative;
+    height: 100vh; // 加上高度
+    max-height: 566px;
+
+    .coop-star {
+        position: absolute;
+        z-index: 2;
+        top: 15%;
+        left: 25%;
+        transform: translate(-15% -25%);
+
+        @media(max-width: layout.$breakpoint_mobile) {
+            top: 0;
+        }
+    }
+
+    .coop-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        z-index: -1;
+    }
+
+    .coop-ad {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        gap: layout.$spacing-6xl;
+
+        .coop-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: layout.$spacing-3xl;
+
+            .coop-title-slogan {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: layout.$spacing-xl;
+
+                @media(max-width: layout.$breakpoint_mobile) {
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+
+                .slogan-brand {
+                    @include font.display_2;
+                    color: colors.$text_dark;
+
+                    @media(max-width: layout.$breakpoint_mobile) {
+                        @include font.headings_h2;
+                    }
+                }
+
+                .slogan-x {
+                    width: 100%;
+                    max-width: 24px;
+                    height: 24px;
+                    object-fit: cover;
+
+                    @media(max-width: layout.$breakpoint_mobile) {
+                        width: 100%;
+                        max-width: 16px;
+                        height: 16px;
+                    }
+                }
+
+                .slogan-kevin {
+                    @include font.display_2;
+                    color: colors.$text_dark;
+
+                    @media(max-width: layout.$breakpoint_mobile) {
+                        @include font.headings_h2;
+                    }
+                }
+            }
+
+            .coop-title-second {
+                @include font.headings_h2;
+                color: colors.$text_dark;
+
+                @media(max-width: layout.$breakpoint_mobile) {
+                    @include font.headings_h5;
+                }
+            }
+
+            .coop-title-desc {
+                @include font.paragraph_lg;
+                color: colors.$text_meted;
+
+                @media(max-width: layout.$breakpoint_mobile) {
+                    @include font.paragraph_md;
+                }
+            }
+
+            .coop-btn {
+                @include layout.primary-text-small;
+
+                a {
+                    @include font.label_md;
+                    font-weight: 500;
+                    color: colors.$text_primary;
+                }
+            }
+        }
+    }
+
+    .coop-indicators {
+        position: absolute;
+        bottom: 00%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2;
     }
 }

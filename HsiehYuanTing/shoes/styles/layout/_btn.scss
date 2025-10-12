@@ -3,9 +3,12 @@
 @use "../colors/colors" as colors;
 @mixin primary-text-large{
     @include radius.redius_sm;
-    padding-top: spacing.$spacing-s;
-    padding-right: spacing.$spacing-l;
-    padding-bottom: spacing.$spacing-s;
-    padding-left: spacing.$spacing-l;
+    padding: spacing.$spacing-s spacing.$spacing-l;
     background-color: colors.$primary_300;
 }
+
+@mixin primary-text-small{
+    @include radius.redius_sm;
+    padding: spacing.$spacing-xs spacing.$spacing-m;
+    background-color: colors.$primary_300;
+} 
