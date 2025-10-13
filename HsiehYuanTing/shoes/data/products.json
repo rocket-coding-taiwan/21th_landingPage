@@ -4,74 +4,958 @@
         "series": "URBN RUNNER",
         "seriesCh": "慢跑系列",
         "pic": "../image/Product-Card1",
-        "product_name": "",
-        "price": 0,
+        "product_name": "PLATFORM 404",
+        "price": 2600,
         "description": "",
         "colors": [
             "blue",
             "lightBrown"
         ],
         "focus": false,
-        "Material": ""
+        "Material": "",
+        "category": "girl"
     },
     {
         "id": 2,
         "series": "STREETMODE",
         "seriesCh": "滑板系列",
         "pic": "../image/Product-Card2",
-        "product_name": "",
-        "price": 0,
+        "product_name": "VM001",
+        "price": 2600,
         "description": "",
         "colors": [
             "blue",
             "lightBrown"
         ],
         "focus": false,
-        "Material": ""
+        "Material": "",
+        "category": "girl"
     },
     {
         "id": 3,
         "series": "CHUNK DISTRICT",
         "seriesCh": "厚底系列",
         "pic": "../image/Product-Card3",
-        "product_name": "",
-        "price": 0,
+        "product_name": "BOOMBLOK",
+        "price": 3200,
         "description": "",
         "colors": [
             "blue",
             "lightBrown"
         ],
         "focus": false,
-        "Material": ""
+        "Material": "",
+        "category": "girl"
     },
     {
         "id": 4,
         "series": "COLLAB ZONE",
         "seriesCh": "聯名企劃",
         "pic": "../image/Product-Card4",
-        "product_name": "",
-        "price": 0,
+        "product_name": "Melty Kiss",
+        "price": 4000,
         "description": "",
         "colors": [
             "blue",
             "lightBrown"
         ],
         "focus": false,
-        "Material": ""
+        "Material": "",
+        "category": "girl"
     },
     {
         "id": 5,
         "series": "URBN RUNNER",
         "seriesCh": "慢跑系列",
         "pic": "../image/Product-Card5",
-        "product_name": "",
-        "price": 0,
+        "product_name": "Neofoam",
+        "price": 4000,
         "description": "",
         "colors": [
             "blue",
             "lightBrown"
         ],
         "focus": false,
-        "Material": ""
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 6,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "Sugar Snap",
+        "price": 3800,
+        "description": "",
+        "colors": [
+            "black",
+            "white"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 7,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "R:UNER",
+        "price": 6000,
+        "description": "",
+        "colors": [
+            "red",
+            "gray"
+        ],
+        "focus": true,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 8,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card3",
+        "product_name": "SKATE PRO",
+        "price": 2800,
+        "description": "",
+        "colors": [
+            "black",
+            "green"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 9,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card4",
+        "product_name": "HIGH RISE",
+        "price": 3500,
+        "description": "",
+        "colors": [
+            "white",
+            "pink"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 10,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card5",
+        "product_name": "ARTIST X",
+        "price": 4500,
+        "description": "",
+        "colors": [
+            "multicolor"
+        ],
+        "focus": true,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 11,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "SPEED LITE",
+        "price": 3200,
+        "description": "",
+        "colors": [
+            "orange",
+            "black"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 12,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "URBAN GLIDE",
+        "price": 2900,
+        "description": "",
+        "colors": [
+            "navy",
+            "yellow"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 13,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card3",
+        "product_name": "MEGA SOLE",
+        "price": 3600,
+        "description": "",
+        "colors": [
+            "beige",
+            "brown"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 14,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card4",
+        "product_name": "STREET ART",
+        "price": 4200,
+        "description": "",
+        "colors": [
+            "purple",
+            "gold"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 15,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card5",
+        "product_name": "TURBO MAX",
+        "price": 5500,
+        "description": "",
+        "colors": [
+            "cyan",
+            "silver"
+        ],
+        "focus": true,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 16,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "FLIP MASTER",
+        "price": 3100,
+        "description": "",
+        "colors": [
+            "red",
+            "black"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 17,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "PLATFORM X",
+        "price": 3400,
+        "description": "",
+        "colors": [
+            "white",
+            "lightGray"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 18,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card3",
+        "product_name": "DESIGNER EDIT",
+        "price": 4800,
+        "description": "",
+        "colors": [
+            "emerald",
+            "navy"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 19,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card4",
+        "product_name": "CLOUD WALKER",
+        "price": 3700,
+        "description": "",
+        "colors": [
+            "lightBlue",
+            "white"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 20,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card5",
+        "product_name": "GRIP ZONE",
+        "price": 2700,
+        "description": "",
+        "colors": [
+            "darkGray",
+            "neonGreen"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 21,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "SKY HIGH",
+        "price": 3900,
+        "description": "",
+        "colors": [
+            "lavender",
+            "cream"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 22,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card2",
+        "product_name": "GALLERY DROP",
+        "price": 5200,
+        "description": "",
+        "colors": [
+            "burgundy",
+            "tan"
+        ],
+        "focus": true,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 23,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card3",
+        "product_name": "PULSE WAVE",
+        "price": 4100,
+        "description": "",
+        "colors": [
+            "pink",
+            "darkBlue"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 24,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card4",
+        "product_name": "DECK MASTER",
+        "price": 3000,
+        "description": "",
+        "colors": [
+            "olive",
+            "orange"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 25,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card5",
+        "product_name": "TOWER BLOCK",
+        "price": 3300,
+        "description": "",
+        "colors": [
+            "charcoal",
+            "white"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 26,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card1",
+        "product_name": "LIMITED EDITION",
+        "price": 5800,
+        "description": "",
+        "colors": [
+            "gold",
+            "black"
+        ],
+        "focus": true,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 27,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "VELOCITY PRO",
+        "price": 4400,
+        "description": "",
+        "colors": [
+            "lime",
+            "gray"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 28,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card3",
+        "product_name": "BOARD RIDER",
+        "price": 2950,
+        "description": "",
+        "colors": [
+            "teal",
+            "rust"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 29,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card4",
+        "product_name": "ALTITUDE MAX",
+        "price": 3750,
+        "description": "",
+        "colors": [
+            "mauve",
+            "ivory"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 30,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card5",
+        "product_name": "CULTURE MIX",
+        "price": 4600,
+        "description": "",
+        "colors": [
+            "sage",
+            "terracotta"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 31,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "SPRINT ELITE",
+        "price": 5000,
+        "description": "",
+        "colors": [
+            "cobalt",
+            "silver"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 32,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "GRIND CORE",
+        "price": 3200,
+        "description": "",
+        "colors": [
+            "maroon",
+            "cream"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 33,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card3",
+        "product_name": "ELEVATED",
+        "price": 3450,
+        "description": "",
+        "colors": [
+            "dustyPink",
+            "sand"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 34,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card4",
+        "product_name": "FUSION SERIES",
+        "price": 4950,
+        "description": "",
+        "colors": [
+            "indigo",
+            "copper"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 35,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card5",
+        "product_name": "MOMENTUM",
+        "price": 3850,
+        "description": "",
+        "colors": [
+            "coral",
+            "navy"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 36,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "STREET GLIDE",
+        "price": 2850,
+        "description": "",
+        "colors": [
+            "forest",
+            "tan"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 37,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "RISE UP",
+        "price": 3650,
+        "description": "",
+        "colors": [
+            "blush",
+            "taupe"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 38,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card3",
+        "product_name": "ARTIST COLLAB",
+        "price": 5100,
+        "description": "",
+        "colors": [
+            "ruby",
+            "charcoal"
+        ],
+        "focus": true,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 39,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card4",
+        "product_name": "AERO FLEX",
+        "price": 4300,
+        "description": "",
+        "colors": [
+            "mint",
+            "slate"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 40,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card5",
+        "product_name": "HALF PIPE",
+        "price": 3050,
+        "description": "",
+        "colors": [
+            "crimson",
+            "bone"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 41,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "STACKED",
+        "price": 3550,
+        "description": "",
+        "colors": [
+            "peach",
+            "stone"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 42,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card2",
+        "product_name": "EXCLUSIVE DROP",
+        "price": 4750,
+        "description": "",
+        "colors": [
+            "azure",
+            "bronze"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 43,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card3",
+        "product_name": "RACE DAY",
+        "price": 4650,
+        "description": "",
+        "colors": [
+            "scarlet",
+            "graphite"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 44,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card4",
+        "product_name": "URBAN ROLL",
+        "price": 2750,
+        "description": "",
+        "colors": [
+            "amber",
+            "ash"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 45,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card5",
+        "product_name": "THICK SOLE",
+        "price": 3250,
+        "description": "",
+        "colors": [
+            "lilac",
+            "khaki"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 46,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card1",
+        "product_name": "SIGNATURE EDIT",
+        "price": 5400,
+        "description": "",
+        "colors": [
+            "sapphire",
+            "platinum"
+        ],
+        "focus": true,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 47,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "FAST LANE",
+        "price": 3950,
+        "description": "",
+        "colors": [
+            "turquoise",
+            "smoke"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 48,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card3",
+        "product_name": "KICKFLIP",
+        "price": 3150,
+        "description": "",
+        "colors": [
+            "mustard",
+            "slate"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 49,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card4",
+        "product_name": "DOUBLE UP",
+        "price": 3800,
+        "description": "",
+        "colors": [
+            "rose",
+            "cement"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 50,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card5",
+        "product_name": "CREATOR SERIES",
+        "price": 4850,
+        "description": "",
+        "colors": [
+            "wine",
+            "pearl"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 51,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "MARATHON PRO",
+        "price": 5200,
+        "description": "",
+        "colors": [
+            "electric",
+            "titanium"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 52,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "PAVEMENT KING",
+        "price": 2900,
+        "description": "",
+        "colors": [
+            "rust",
+            "vanilla"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 53,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card3",
+        "product_name": "TOWER UP",
+        "price": 3400,
+        "description": "",
+        "colors": [
+            "powder",
+            "mocha"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 54,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card4",
+        "product_name": "SPECIAL EDITION",
+        "price": 5600,
+        "description": "",
+        "colors": [
+            "obsidian",
+            "champagne"
+        ],
+        "focus": true,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 55,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card5",
+        "product_name": "SWIFT STRIDE",
+        "price": 4200,
+        "description": "",
+        "colors": [
+            "aqua",
+            "pewter"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 56,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card1",
+        "product_name": "RAMP RIDER",
+        "price": 3100,
+        "description": "",
+        "colors": [
+            "brick",
+            "wheat"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 57,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
+        "pic": "../image/Product-Card2",
+        "product_name": "MAX HEIGHT",
+        "price": 3700,
+        "description": "",
+        "colors": [
+            "orchid",
+            "linen"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 58,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
+        "pic": "../image/Product-Card3",
+        "product_name": "ICON SERIES",
+        "price": 4900,
+        "description": "",
+        "colors": [
+            "jade",
+            "gunmetal"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 59,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
+        "pic": "../image/Product-Card4",
+        "product_name": "ENDURANCE X",
+        "price": 4500,
+        "description": "",
+        "colors": [
+            "neon",
+            "coal"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
+    },
+    {
+        "id": 60,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
+        "pic": "../image/Product-Card5",
+        "product_name": "CONCRETE KING",
+        "price": 3250,
+        "description": "",
+        "colors": [
+            "cardinal",
+            "oatmeal"
+        ],
+        "focus": false,
+        "Material": "",
+        "category": "girl"
     }
 ]
