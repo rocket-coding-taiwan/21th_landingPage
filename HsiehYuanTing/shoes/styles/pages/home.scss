@@ -542,3 +542,114 @@ a {
         }
     }
 }
+
+.wearing {
+    width: 100%;
+    max-width: 1296px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include layout.m-0-auto;
+    gap: layout.$spacing-m;
+    padding: layout.$spacing-5xl 0;
+
+    @media(max-width: layout.$breakpoint_mobile) {
+        justify-content: center;
+        padding: layout.$spacing-2xl layout.$spacing-s;
+    }
+
+    .wearing-title {
+        @include font.headings_h2;
+        font-weight: 700;
+        color: colors.$text_primary;
+
+        @media(max-width: layout.$breakpoint_mobile) {
+            @include font.headings_h4;
+        }
+    }
+
+    .wearing-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media(max-width: layout.$breakpoint_mobile) {}
+
+        .wearing-one {
+            width: 432px;
+            max-width: 432px;
+
+            .one-img-sm {
+                width: 100%;
+                max-width: 210px;
+            }
+
+            .one-img-md {
+                width: 100%;
+                max-width: 426px;
+            }
+
+            @media(max-width: layout.$breakpoint_mobile) {
+                display: none;
+            }
+        }
+
+        .wearing-two {
+            width: 432px;
+            max-width: 432px;
+
+            .one-img-sm {
+                width: 100%;
+                max-width: 210px;
+            }
+
+            @media(max-width: layout.$breakpoint_mobile) {
+                display: none;
+            }
+        }
+
+        .wearing-three {
+            width: 432px;
+            max-width: 432px;
+
+            .one-img-sm {
+                width: 100%;
+                max-width: 213px;
+            }
+
+            .one-img-md {
+                width: 100%;
+                max-width: 432px;
+            }
+
+            @media(max-width: layout.$breakpoint_mobile) {
+                display: none;
+            }
+        }
+
+        .wearing-items-mobile {
+            display: none;
+
+            @media(max-width: layout.$breakpoint_mobile) {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100vw;
+                justify-content: flex-start;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                gap: layout.$spacing-m;
+                flex-shrink: 0;
+            }
+
+            .wearing-mobile-item {
+                @media(max-width: layout.$breakpoint_mobile) {
+                    width: 100%;
+                    max-width: 260px;
+                }
+            }
+        }
+
+    }
+}

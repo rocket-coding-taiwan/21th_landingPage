@@ -559,4 +559,108 @@ a {
     font-size: 16px;
     line-height: 120%;
   }
+}
+
+.wearing {
+  width: 100%;
+  max-width: 1296px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0 auto;
+  gap: 16px;
+  padding: 64px 0;
+}
+@media (max-width: 576px) {
+  .wearing {
+    justify-content: center;
+    padding: 40px 12px;
+  }
+}
+.wearing .wearing-title {
+  font-size: 32px;
+  line-height: 120%;
+  font-weight: 700;
+  color: #212529;
+}
+@media (max-width: 576px) {
+  .wearing .wearing-title {
+    font-size: 24px;
+    line-height: 120%;
+  }
+}
+.wearing .wearing-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wearing .wearing-items .wearing-one {
+  width: 432px;
+  max-width: 432px;
+}
+.wearing .wearing-items .wearing-one .one-img-sm {
+  width: 100%;
+  max-width: 210px;
+}
+.wearing .wearing-items .wearing-one .one-img-md {
+  width: 100%;
+  max-width: 426px;
+}
+@media (max-width: 576px) {
+  .wearing .wearing-items .wearing-one {
+    display: none;
+  }
+}
+.wearing .wearing-items .wearing-two {
+  width: 432px;
+  max-width: 432px;
+}
+.wearing .wearing-items .wearing-two .one-img-sm {
+  width: 100%;
+  max-width: 210px;
+}
+@media (max-width: 576px) {
+  .wearing .wearing-items .wearing-two {
+    display: none;
+  }
+}
+.wearing .wearing-items .wearing-three {
+  width: 432px;
+  max-width: 432px;
+}
+.wearing .wearing-items .wearing-three .one-img-sm {
+  width: 100%;
+  max-width: 213px;
+}
+.wearing .wearing-items .wearing-three .one-img-md {
+  width: 100%;
+  max-width: 432px;
+}
+@media (max-width: 576px) {
+  .wearing .wearing-items .wearing-three {
+    display: none;
+  }
+}
+.wearing .wearing-items .wearing-items-mobile {
+  display: none;
+}
+@media (max-width: 576px) {
+  .wearing .wearing-items .wearing-items-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+}
+@media (max-width: 576px) {
+  .wearing .wearing-items .wearing-items-mobile .wearing-mobile-item {
+    width: 100%;
+    max-width: 260px;
+  }
 }/*# sourceMappingURL=home.css.map */
