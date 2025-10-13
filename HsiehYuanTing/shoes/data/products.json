@@ -1,6 +1,8 @@
 [
     {
         "id": 1,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
         "pic": "../image/Product-Card1",
         "product_name": "",
         "price": 0,
@@ -13,7 +15,9 @@
         "Material": ""
     },
     {
-        "id": 1,
+        "id": 2,
+        "series": "STREETMODE",
+        "seriesCh": "滑板系列",
         "pic": "../image/Product-Card2",
         "product_name": "",
         "price": 0,
@@ -26,7 +30,9 @@
         "Material": ""
     },
     {
-        "id": 1,
+        "id": 3,
+        "series": "CHUNK DISTRICT",
+        "seriesCh": "厚底系列",
         "pic": "../image/Product-Card3",
         "product_name": "",
         "price": 0,
@@ -39,7 +45,9 @@
         "Material": ""
     },
     {
-        "id": 1,
+        "id": 4,
+        "series": "COLLAB ZONE",
+        "seriesCh": "聯名企劃",
         "pic": "../image/Product-Card4",
         "product_name": "",
         "price": 0,
@@ -52,7 +60,9 @@
         "Material": ""
     },
     {
-        "id": 1,
+        "id": 5,
+        "series": "URBN RUNNER",
+        "seriesCh": "慢跑系列",
         "pic": "../image/Product-Card5",
         "product_name": "",
         "price": 0,

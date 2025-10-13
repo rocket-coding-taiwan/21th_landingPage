@@ -256,7 +256,7 @@ a {
     padding: layout.$spacing-5xl 0;
 
     @media(max-width: layout.$breakpoint_mobile) {
-        padding: layout.$spacing-2xl 0;
+        padding: layout.$spacing-2xl layout.$spacing-s;
     }
 
     .hot-title {
@@ -314,6 +314,18 @@ a {
     height: 100vh; // 加上高度
     max-height: 566px;
 
+    .coop-spark {
+        position: absolute;
+        bottom: 20%;
+        right: 25%;
+        transform: translate(-20%, -25%);
+
+        @media(max-width: layout.$breakpoint_mobile) {
+            right: 0;
+            transform: translateY(0);
+        }
+    }
+
     .coop-star {
         position: absolute;
         z-index: 2;
@@ -322,7 +334,9 @@ a {
         transform: translate(-15% -25%);
 
         @media(max-width: layout.$breakpoint_mobile) {
-            top: 0;
+            top: 5%;
+            left: -5%;
+            transform: translate(-5%, 5%);
         }
     }
 
@@ -352,6 +366,10 @@ a {
             justify-content: space-between;
             align-items: center;
             gap: layout.$spacing-3xl;
+
+            @media(max-width: layout.$breakpoint_mobile) {
+                gap: layout.$spacing-xl;
+            }
 
             .coop-title-slogan {
                 display: flex;
@@ -433,5 +451,94 @@ a {
         left: 50%;
         transform: translateX(-50%);
         z-index: 2;
+    }
+}
+
+.series {
+    width: 100%;
+    max-width: 1296px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    @include layout.m-0-auto;
+    gap: layout.$spacing-m;
+    padding: layout.$spacing-5xl 0;
+
+    @media(max-width: layout.$breakpoint_mobile) {
+        justify-content: center;
+        padding: layout.$spacing-2xl layout.$spacing-s;
+    }
+
+    .series-title {
+        @include font.headings_h2;
+        font-weight: 700;
+        color: colors.$text_primary;
+
+        @media(max-width: layout.$breakpoint_mobile) {
+            @include font.headings_h4;
+        }
+    }
+
+    .series-items {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: layout.$spacing-l;
+        white-space: nowrap;
+
+        @media(max-width: layout.$breakpoint_mobile) {
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .series-item {
+            position: relative;
+            width: 100%;
+            max-width: 306px;
+
+            @media(max-width: layout.$breakpoint_mobile) {
+                max-width: 169px;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0; // 等於 top:0; right:0; bottom:0; left:0;
+                background: rgba(0, 0, 0, 0.4);
+                z-index: 1;
+            }
+
+            .series-tag {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .series-tag-text {
+                    @include font.headings_h3;
+                    color: colors.$text_dark;
+
+                    @media(max-width: layout.$breakpoint_mobile) {
+                        @include font.headings_h6;
+                    }
+                }
+
+                .series-tag-chtext {
+                    @include font.headings_h4;
+                    color: colors.$text_dark;
+
+                    @media(max-width: layout.$breakpoint_mobile) {
+                        @include font.headings_h6;
+                    }
+                }
+            }
+        }
     }
 }
