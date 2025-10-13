@@ -653,3 +653,105 @@ a {
 
     }
 }
+
+.coupon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: colors.$primary_200;
+    gap: layout.$spacing-l;
+    padding: layout.$spacing-l;
+
+    .coupon-title {
+        @include font.headings_h4;
+
+        @media(max-width: layout.$breakpoint_mobile) {
+            @include font.headings_h5;
+        }
+    }
+
+    .coupon-btn {
+        @include layout.neutral-text-large;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: layout.$spacing-xs;
+
+        a {
+            @include font.label_md;
+            color: colors.$text_dark;
+        }
+    }
+
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: layout.$spacing-5xl 312px;
+    gap: layout.$spacing-l;
+
+    @media(max-width: layout.$breakpoint_mobile) {
+        padding: layout.$spacing-xl layout.$spacing-s;
+        gap: layout.$spacing-l;
+    }
+
+    .footer-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        max-width: 1296px;
+
+        @media(max-width: layout.$breakpoint_mobile) {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: layout.$spacing-xs;
+            max-width: 351px;
+        }
+
+        .footer-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: layout.$spacing-2xl;
+
+            @media(max-width: layout.$breakpoint_mobile) {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: layout.$spacing-s layout.$spacing-s;
+                gap: layout.$spacing-xxs;
+            }
+
+            a {
+                @include font.label_md;
+                color: colors.$text_primary;
+            }
+        }
+    }
+
+    .footer-copyRight {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 1296px;
+        padding-top: layout.$spacing-xl;
+        border-top: 1px solid colors.$neutral_300;
+
+        p {
+            @include font.paragraph_sm;
+            color: colors.$text_secondary;
+        }
+
+        @media(max-width: layout.$breakpoint_mobile) {
+            max-width: 351px;
+        }
+
+    }
+}

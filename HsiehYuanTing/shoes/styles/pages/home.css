@@ -663,4 +663,110 @@ a {
     width: 100%;
     max-width: 260px;
   }
+}
+
+.coupon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E8FEC5;
+  gap: 24px;
+  padding: 24px;
+}
+.coupon .coupon-title {
+  font-size: 24px;
+  line-height: 120%;
+}
+@media (max-width: 576px) {
+  .coupon .coupon-title {
+    font-size: 20px;
+    line-height: 120%;
+  }
+}
+.coupon .coupon-btn {
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background-color: #212529;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.coupon .coupon-btn a {
+  font-size: 16px;
+  line-height: 150%;
+  color: #FFFFFF;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 64px 312px;
+  gap: 24px;
+}
+@media (max-width: 576px) {
+  .footer {
+    padding: 32px 12px;
+    gap: 24px;
+  }
+}
+.footer .footer-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1296px;
+}
+@media (max-width: 576px) {
+  .footer .footer-menu {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 351px;
+  }
+}
+.footer .footer-menu .footer-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+@media (max-width: 576px) {
+  .footer .footer-menu .footer-items {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 12px 12px;
+    gap: 4px;
+  }
+}
+.footer .footer-menu .footer-items a {
+  font-size: 16px;
+  line-height: 150%;
+  color: #212529;
+}
+.footer .footer-copyRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1296px;
+  padding-top: 32px;
+  border-top: 1px solid #DEE2E6;
+}
+.footer .footer-copyRight p {
+  font-size: 14px;
+  line-height: 150%;
+  color: #6C757D;
+}
+@media (max-width: 576px) {
+  .footer .footer-copyRight {
+    max-width: 351px;
+  }
 }/*# sourceMappingURL=home.css.map */
