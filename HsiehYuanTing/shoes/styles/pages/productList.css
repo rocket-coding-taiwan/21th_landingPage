@@ -56,6 +56,7 @@ a {
   padding: 12px 0;
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 5%;
   font-weight: 500;
 }
 @media (max-width: 576px) {
@@ -70,6 +71,91 @@ a {
     align-items: center;
     width: 50%;
   }
+}
+
+.section {
+  width: 100%;
+  max-width: 1296px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 32px 312px;
+  gap: 24px;
+}
+.section .path {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+.section .path .divider {
+  color: #DEE2E6;
+}
+.section .path .pre-point {
+  color: #6C757D;
+}
+.section .path .current-point {
+  color: #212529;
+}
+.section .category {
+  font-size: 28px;
+  line-height: 120%;
+  color: #212529;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+}
+.section .product-items {
+  display: flex;
+}
+.section .product-items .select {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-right: 24px;
+}
+.section .product-items .select ul li {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 5%;
+  color: #212529;
+  padding: 12px 0;
+}
+.section .product-items .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+.section .product-items .list .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 12px;
+}
+.section .product-items .list .card img {
+  width: 100%;
+  max-width: 343px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.section .product-items .list .card .card-title {
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 5%;
+  color: #212529;
+}
+.section .product-items .list .card .card-price {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 5%;
+  color: #212529;
 }
 
 .footer {
@@ -120,6 +206,7 @@ a {
 .footer .footer-menu .footer-items a {
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 5%;
   color: #212529;
 }
 .footer .footer-copyRight {
@@ -135,6 +222,7 @@ a {
 .footer .footer-copyRight p {
   font-size: 14px;
   line-height: 150%;
+  letter-spacing: 5%;
   color: #6C757D;
 }
 @media (max-width: 576px) {

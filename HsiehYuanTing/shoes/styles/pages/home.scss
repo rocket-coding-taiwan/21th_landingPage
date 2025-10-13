@@ -549,7 +549,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
     @include layout.m-0-auto;
     gap: layout.$spacing-m;
     padding: layout.$spacing-5xl 0;
@@ -573,8 +573,7 @@ a {
         display: flex;
         justify-content: center;
         align-items: center;
-
-        @media(max-width: layout.$breakpoint_mobile) {}
+        gap: layout.$spacing-xxs;
 
         .wearing-one {
             width: 432px;
@@ -582,7 +581,7 @@ a {
 
             .one-img-sm {
                 width: 100%;
-                max-width: 210px;
+                max-width: 214px;
             }
 
             .one-img-md {
@@ -601,7 +600,7 @@ a {
 
             .one-img-sm {
                 width: 100%;
-                max-width: 210px;
+                max-width: 214px;
             }
 
             @media(max-width: layout.$breakpoint_mobile) {
@@ -615,7 +614,7 @@ a {
 
             .one-img-sm {
                 width: 100%;
-                max-width: 213px;
+                max-width: 214px;
             }
 
             .one-img-md {

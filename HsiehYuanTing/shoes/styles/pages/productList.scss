@@ -76,6 +76,98 @@ a {
     }
 }
 
+.section {
+    width: 100%;
+    max-width: 1296px;
+    @include layout.m-0-auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: layout.$spacing-xl 312px;
+    gap: layout.$spacing-l;
+
+    .path {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: layout.$spacing-s;
+
+        .divider {
+            color: colors.$neutral_300;
+        }
+
+        .pre-point {
+            color: colors.$text_secondary;
+        }
+
+        .current-point {
+            color: colors.$text_primary;
+        }
+    }
+
+    .category {
+        @include font.headings_h3;
+        color: colors.$text_primary;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 700;
+
+    }
+
+    .product-items {
+        display: flex;
+
+        .select {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: layout.$spacing-m;
+            padding-right: layout.$spacing-l;
+
+            ul {
+                li {
+                    @include font.label_md;
+                    color: colors.$text_primary;
+                    padding: layout.$spacing-s 0;
+                }
+            }
+        }
+
+        .list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: layout.$spacing-l;
+            .card {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: layout.$spacing-s;
+
+                img {
+                    width: 100%;
+                    max-width: 343px;
+                    object-fit: cover;
+                }
+
+                .card-title {
+                    @include font.headings_h6;
+                    color: colors.$text_primary;
+                }
+
+                .card-price {
+                    @include font.label_md;
+                    color: colors.$text_primary;
+                }
+            }
+        }
+    }
+}
+
 .footer {
     display: flex;
     flex-direction: column;
