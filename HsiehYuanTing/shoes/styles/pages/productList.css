@@ -245,8 +245,14 @@ a {
   gap: 8px;
   font-weight: 500;
   color: #212529;
+  width: 232px;
+  max-width: 232px;
 }
 .product-items .list .pagnation .total-page .single-page {
+  width: 40px;
+  height: 40px;
+  max-height: 40px;
+  max-width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
