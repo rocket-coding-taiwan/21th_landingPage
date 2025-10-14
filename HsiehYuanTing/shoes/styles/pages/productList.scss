@@ -124,135 +124,155 @@ a {
             }
         }
     }
-}
 
-.category {
-    @include font.headings_h3;
-    color: colors.$text_primary;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
-
-    @media(max-width: layout.$breakpoint_mobile) {
-        @include font.headings_h4;
-    }
-}
-
-.product-items {
-    display: flex;
-    gap: layout.$spacing-l;
-
-    .select {
+    .category {
+        @include font.headings_h3;
+        color: colors.$text_primary;
         display: flex;
-        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
-        gap: layout.$spacing-m;
-        white-space: nowrap;
-
-        ul {
-            li {
-                @include font.label_md;
-                color: colors.$text_primary;
-                padding: layout.$spacing-s 0;
-            }
-        }
+        align-items: center;
+        font-weight: 700;
 
         @media(max-width: layout.$breakpoint_mobile) {
-            display: none;
+            @include font.headings_h4;
         }
     }
 
-    .list {
+    .product-items {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: layout.$spacing-3xl;
+        gap: layout.$spacing-l;
 
-        @media(max-width: layout.$breakpoint_mobile) {
-            gap: layout.$spacing-xl;
-        }
-
-        .cards {
+        .select {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
+            flex-direction: column;
+            justify-content: space-between;
             align-items: flex-start;
-            gap: layout.$spacing-l;
+            gap: layout.$spacing-m;
+            white-space: nowrap;
 
-            .card {
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: layout.$spacing-s;
-                width: 100%;
-                max-width: 340px;
-
-                @media(max-width: layout.$breakpoint_mobile) {
-                    max-width: 170px;
-                    gap: layout.$spacing-xs;
-                }
-
-                img {
-
-                    object-fit: cover;
-                }
-
-                .card-title {
-                    @include font.headings_h6;
-                    font-weight: 700;
-                    color: colors.$text_primary;
-                }
-
-                .card-price {
+            ul {
+                li {
                     @include font.label_md;
                     color: colors.$text_primary;
+                    padding: layout.$spacing-s 0;
                 }
+            }
+
+            @media(max-width: layout.$breakpoint_mobile) {
+                display: none;
             }
         }
 
-        .pagnation {
+        .list {
             display: flex;
-            gap: layout.$spacing-s;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: layout.$spacing-3xl;
 
-            .switch-pre-tab,
-            .switch-next-tab {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: layout.$spacing-xs;
-                padding: layout.$spacing-xs;
-                opacity: 0.4;
+            @media(max-width: layout.$breakpoint_mobile) {
+                gap: layout.$spacing-xl;
             }
 
-            .total-page {
+            .cards {
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap: layout.$spacing-l;
+
+                .card {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    gap: layout.$spacing-s;
+                    width: 100%;
+                    max-width: 340px;
+
+                    @media(max-width: layout.$breakpoint_mobile) {
+                        max-width: 170px;
+                        gap: layout.$spacing-xs;
+                    }
+
+                    img {
+
+                        object-fit: cover;
+                    }
+
+                    .card-title {
+                        @include font.headings_h6;
+                        font-weight: 700;
+                        color: colors.$text_primary;
+                    }
+
+                    .card-price {
+                        @include font.label_md;
+                        color: colors.$text_primary;
+                    }
+                }
+            }
+
+            .pagnation {
+                display: flex;
+                gap: layout.$spacing-s;
                 justify-content: center;
                 align-items: center;
-                gap: layout.$spacing-xs;
-                font-weight: 500;
-                color: colors.$text_primary;
-                width: 232px;
-                max-width: 232px;
-                .single-page {
-                    width: 40px;
-                    height: 40px;
-                    max-height: 40px;
-                    max-width: 40px;
+                padding-right: layout.$spacing-6xl;
+
+                @media(max-width: layout.$breakpoint_mobile) {
+                    padding-right: 0;
+                    max-width: 336px;
+                }
+
+                .switch-pre-tab,
+                .switch-next-tab {
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     gap: layout.$spacing-xs;
+                    padding: layout.$spacing-xs;
+
+                    &.disabled {
+                        opacity: 0.4;
+                    }
+
+                    &.enabled {
+                        opacity: 1;
+                    }
+                }
+
+                .total-page {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: layout.$spacing-xs;
+                    font-weight: 500;
+                    color: colors.$text_primary;
+                    width: 232px;
+                    max-width: 232px;
+
+                    .single-page {
+                        width: 40px;
+                        height: 40px;
+                        max-height: 40px;
+                        max-width: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        gap: layout.$spacing-xs;
+
+                        &.active {
+                            background-color: colors.$primary_300;
+                        }
+                    }
                 }
             }
         }
     }
 }
+
+
 
 .coupon {
     display: flex;
