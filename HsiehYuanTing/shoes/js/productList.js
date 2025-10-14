@@ -1,34 +1,36 @@
-// homework
-// 寫一個data.json
-// 商品頁切換分頁
 
 let items = null;
-
 const totalPageDom = document.querySelector('.total-page');
 const cardsDom = document.querySelector('.cards');
+const preDom = document.querySelector('.switch-pre-tab');
+const nextDom = document.querySelector('.switch-next-tab');
 
-const maxCount = 9 // 一頁 9 個 item
+const maxCount = 9; // 一頁 9 個 item
+let totalPageGlobal = 0;
+let currentPageGlobal = 1; // 紀錄當前頁數
 
 fetch('../data/products.json').then(res => res.json())
     .then(data => {
         items = [...data];
-        pagination(items, 1);
+        pagination(items, currentPageGlobal);
+        updatePaginationBtn();
     }).catch(err => console.error('資料載入失敗:', err));
 
 
 function pagination(data, currentPage) {
     const totalCount = data.length;
+    totalPageGlobal = Math.ceil(totalCount / maxCount);
     totalPageDom.innerHTML = renderPages(totalCount, currentPage);
     cardsDom.innerHTML = renderCards(data, currentPage);
+    updatePaginationBtn();
 }
 
 //渲染分頁
 function renderPages(totalCount, currentPage) {
     let str = '';
-    let totalPage = Math.ceil(totalCount / maxCount);
     // 當前頁的前兩頁跟後兩頁 跟最後一頁才會被印出來 不然就是被加上一個 ...
-    if (currentPage > totalPage) {
-        currentPage = pageTotal;
+    if (currentPage > totalPageGlobal) {
+        currentPage = totalPageGlobal;
     }
     pageSet = [
         1,
@@ -37,11 +39,11 @@ function renderPages(totalCount, currentPage) {
         currentPage,
         currentPage + 1,
         currentPage + 2,
-        totalPage
+        totalPageGlobal
     ];
 
     pageSet = pageSet.filter(item => {
-        return item > 0 && item <= totalPage
+        return item > 0 && item <= totalPageGlobal
     });
 
     // 移除重複的頁碼 
@@ -61,7 +63,7 @@ function renderPages(totalCount, currentPage) {
             `
         }
         str += `
-            <div class="single-page" id="${i}">
+            <div class="single-page ${currentPage == i ? `active` : ''}" id="${i}">
                 <p>${i}</p>
             </div>
             `
@@ -88,9 +90,44 @@ function renderCards(data, page) {
 
 
 function switchPage(e) {
-    e.preventDefault();
-    let currentPage = e.target.closest('.single-page').id;
-    pagination(items, parseInt(currentPage));
+    currentPageGlobal = parseInt(e.target.closest('.single-page').id);
+    pagination(items, currentPageGlobal);
+}
+
+function prePage(e) {
+    if (currentPageGlobal > 1) {
+        currentPageGlobal -= 1;
+        pagination(items, currentPageGlobal);
+    }
+}
+
+function nextPage(e) {
+    if (currentPageGlobal < totalPageGlobal) {
+        currentPageGlobal += 1;
+        pagination(items, currentPageGlobal);
+    }
+}
+
+function updatePaginationBtn() {
+    // 上一頁按鈕
+    if (currentPageGlobal === 1) {
+        preDom.classList.add('disabled');
+        preDom.classList.remove('enabled');
+    } else {
+        preDom.classList.remove('disabled');
+        preDom.classList.add('enabled');
+    }
+
+    // 下一頁按鈕
+    if (currentPageGlobal === totalPageGlobal) {
+        nextDom.classList.add('disabled');
+        nextDom.classList.remove('enabled');
+    } else {
+        nextDom.classList.remove('disabled');
+        nextDom.classList.add('enabled');
+    }
 }
 
 totalPageDom.addEventListener('click', switchPage);
+preDom.addEventListener('click', prePage);
+nextDom.addEventListener('click', nextPage);
