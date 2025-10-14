@@ -57,6 +57,7 @@ a {
   padding: 12px 0;
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 5%;
   font-weight: 500;
 }
 @media (max-width: 576px) {
@@ -149,6 +150,7 @@ a {
   .banner .ad .ad-title h3 {
     font-size: 20px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .banner .ad .ad-btn {
@@ -161,6 +163,7 @@ a {
   background-color: #C0FA73;
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 5%;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -211,6 +214,7 @@ a {
   .newArrival .new-title h3 {
     font-size: 24px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .newArrival .new-items {
@@ -230,18 +234,21 @@ a {
 .newArrival .new-items .new-item .new-item-title {
   font-size: 20px;
   line-height: 120%;
+  letter-spacing: 5%;
   font-weight: 700;
 }
 @media (max-width: 576px) {
   .newArrival .new-items .new-item .new-item-title {
     font-size: 16px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .newArrival .new-items .new-item .new-item-price {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 5%;
 }
 
 .hot {
@@ -270,6 +277,7 @@ a {
   .hot .hot-title {
     font-size: 24px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .hot .hot-items {
@@ -308,6 +316,7 @@ a {
 .hot .hot-items .hot-item .hot-tag .hot-tag-text {
   font-size: 14px;
   line-height: 150%;
+  letter-spacing: 5%;
   font-weight: 500;
 }
 
@@ -433,17 +442,20 @@ a {
   .coop .coop-ad .coop-title .coop-title-second {
     font-size: 20px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .coop .coop-ad .coop-title .coop-title-desc {
   font-size: 20px;
   line-height: 150%;
+  letter-spacing: 5%;
   color: #ADB5BD;
 }
 @media (max-width: 576px) {
   .coop .coop-ad .coop-title .coop-title-desc {
     font-size: 16px;
     line-height: 150%;
+    letter-spacing: 5%;
   }
 }
 .coop .coop-ad .coop-title .coop-btn {
@@ -456,6 +468,7 @@ a {
 .coop .coop-ad .coop-title .coop-btn a {
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 5%;
   font-weight: 500;
   color: #212529;
 }
@@ -494,6 +507,7 @@ a {
   .series .series-title {
     font-size: 24px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .series .series-items {
@@ -547,17 +561,20 @@ a {
   .series .series-items .series-item .series-tag .series-tag-text {
     font-size: 16px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .series .series-items .series-item .series-tag .series-tag-chtext {
   font-size: 24px;
   line-height: 120%;
+  letter-spacing: 5%;
   color: #FFFFFF;
 }
 @media (max-width: 576px) {
   .series .series-items .series-item .series-tag .series-tag-chtext {
     font-size: 16px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 
@@ -567,7 +584,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: space-between;
+  justify-content: flex-start;
   margin: 0 auto;
   gap: 16px;
   padding: 64px 0;
@@ -588,12 +605,14 @@ a {
   .wearing .wearing-title {
     font-size: 24px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .wearing .wearing-items {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 4px;
 }
 .wearing .wearing-items .wearing-one {
   width: 432px;
@@ -601,7 +620,7 @@ a {
 }
 .wearing .wearing-items .wearing-one .one-img-sm {
   width: 100%;
-  max-width: 210px;
+  max-width: 214px;
 }
 .wearing .wearing-items .wearing-one .one-img-md {
   width: 100%;
@@ -618,7 +637,7 @@ a {
 }
 .wearing .wearing-items .wearing-two .one-img-sm {
   width: 100%;
-  max-width: 210px;
+  max-width: 214px;
 }
 @media (max-width: 576px) {
   .wearing .wearing-items .wearing-two {
@@ -631,7 +650,7 @@ a {
 }
 .wearing .wearing-items .wearing-three .one-img-sm {
   width: 100%;
-  max-width: 213px;
+  max-width: 214px;
 }
 .wearing .wearing-items .wearing-three .one-img-md {
   width: 100%;
@@ -676,11 +695,13 @@ a {
 .coupon .coupon-title {
   font-size: 24px;
   line-height: 120%;
+  letter-spacing: 5%;
 }
 @media (max-width: 576px) {
   .coupon .coupon-title {
     font-size: 20px;
     line-height: 120%;
+    letter-spacing: 5%;
   }
 }
 .coupon .coupon-btn {
@@ -697,6 +718,7 @@ a {
 .coupon .coupon-btn a {
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 5%;
   color: #FFFFFF;
 }
 
@@ -748,6 +770,7 @@ a {
 .footer .footer-menu .footer-items a {
   font-size: 16px;
   line-height: 150%;
+  letter-spacing: 5%;
   color: #212529;
 }
 .footer .footer-copyRight {
@@ -763,6 +786,7 @@ a {
 .footer .footer-copyRight p {
   font-size: 14px;
   line-height: 150%;
+  letter-spacing: 5%;
   color: #6C757D;
 }
 @media (max-width: 576px) {
