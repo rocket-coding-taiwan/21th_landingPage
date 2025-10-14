@@ -83,22 +83,55 @@ a {
   padding: 32px 312px;
   gap: 24px;
 }
+@media (max-width: 576px) {
+  .section {
+    padding: 16px 12px;
+    gap: 12px;
+    max-width: 375px;
+  }
+}
 .section .path {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 12px;
 }
+@media (max-width: 576px) {
+  .section .path {
+    gap: 8px;
+  }
+}
 .section .path .divider {
   color: #DEE2E6;
 }
 .section .path .pre-point {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 5%;
   color: #6C757D;
 }
+@media (max-width: 576px) {
+  .section .path .pre-point {
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 5%;
+  }
+}
 .section .path .current-point {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 5%;
   color: #212529;
 }
-.section .category {
+@media (max-width: 576px) {
+  .section .path .current-point {
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 5%;
+  }
+}
+
+.category {
   font-size: 28px;
   line-height: 120%;
   color: #212529;
@@ -107,55 +140,155 @@ a {
   align-items: center;
   font-weight: 700;
 }
-.section .product-items {
-  display: flex;
+@media (max-width: 576px) {
+  .category {
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 5%;
+  }
 }
-.section .product-items .select {
+
+.product-items {
+  display: flex;
+  gap: 24px;
+}
+.product-items .select {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
   gap: 16px;
-  padding-right: 24px;
+  white-space: nowrap;
 }
-.section .product-items .select ul li {
+.product-items .select ul li {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 5%;
   color: #212529;
   padding: 12px 0;
 }
-.section .product-items .list {
+@media (max-width: 576px) {
+  .product-items .select {
+    display: none;
+  }
+}
+.product-items .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+@media (max-width: 576px) {
+  .product-items .list {
+    gap: 32px;
+  }
+}
+.product-items .list .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   gap: 24px;
 }
-.section .product-items .list .card {
+.product-items .list .cards .card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   gap: 12px;
-}
-.section .product-items .list .card img {
   width: 100%;
-  max-width: 343px;
+  max-width: 340px;
+}
+@media (max-width: 576px) {
+  .product-items .list .cards .card {
+    max-width: 170px;
+    gap: 8px;
+  }
+}
+.product-items .list .cards .card img {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.section .product-items .list .card .card-title {
+.product-items .list .cards .card .card-title {
   font-size: 16px;
   line-height: 120%;
   letter-spacing: 5%;
+  font-weight: 700;
   color: #212529;
 }
-.section .product-items .list .card .card-price {
+.product-items .list .cards .card .card-price {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 5%;
   color: #212529;
+}
+.product-items .list .pagnation {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.product-items .list .pagnation .switch-pre-tab,
+.product-items .list .pagnation .switch-next-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  opacity: 0.4;
+}
+.product-items .list .pagnation .total-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: #212529;
+}
+.product-items .list .pagnation .total-page .single-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.coupon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #E8FEC5;
+  gap: 24px;
+  padding: 24px;
+}
+.coupon .coupon-title {
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 5%;
+}
+@media (max-width: 576px) {
+  .coupon .coupon-title {
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 5%;
+  }
+}
+.coupon .coupon-btn {
+  border-width: 0px 2px 2px 0px;
+  border-style: solid;
+  border-radius: 4px;
+  padding: 12px 24px;
+  background-color: #212529;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.coupon .coupon-btn a {
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 5%;
+  color: #FFFFFF;
 }
 
 .footer {

@@ -1,19 +1,19 @@
 const list = document.querySelector('.hot-items');
 const series = document.querySelector('.series-items');
 let items = null;
-let str = '';
-let seriesStr = ''
+let maxCount = 4;
 fetch('../data/products.json').then(res => res.json())
     .then(data => {
         items = [...data];
         combineCard(items);
         combineSeriesCard(items);
-        list.innerHTML = str;
-        series.innerHTML = seriesStr;
-    })
+        list.innerHTML = combineCard(data);
+        series.innerHTML = combineSeriesCard(data);
+    }).catch(err => console.error('資料載入失敗:', err));
 
 function combineCard(data) {
-    for (let i = 0; i < 4; i++) {
+    let str = ''
+    for (let i = 0; i < maxCount; i++) {
         str +=
             `
             <div class="hot-item">
@@ -24,11 +24,13 @@ function combineCard(data) {
             </div>
         `
     }
+    return str;
 }
 
 function combineSeriesCard(data) {
-    for (let i = 0; i < 4; i++) {
-        seriesStr +=
+    let str = ''
+    for (let i = 0; i < maxCount; i++) {
+        str +=
             `
             <div class="series-item">
                     <img src="${data[i].pic}.png" alt="product-card">
@@ -39,4 +41,5 @@ function combineSeriesCard(data) {
             </div>
         `
     }
+    return str;
 }
