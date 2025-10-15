@@ -118,7 +118,7 @@ a {
             color: colors.$neutral_300;
         }
 
-        .pre-point {
+        .pre-point, .mid-point {
             @include font.label_md;
             color: colors.$text_secondary;
 

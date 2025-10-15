@@ -1,16 +1,25 @@
 let items = null; // 原始資料，永不改動
 let filteredItems = null;  // 過濾後的資料，用來渲染
+
 const totalPageDom = document.querySelector('.total-page');
 const cardsDom = document.querySelector('.cards');
 const preDom = document.querySelector('.switch-pre-tab');
 const nextDom = document.querySelector('.switch-next-tab');
 const selectDom = document.querySelector('.select-ul');
+const prePointDom = document.querySelector('.mid-point');
+const categoryDom = document.querySelector('.category');
+const currentPointDom = document.querySelector('.current-point');
 
 const maxCount = 9; // 一頁 9 個 item
 let totalSeriesGlobal = []; // 所有系列
 let totalPageGlobal = 0; // 總頁數
 let currentPageGlobal = 1; // 紀錄當前頁數
 let currentSeriesGlobal = '所有商品'; // 記錄當前選擇的系列 預設是所有商品
+let currentCategory = { // 根據資料查表給對應的顯示
+    'girl': '女鞋',
+    'boy': '男鞋',
+    'kid': '童鞋'
+}; // 目前的目錄
 fetch('../data/products.json').then(res => res.json())
     .then(data => {
         items = [...data];
@@ -25,6 +34,7 @@ function pagination(data, currentPage) {
     totalPageDom.innerHTML = renderPages(currentPage);
     cardsDom.innerHTML = renderCards(data, currentPage);
     selectDom.innerHTML = renderSeries();
+    renderCategory();
     updatePaginationBtn();
 }
 // 抓出所有的系列
@@ -48,6 +58,25 @@ function filterBySeries(seriesName) {
         })
     }
     pagination(filteredItems, currentPageGlobal);
+    renderPath(currentSeriesGlobal)
+}
+// 根據表給予對應的目錄
+function getCategory() {
+    let str = ''
+    // 先假設 api 都是給女鞋是放在每一筆資料裡面而且是統一的，所以抓第一筆就好
+    // 應該要是介面選擇然後帶這邊全域才好
+    str = currentCategory[filteredItems[0].category];  
+    return str
+}
+// 渲染目錄顯示
+function renderCategory() {
+    let showCategory = getCategory();
+    prePointDom.innerText = `${showCategory}`;
+    categoryDom.innerText = `${showCategory}`;
+}
+// 依照系列渲染路徑
+function renderPath(currentSeries) {
+    currentPointDom.innerText = `${currentSeries}`;
 }
 //  渲染分頁
 function renderPages(currentPage) {
@@ -149,7 +178,6 @@ function takeSelect(e) {
         filterBySeries(seriesName);
     }
 }
-
 // 分頁按鈕 diabled enabled
 function updatePaginationBtn() {
     // 上一頁按鈕
