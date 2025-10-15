@@ -50,7 +50,7 @@
     {
         "id": 4,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card4",
         "product_name": "Melty Kiss",
         "price": 4000,
@@ -146,7 +146,7 @@
     {
         "id": 10,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card5",
         "product_name": "ARTIST X",
         "price": 4500,
@@ -209,7 +209,7 @@
     {
         "id": 14,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card4",
         "product_name": "STREET ART",
         "price": 4200,
@@ -273,7 +273,7 @@
     {
         "id": 18,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card3",
         "product_name": "DESIGNER EDIT",
         "price": 4800,
@@ -337,7 +337,7 @@
     {
         "id": 22,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card2",
         "product_name": "GALLERY DROP",
         "price": 5200,
@@ -401,7 +401,7 @@
     {
         "id": 26,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card1",
         "product_name": "LIMITED EDITION",
         "price": 5800,
@@ -465,7 +465,7 @@
     {
         "id": 30,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card5",
         "product_name": "CULTURE MIX",
         "price": 4600,
@@ -529,7 +529,7 @@
     {
         "id": 34,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card4",
         "product_name": "FUSION SERIES",
         "price": 4950,
@@ -593,7 +593,7 @@
     {
         "id": 38,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card3",
         "product_name": "ARTIST COLLAB",
         "price": 5100,
@@ -657,7 +657,7 @@
     {
         "id": 42,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card2",
         "product_name": "EXCLUSIVE DROP",
         "price": 4750,
@@ -721,7 +721,7 @@
     {
         "id": 46,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card1",
         "product_name": "SIGNATURE EDIT",
         "price": 5400,
@@ -785,7 +785,7 @@
     {
         "id": 50,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card5",
         "product_name": "CREATOR SERIES",
         "price": 4850,
@@ -849,7 +849,7 @@
     {
         "id": 54,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card4",
         "product_name": "SPECIAL EDITION",
         "price": 5600,
@@ -913,7 +913,7 @@
     {
         "id": 58,
         "series": "COLLAB ZONE",
-        "seriesCh": "聯名企劃",
+        "seriesCh": "限定 / 聯名企劃",
         "pic": "../image/Product-Card3",
         "product_name": "ICON SERIES",
         "price": 4900,

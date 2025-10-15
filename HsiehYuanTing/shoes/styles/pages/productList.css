@@ -175,6 +175,9 @@ a {
   color: #212529;
   padding: 12px 0;
 }
+.section .product-items .select ul li.active {
+  color: #57A203;
+}
 @media (max-width: 576px) {
   .section .product-items .select {
     display: none;

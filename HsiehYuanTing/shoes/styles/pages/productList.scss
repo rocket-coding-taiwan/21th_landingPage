@@ -168,6 +168,9 @@ a {
                     color: colors.$text_primary;
                     padding: layout.$spacing-s 0;
                 }
+                li.active{
+                    color: colors.$text_highlight;
+                }
             }
 
             @media(max-width: layout.$breakpoint_mobile) {
@@ -231,7 +234,7 @@ a {
                 justify-content: center;
                 align-items: center;
                 padding-right: layout.$spacing-6xl;
-
+                
                 @media(max-width: layout.$breakpoint_mobile) {
                     padding-right: 0;
                     max-width: 336px;
