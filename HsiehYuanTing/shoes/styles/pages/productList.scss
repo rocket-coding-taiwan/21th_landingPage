@@ -12,7 +12,8 @@ a {
     max-width: 100%;
     padding: 0;
     margin: 0;
-    overflow-x: hidden
+    overflow-x: hidden;
+
 }
 
 .header {
@@ -22,10 +23,15 @@ a {
     padding: layout.$spacing-m 312px;
     flex-wrap: nowrap;
 
+    @media(max-width: layout.$breakpoint_macbook) {
+        padding: layout.$spacing-m layout.$spacing-5xl;
+    }
+
     @media(max-width: layout.$breakpoint_mobile) {
         padding: layout.$spacing-s;
         @include layout.p-0;
     }
+
 
     .menu {
         display: flex;
@@ -86,11 +92,17 @@ a {
     padding: layout.$spacing-xl 312px;
     gap: layout.$spacing-l;
 
+    @media(max-width: layout.$breakpoint_macbook) {
+        padding: layout.$spacing-xl layout.$spacing-5xl;
+    }
+
     @media(max-width: layout.$breakpoint_mobile) {
         padding: layout.$spacing-m layout.$spacing-s;
         gap: layout.$spacing-s;
         max-width: 375px;
     }
+
+
 
     .path {
         display: flex;
@@ -272,8 +284,6 @@ a {
     }
 }
 
-
-
 .coupon {
     display: flex;
     justify-content: center;
@@ -313,10 +323,16 @@ a {
     padding: layout.$spacing-5xl 312px;
     gap: layout.$spacing-l;
 
+    @media(max-width: layout.$breakpoint_macbook) {
+        padding: layout.$spacing-5xl layout.$spacing-5xl;
+    }
+
+
     @media(max-width: layout.$breakpoint_mobile) {
         padding: layout.$spacing-xl layout.$spacing-s;
         gap: layout.$spacing-l;
     }
+
 
     .footer-menu {
         display: flex;

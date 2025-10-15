@@ -19,6 +19,11 @@ a {
   padding: 16px 312px;
   flex-wrap: nowrap;
 }
+@media (max-width: 1470px) {
+  .header {
+    padding: 16px 64px;
+  }
+}
 @media (max-width: 576px) {
   .header {
     padding: 12px;
@@ -82,6 +87,11 @@ a {
   justify-content: flex-start;
   padding: 32px 312px;
   gap: 24px;
+}
+@media (max-width: 1470px) {
+  .section {
+    padding: 32px 64px;
+  }
 }
 @media (max-width: 576px) {
   .section {
@@ -319,6 +329,11 @@ a {
   align-items: center;
   padding: 64px 312px;
   gap: 24px;
+}
+@media (max-width: 1470px) {
+  .footer {
+    padding: 64px 64px;
+  }
 }
 @media (max-width: 576px) {
   .footer {

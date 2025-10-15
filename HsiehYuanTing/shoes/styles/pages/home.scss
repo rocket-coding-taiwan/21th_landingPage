@@ -575,6 +575,10 @@ a {
         align-items: center;
         gap: layout.$spacing-xxs;
 
+        @media(max-width: layout.$breakpoint_macbook) {
+            gap: 0;
+        }
+
         .wearing-one {
             width: 432px;
             max-width: 432px;
@@ -582,11 +586,20 @@ a {
             .one-img-sm {
                 width: 100%;
                 max-width: 214px;
+
+                @media(max-width: layout.$breakpoint_macbook) {
+                    max-width: 209px;
+                }
             }
 
             .one-img-md {
                 width: 100%;
                 max-width: 426px;
+
+                @media(max-width: layout.$breakpoint_macbook) {
+                    max-width: 424px;
+                    max-height: 420px;
+                }
             }
 
             @media(max-width: layout.$breakpoint_mobile) {
@@ -601,6 +614,10 @@ a {
             .one-img-sm {
                 width: 100%;
                 max-width: 214px;
+
+                @media(max-width: layout.$breakpoint_macbook) {
+                    max-width: 210px;
+                }
             }
 
             @media(max-width: layout.$breakpoint_mobile) {
@@ -615,16 +632,27 @@ a {
             .one-img-sm {
                 width: 100%;
                 max-width: 214px;
+
+                @media(max-width: layout.$breakpoint_macbook) {
+                    max-width: 210px;
+                }
             }
 
             .one-img-md {
                 width: 100%;
                 max-width: 432px;
+
+                @media(max-width: layout.$breakpoint_macbook) {
+                    max-width: 424px;
+                    max-height: 420px;
+                }
             }
+
 
             @media(max-width: layout.$breakpoint_mobile) {
                 display: none;
             }
+
         }
 
         .wearing-items-mobile {
