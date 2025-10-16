@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>URBNSTEP</title>
+
+<!-- <script defer="" src="script.js"></script> -->
+<!-- ====== Favicon / App Icons / PWA / Social ====== -->
+<link href="assets/logo/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
+<link href="assets/logo/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="assets/logo/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<link href="site.webmanifest" rel="manifest"/>
+<meta content="#C0FA73" name="theme-color"/>
+<meta content="Spark Haven" property="og:title"/>
+<meta content="Your Step, Your Statement" property="og:description"/>
+<meta content="assets/logo/og-image.jpg" property="og:image"/>
+<meta content="website" property="og:type"/>
+
+<link rel="stylesheet" href="css/design-system.css">
+
+<!-- ====== Tokens / 容器 / 工具 ====== -->
+</link><link href="./css/base.css" rel="stylesheet"/> 
+
+<!-- ====== Header / Footer / Grid helpers / Hero ====== -->
+<link href="./css/layout.css" rel="stylesheet"/> 
+
+<!-- ====== 可重用元件 ====== -->
+<link href="./css/components.css" rel="stylesheet"/> 
+
+<!-- ====== 響應式 ====== -->
+<link href="./css/responsive.css" rel="stylesheet"/> 
+
+</head>
+
+
+<body>
+<!-- ============ 導覽列（網站最上方那條） ============ -->
+<header class="navbar navbar--desktop">
+<div class="container navbar__inner">
+<div class="navbar__left">
+<a aria-label="URBNSTEP 首頁" class="navbar__brand" href="index.html">
+<img alt="URBNSTEP" height="28" src="assets/logo/logo.svg"/>
+</a>
+<nav aria-label="主選單" class="navbar__menu">
+<a class="btn--ghost" href="pages/products.html">商品列表</a>
+<a class="btn--ghost" href="pages/about.html">品牌故事</a>
+</nav>
+</div>
+<div class="navbar__right">
+  <a class="icon-btn nav-login" href="pages/login.html" aria-label="會員登入">
+    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" aria-hidden="true">
+      <path fill="currentColor" d="M24 24c1.194 0 2.338-.474 3.182-1.318A4.5 4.5 0 0 0 28.5 19.5a4.5 4.5 0 0 0-1.318-3.182A4.5 4.5 0 0 0 24 15a4.5 4.5 0 0 0-3.182 1.318A4.5 4.5 0 0 0 19.5 19.5a4.5 4.5 0 0 0 1.318 3.182A4.5 4.5 0 0 0 24 24Zm3-4.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM33 31.5C33 33 31.5 33 31.5 33h-15s-1.5 0-1.5-1.5S16.5 25.5 24 25.5 33 30 33 31.5Zm-1.5-.006c-.001-.369-.231-1.479-1.248-2.496C29.274 28.02 27.434 27 24 27s-5.274 1.02-6.252 1.998c-1.017 1.017-1.245 2.127-1.248 2.496h15Z"/>
+    </svg>
+  </a>
+</div>
+
+</div>
+</div>
+</header>
+<!-- ✅ 手機版導覽列 -->
+<header class="navbar navbar--mobile">
+<div class="navbar__inner">
+<div class="navbar__left">
+<a class="navbar__brand" href="#">
+<img alt="URBNSTEP" height="28" src="assets/logo/logo.svg"/>
+</a>
+<div class="navbar__right">
+  <a class="icon-btn nav-login" href="pages/login.html" aria-label="會員登入">
+    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" aria-hidden="true">
+      <path fill="currentColor" d="M24 24c1.194 0 2.338-.474 3.182-1.318A4.5 4.5 0 0 0 28.5 19.5a4.5 4.5 0 0 0-1.318-3.182A4.5 4.5 0 0 0 24 15a4.5 4.5 0 0 0-3.182 1.318A4.5 4.5 0 0 0 19.5 19.5a4.5 4.5 0 0 0 1.318 3.182A4.5 4.5 0 0 0 24 24Zm3-4.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM33 31.5C33 33 31.5 33 31.5 33h-15s-1.5 0-1.5-1.5S16.5 25.5 24 25.5 33 30 33 31.5Zm-1.5-.006c-.001-.369-.231-1.479-1.248-2.496C29.274 28.02 27.434 27 24 27s-5.274 1.02-6.252 1.998c-1.017 1.017-1.245 2.127-1.248 2.496h15Z"/>
+    </svg>
+  </a>
+</div>
+
+</div>
+</div>
+<div class="navbar__menu">
+<a class="btn btn--ghost" href="pages/products.html">商品列表</a>
+<a class="btn btn--ghost" href="pages/about.html">品牌故事</a>
+</div>
+</div>
+</header>
+<!-- ============ 首屏 Hero（大圖 + 口號 + 按鈕） ============
+    高度：styles.css → .hero 的 min-height
+  -->
+<section class="hero">
+<div class="container hero__content">
+<h1 class="hero__title">URBNSTEP</h1>
+<p class="hero__subtitle">Your Step, Your Statement</p>
+<a class="btn btn--primary hero__cta" href="#">立即選購</a>
+</div>
+</section>
+<!-- ============ 新品上市（四張卡片） ============
+    比例：styles.css → .card--wide / .card--square 的 aspect-ratio
+    想改文案：改 h3 與價格 p 文字
+  -->
+<section class="section">
+<div class="container">
+<header class="section__header">
+<h2 class="section__title">New Arrival</h2>
+<p class="section__subtitle">新品上市</p>
+</header>
+<div class="grid grid--2">
+<article class="card card--wide">
+<img alt="新品 1" class="card__media" src="assets/img/new-1.png">
+<div class="card__body"><h3 class="card__title">Monoverse</h3><p class="card__price">NT$3,600</p></div>
+</img></article>
+<article class="card card--wide">
+<img alt="新品 2" class="card__media" src="assets/img/new-2.png">
+<div class="card__body"><h3 class="card__title">PLATFORM 404</h3><p class="card__price">NT$2,600</p></div>
+</img></article>
+<article class="card card--square">
+<img alt="新品 3" class="card__media" src="assets/img/new-3.png">
+<div class="card__body"><h3 class="card__title">URBN Force</h3><p class="card__price">NT$3,200</p></div>
+</img></article>
+<article class="card card--square">
+<img alt="新品 4" class="card__media" src="assets/img/new-4.png"/>
+<div class="card__body"><h3 class="card__title">Mode90</h3><p class="card__price">NT$4,000</p></div>
+</article>
+</div>
+</div>
+</section>
+<!-- ============ 熱銷補貨（四張小卡可橫向滑動） ============
+    手機上會出現「橫向滑動」效果；桌機固定四欄
+    改欄 styles.css → .product-strip grid-template-columns
+  -->
+<section class="section">
+<div class="container">
+<header class="section__header">
+<h2 class="typo-display-2">熱銷補貨</h2></header>
+<div class="product-strip">
+<article class="product">
+<span class="badge">人氣 No.1</span>
+<img alt="熱銷 1" src="assets/img/hot_1.png"/>
+</article>
+<article class="product">
+<span class="badge">人氣 No.1</span>
+<img alt="熱銷 2" src="assets/img/hot_2.png"/>
+</article>
+<article class="product">
+<span class="badge">人氣 No.1</span>
+<img alt="熱銷 3" src="assets/img/hot_3.png"/>
+</article>
+<article class="product">
+<span class="badge">人氣 No.1</span>
+<img alt="熱銷 4" src="assets/img/hot_4.png"/>
+</article>
+</div>
+</div>
+</section>
+<!-- ============ 聯名 Banner（可擴充輪播） ============
+    目前只有 1 張。要多張：複製 .slide 節點，script.js 會自動對應按點選索引。
+  -->
+<!-- 聯名 Banner -->
+<section aria-labelledby="collab-title" class="promo promo--collab">
+<div class="container">
+<div class="promo__box">
+<!-- 裝飾圖：左上星星 -->
+<img alt="" aria-hidden="true" class="promo__deco promo__deco--star" src="assets/img/promo_star.svg"/>
+<!-- 裝飾圖：右側光芒 -->
+<img alt="" aria-hidden="true" class="promo__deco promo__deco--rays" src="assets/img/promo_rays.svg"/>
+<!-- 大標：48px -->
+<h2 class="promo__title" id="collab-title">URBNSTEP <span class="promo__x">×</span> Kevin Chen</h2>
+<!-- 次標：32px（與上方間距 16px） -->
+<p class="promo__subtitle">跨界聯名，限量發售</p>
+<!-- 說明：20px（與上方間距 32px） -->
+<p class="promo__desc">
+        新銳漫畫家 Kevin Chen 親自操刀設計，街頭能量全面引爆！
+      </p>
+<!-- CTA：16px（與上方間距 48px） -->
+<a class="btn btn--primary promo__cta" href="#">立即搶購</a>
+<!-- 指示點（可選） -->
+<div aria-label="聯名 Banner 分頁" class="promo__dots" role="tablist">
+<button aria-label="第 1 張" aria-selected="true" class="dot is-active" role="tab"></button>
+<button aria-label="第 2 張" aria-selected="false" class="dot" role="tab"></button>
+<button aria-label="第 3 張" aria-selected="false" class="dot" role="tab"></button>
+<button aria-label="第 4 張" aria-selected="false" class="dot" role="tab"></button>
+<button aria-label="第 5 張" aria-selected="false" class="dot" role="tab"></button>
+</div>
+</div>
+</div>
+</section>
+<!-- ============ 依系列選購（四塊分類） ============
+    這裡使用「圖片 + 左下角白底標籤」
+    想改標籤字：改 <span class="tile__label"> 內容
+  -->
+<section class="section">
+<div class="container">
+<header class="section__header">
+<h2 class="typo-display-2">依系列選購</h2></header>
+<div class="grid grid--4">
+<!-- 1 單一卡片 -->
+<a class="tile" href="#">
+<img alt="URBN RUNNER" class="tile__media" src="assets/img/cat_1.png"/>
+<!-- 置中文字（新加的包裝） -->
+<div class="tile__overlay">
+<div class="tile__text">
+<h3 class="tile__title">URBN RUNNER</h3>
+<p class="tile__subtitle">慢跑系列</p>
+</div>
+</div>
+</a>
+<!-- 2 -->
+<a class="tile" href="#">
+<img alt="STREETMODE" class="tile__media" src="assets/img/cat_2.png"/>
+<div class="tile__overlay">
+<div class="tile__text">
+<h3 class="tile__title">STREETMODE</h3>
+<p class="tile__subtitle">潮流系列</p>
+</div>
+</div>
+</a>
+<!-- 3 -->
+<a class="tile" href="#">
+<img alt="CHUNK DISTRICT" class="tile__media" src="assets/img/cat_3.png"/>
+<div class="tile__overlay">
+<div class="tile__text">
+<h3 class="tile__title">CHUNK DISTRICT</h3>
+<p class="tile__subtitle">厚底系列</p>
+</div>
+</div>
+</a>
+<!-- 4 -->
+<a class="tile" href="#">
+<img alt="COLLAB ZONE" class="tile__media" src="assets/img/cat_4.png"/>
+<div class="tile__overlay">
+<div class="tile__text">
+<h3 class="tile__title">COLLAB ZONE</h3>
+<p class="tile__subtitle">聯名企劃</p>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- ============ 穿搭靈感 ============ -->
+<section class="section">
+<div class="container">
+<header class="section__header">
+<h2 class="typo-display-2">穿搭靈感</h2>
+</header>
+<!-- Grid 版本 -->
+<div aria-label="穿搭靈感圖集" class="lookbook-grid">
+<figure class="look l1"><img alt="look 1" loading="lazy" src="assets/img/look_1.png"/></figure>
+<figure class="look l2"><img alt="look 2" loading="lazy" src="assets/img/look_2.png"/></figure>
+<figure class="look l3"><img alt="look 3" loading="lazy" src="assets/img/look_3.png"/></figure>
+<figure class="look l4"><img alt="look 4" loading="lazy" src="assets/img/look_4.png"/></figure>
+<!-- 右側大圖 -->
+<figure class="look look--big"><img alt="look 5" loading="lazy" src="assets/img/look_5.png"/></figure>
+<!-- 左側大圖 -->
+<figure class="look look--big"><img alt="look 6" loading="lazy" src="assets/img/look_6.png"/></figure>
+<figure class="look l7"><img alt="look 7" loading="lazy" src="assets/img/look_7.png"/></figure>
+<figure class="look l8"><img alt="look 8" loading="lazy" src="assets/img/look_8.png"/></figure>
+<figure class="look l9"><img alt="look 9" loading="lazy" src="assets/img/look_9.png"/></figure>
+<figure class="look l10"><img alt="look 10" loading="lazy" src="assets/img/look_10.png"/></figure>
+<figure class="look l11"><img alt="look 11" loading="lazy" src="assets/img/look_11.png"/></figure>
+<figure class="look l12"><img alt="look 12" loading="lazy" src="assets/img/look_12.png"/></figure>
+</div>
+</div>
+</section>
+<!-- ============ 會員 CTA & Footer ============ -->
+<section class="cta">
+<div class="container cta__inner">
+<p class="cta__text">加入會員取得 9 折優惠</p>
+<a class="btn btn--dark" href="pages/register.html">馬上註冊</a>
+</div></section>
+<footer class="footer">
+<div class="container footer__inner">
+<!-- 上排：左右各一邊（Logo 靠左、選單靠右） -->
+<div class="footer__top">
+<div class="footer__brand">
+<img alt="URBNSTEP" height="20" src="assets/logo/logo.svg"/>
+</div>
+<ul aria-label="頁尾選單" class="footer__links">
+<li><a href="pages/products.html">商品列表</a></li>
+<li><a href="pages/about.html">品牌故事</a></li>
+</ul>
+</div>
+<!-- 灰色分隔線 -->
+<hr class="footer__rule"/>
+<!-- 下排：版權兩行 -->
+<div class="footer__bottom">
+<p class="footer__copy">Copyright ©2025 URBNSTYLE</p>
+<p class="footer__copy">All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+/* =========================================
+   layout.css
+   Header / Footer / Grid / Hero
+   ========================================= */
+.site-header{ position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:0px solid var(--muted); }
+.navbar{ height:80px; display:flex; align-items:center; gap:24px; }
+.navbar__brand{ font-weight:800; letter-spacing:.4px; margin-right:auto; text-decoration:none; color:var(--ink); }
+.navbar__menu{ display:flex; gap:24px; }
+.navbar__menu a{ color:var(--ink); text-decoration:none; }
+.navbar__menu a.is-active{ color:#6C757D; }
+.navbar__tools{ margin-left:12px; }
+
+.site-footer{ background:#F3F5F4; border-top:1px solid var(--muted); margin-top:56px; }
+.footer__nav{ display:flex; gap:24px; justify-content:flex-end; padding: 16px 0; }
+.footer__copy{ color:var(--ink-2); font-size:var(--fs-14); padding: 8px 0 4px; }
+
+.grid{ display:grid; gap:24px; }
+.grid--2{ grid-template-columns: repeat(2, 1fr); }
+.grid--3{ grid-template-columns: repeat(3, 1fr); }
+.grid--4{ grid-template-columns: repeat(4, 1fr); }
+
+.hero{
+  min-height:48vh;
+  background:url('../assets/img/brand-hero.png') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+}
+.hero__title{ color:#fff; text-shadow: 0 2px 12px rgba(0,0,0,.35); font-size: var(--fs-40); margin:0; }
+.hero__subtitle{ color:#fff; opacity:.9; margin:8px 0 0; }
+
+/* =============================================================
+   【中文說明｜layout.css】
+   - 整體版型（Header / Footer / Grid / Hero）
+   - 單一頁特例請勿放這裡
+   ============================================================= */
+
+/* 導覽列（桌機） */
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+.navbar__inner{ display:flex; align-items:center; justify-content:space-between; height:80px; }
+
+/* 首屏 Hero（桌機） */
+.hero{
+  min-height: 800px;
+  background-image: url('../assets/img/brand-hero.png'); /* 請確認檔名與 assets/img 內一致 */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display:flex; align-items:center;
+}

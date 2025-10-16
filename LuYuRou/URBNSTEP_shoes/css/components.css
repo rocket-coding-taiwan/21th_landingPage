@@ -1,0 +1,1004 @@
+/* =========================================
+   components.css
+   可重複使用的元件
+   ========================================= */
+
+/* Product Card */
+.product-card{ display:block; text-decoration:none; color:inherit; }
+.product-card__thumb{ margin-bottom:12px; background:#EEF3F6; border-radius: 10px; }
+.product-card__title{ font-weight:700; margin:0; }
+.product-card__price{ color:var(--ink-2); font-size:var(--fs-14); margin:4px 0 0; }
+
+/* Sidebar (Products) */
+.sidebar{ width:220px; }
+.sidebar__title{ font-weight:700; margin:0 0 8px; }
+.sidebar__nav{ list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+.sidebar__nav a{ color:var(--ink); text-decoration:none; font-size:var(--fs-14); }
+
+/* Pagination */
+.pagination{ display:flex; gap:8px; align-items:center; justify-content:center; }
+.pagination a, .pagination span{
+  width:36px; height:36px; border-radius:8px; border:1px solid var(--muted);
+  display:grid; place-items:center; text-decoration:none; color:var(--ink);
+}
+.pagination .is-active{ background:var(--ink); color:#fff; border-color:var(--ink); }
+
+/* PDP: product detail */
+.pdp{ display:grid; grid-template-columns: 1.5fr 1fr; gap:32px; }
+.pdp__thumbs{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+.pdp__meta h1{ margin:0 0 8px; }
+.pdp__price{ font-weight:700; margin:0 0 16px; }
+.pdp__options{ display:grid; gap:8px; margin:16px 0; }
+.pdp__actions{ display:flex; gap:12px; margin:16px 0 24px; }
+
+/* Auth */
+.auth-card{ background:#F3F5F4; padding:24px; border-radius: var(--radius); }
+.auth-providers{ display:grid; gap:12px; }
+
+
+/* ===== original styles.css appended for fidelity ===== */
+
+:root{
+  --container-max: 1520px;
+  --gap: 40px 24px;
+  --radius: 1px;
+  --brand: #C0FA73;
+  --brand-dark: #477A11;
+  --ink: #212529;
+  --ink-2: #374151;
+  --line: #e5e7eb;
+  --bg: #fff;
+  --bg-muted: #f7f9fc;
+  --font-size-h1: clamp(28px, 4vw, 56px);
+  --font-size-h2: clamp(32px, 3.6vw, 48px);
+  --font-size-h3: clamp(16px, 2vw, 20px);
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Noto Sans TC','PingFang TC','Heiti TC',Arial,sans-serif; color:var(--ink); background:var(--bg); }
+img{ display:block; max-width:100%; height:auto; }
+a{ color:inherit; text-decoration:none; }
+.container{ width:min(100% - 40px, var(--container-max)); margin-inline:auto; }
+
+.section--muted{ background:#fff; padding-block: 32px;}
+.section__header{ margin-bottom:32px; }
+.section__title{ 
+  font-weight: 700;        /* 粗體 */
+  line-height: 1.2;        /* 120% */
+  letter-spacing: 0.05em;  /* 5% */
+  font-size: 48px;
+  text-transform: none;
+   margin:0px 0 0;
+  text-align: center;
+ }
+.section__subtitle{ 
+  color:var(--ink-2); 
+  font-weight: 700;        /* 粗體 */
+  letter-spacing: 0.05em;  /* 5% */
+  margin:12px 0 0; 
+  text-align: center;
+}
+
+ .typo-display-2{
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;        /* 粗體 */
+  font-size: 32px;         /* 桌機 32px */
+  line-height: 1.2;        /* 120% */
+  letter-spacing: 0.05em;  /* 5% */
+  text-transform: none;
+  margin-bottom:16px;
+}
+
+/* ===== 導覽列 ===== */
+.navbar{ position:sticky; top:0; background:#fff; }
+.navbar__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between; /* 左右各一組 */
+  height: 80px;
+  padding-left: 172px;
+  padding-right: 172px;
+  padding-block: 16px;
+}
+
+.navbar__left{
+  display:flex;
+  align-items:center;
+  gap:48px;           /* Logo 與選單之間的距離 */
+}
+
+.navbar__menu{
+  display:flex;
+  align-items:center;
+  gap:40px;           /* 兩個文字連結之間的距離 */
+}
+
+.navbar__brand{ font-weight:800; letter-spacing:.08em; }
+
+.navbar__links{ 
+  display:flex; 
+  gap:12px; 
+  align-items:center; 
+}
+.btn--ghost{ 
+  padding:8px 12px; 
+  border-radius:10px; 
+  border:1px 
+  solid transparent; 
+}
+.btn--ghost:hover{ 
+  color: #6C757D;       /* hover 只改字色 */
+  background: transparent;   /* 保持透明（避免吃到舊設定） */
+  border-color: transparent; /* 保持無邊框 */
+}
+
+
+/* 導覽列登入 Icon：同時支援 a / button，不跑版 */
+.icon-btn{
+  display: inline-flex;              /* 讓 <a> 有盒子尺寸 */
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  line-height: 0;                    /* 移除 inline 的基線空隙 */
+  vertical-align: middle;            /* 與文字/Logo 對齊 */
+  background: transparent;
+  border: 0;
+  color: #212529;
+  text-decoration: none;             /* <a> 取消底線 */
+  cursor: pointer;
+}
+.icon-btn:hover{ color:#57A203; }    /* 保留原本 hover 效果 */
+.icon-btn svg{ width:100%; height:100%; display:block; }  /* SVG 填滿盒子 */
+
+
+
+
+/* ===== 按鈕（顏色與圓角在上面的變數） ===== */
+.btn{ 
+  display:inline-block; 
+  padding:12px 18px; 
+  border-radius:4px; 
+  font-weight:600; 
+  border:2px solid transparent; }
+.btn--primary{ background:var(--brand); }
+.btn--primary:hover{ background:var(--brand); color: var(--brand-dark);}
+.btn--dark{ 
+  background:#222; 
+  color:#fff; 
+  padding: 12px 24px;
+  font-size: 16px;
+  line-height: 1.5;      /* 150% */
+  letter-spacing: 0.05em;/* 5% */
+}
+.btn--dark:hover{ opacity:.9; }
+
+/* 首頁 Hero 的主按鈕文字樣式 */
+.hero__cta{
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 500;      /* Medium */
+  font-size: 16px;
+  line-height: 1.5;      /* 150% */
+  letter-spacing: 0.05em;/* 5% */
+  text-transform: none;  /* 不要全大寫就保留這行 */
+  padding: 10px 16px;    /* 想更大/更小改這裡 */
+  border-radius: 4px;   /* 圓角 */
+  color: var(--ink);
+}
+
+
+/* ===== Hero ===== */
+
+.hero__content{ color:#fff; padding:60px 24px; }
+.hero__title{ 
+  margin:0 0 8px; letter-spacing:.06em; 
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;          /* 粗體：700 */
+  font-size: clamp(48px, 6vw, 64px);  /* 行動到桌機，最大 64px */
+  line-height: 1.2;          /* 120% */
+  letter-spacing: 0.05em;    /* 5% */
+  text-transform: none;      /* 若不想全大寫，保留這行 */
+}
+
+/* 副標題 */
+.hero__subtitle{ 
+  margin:0 0 16px; opacity:.9; 
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;          /* 粗體 */
+  font-size: 28px;           /* 桌機 28px */
+  line-height: 1.2;          /* 120% */
+  letter-spacing: 0.05em;    /* 5% */
+  margin: 0 0 48px;          /* 與按鈕的距離 */
+  text-transform: none;      /* 不要全大寫的話保留這行 */
+}
+
+/* ===== 新品卡片網格（上 2 張 16:9，下 2 張 4:3） ===== */
+.grid{ display:grid; gap:var(--gap); }
+.grid--2{ grid-template-columns:repeat(2,1fr); }
+.grid--4{ grid-template-columns:repeat(4,1fr); }
+.card{ 
+  background:#fff; 
+  border-radius:var(--radius); 
+  overflow:hidden; 
+  border:0px solid 
+  var(--line); 
+}
+.card--wide .card__media{ aspect-ratio:1/1; object-fit:cover; }
+.card--square .card__media{ aspect-ratio:1/1; object-fit:cover; }
+.card__body{ padding:4px 0px 4px; }
+.card__title{ 
+  margin:0; 
+  font-size:20px; 
+  font-weight:700; 
+}
+.card__price{ margin:6px 0 0; color:var(--ink-2); font-size:16px; }
+
+/* ===== 熱銷補貨（水平滑動） ===== */
+.product-strip{ 
+  display:grid; 
+  grid-template-columns:repeat(4,1fr); 
+  gap:var(--gap); 
+  scroll-snap-type:x mandatory; 
+  overflow-x:auto; 
+  padding-bottom:6px; }
+
+.product{ 
+  background:#F1F3F7; 
+  border:0px solid var(--line); 
+  overflow:hidden; 
+  scroll-snap-align:start; 
+  position: relative; /* 讓角標能定位在卡片上 */
+}
+.product img{ width:100%; aspect-ratio:1/1; object-fit:cover; }
+.product__title{ padding:10px 12px 14px; margin:0; font-size:15px; color:var(--ink-2); }
+
+/* 角標樣式：淡綠底、字綠、左上角 */
+.badge{
+  position: absolute;
+  top: 0px;              /* 與卡片上緣距離 */
+  left: 0px;             /* 與卡片左緣距離 */
+  padding: 8px 12px;     /* 角標內距 */
+  background: #F5FEE7;    /* 淡綠底 */
+  color: #57A203;         /* 深綠字 */
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ===== 聯名 Banner ===== */
+.promo--collab{
+  /* 背景圖鋪滿 */
+  background: #111 url('../assets/img/Section--Sale.png') center/cover no-repeat;
+  color: #fff;
+}
+
+/* 內層排版容器：置中寬度，內容垂直間距由各元素 margin 控制 */
+.promo__box{
+  text-align: center;
+  padding: 100px; 
+}
+
+/* 大標：48px */
+.promo__title{
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1.2;       /* 120% */
+  letter-spacing: .05em;  /* 5% */
+  margin: 0;              /* 先歸零，交由下面的間距規則控制 */
+  padding-top: 0;         /* 不用額外 padding */
+}
+
+/* 只讓標題中的 × 變色 */
+.promo__title .promo__x{
+  color: var(--brand);     /* 你的主綠 */
+  font-weight: 700;        /* 讓 × 看起來更穩（可選） */
+}
+
+/* 次標：32px，與上方(大標)間距 16px */
+.promo__subtitle{
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: .05em;
+  margin: 16px 0 0;
+}
+
+/* 說明：20px，與上方(次標)間距 32px */
+.promo__desc{
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 500;       /* Medium */
+  font-size: 20px;
+  line-height: 1.6;
+  letter-spacing: .02em;
+  color: rgba(255,255,255,.88);
+  margin: 32px auto 0;
+  max-width: 960px;       /* 讓段落寬度好閱讀，可調 */
+}
+
+/* 只改聯名區塊的說明文字為灰色（不影響其它區塊的 .promo__desc） */
+.promo--collab .promo__desc{
+  color: #ADB5BD;         
+}
+
+
+/* CTA：16px，與上方(說明)間距 48px */
+.promo__cta{
+  display: inline-block;
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;       /* 150% */
+  letter-spacing: .05em;
+  margin-top: 48px;
+  border-radius: 4px;     /* 按鈕圓角依設計調整 */
+  padding: 12px 24px;
+  color: var(--ink);
+}
+
+/* 指示點（SVG 當作底圖） */
+.promo__dots{
+  display: flex;
+  justify-content: center;
+
+  margin-top: 82px;       /* 與 CTA 的距離，可調 */
+}
+
+.promo__dots .dot{
+  width: 24px;
+  height: 8px;
+  background: url("../assets/img/indicators_State_Inactive.svg") center/100% 100% no-repeat;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  
+}
+.promo__dots .dot.is-active{
+  background-image: url('../assets/img/indicators_State_Active.svg');
+}
+
+/* 讓整個聯名 Banner 區塊成為定位參考點（不改排版，只是提供座標基準） */
+.promo{
+  position: relative;
+  padding-bottom: 72px;          /* ↑ 這個決定「按鈕與指示點的距離」；覺得近就加大 */
+  margin-block: 48px;
+}
+
+/* 將指示點吸在底部置中 —— 依你實際的 class 會中一個 */
+.promo .promo__dots,
+.promo .slider__dots,
+.promo .dots,
+.promo .indicators{
+  position: absolute;
+  left: 50%;
+  bottom: 12px;                  /* 指示點距離底邊；想更貼底改小（8px/0） */
+  transform: translateX(-50%);
+  margin-top: 0;                 /* 既然改絕對定位，就不要再用 margin 往下推 */
+ 
+}
+
+/* 裝飾圖共同設定：不吃點擊、置於底層 */
+.promo__deco{
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;              /* 文字/按鈕會在它上面 */
+  opacity: 1;
+}
+
+/* 左上星星 */
+.promo__deco--star{
+  width: 72px;             /* 依圖檔尺寸調 */
+  left: 30%;               /* 調到大標左側上方 */
+  top: 56px;
+}
+
+/* 右側光芒 */
+.promo__deco--rays{
+  width: 82px;
+  right: 32%;
+  top: 280px;
+}
+
+
+
+/* ===== 依系列選購（左下白標籤） ===== */
+.tile{ 
+  position:relative; 
+  border-radius:1px; 
+  overflow:hidden; 
+  border:1px solid 
+  var(--line); }
+.tile__media{ 
+  width:100%; 
+  aspect-ratio:1/1; 
+  object-fit:cover; 
+  display:block; }
+.tile__label{ 
+  position:absolute; 
+  left:12px; bottom:12px; 
+  background:rgba(255,255,255,.92); 
+  padding:8px 10px; 
+  border-radius:1px; 
+  font-weight:700; 
+  font-size:14px; 
+  line-height:1.3;}
+
+  /* === 依系列選購：置中文字 === */
+
+/* 卡片本體仍沿用現有 .tile，這裡只補定位用 */
+.tile{
+  position: relative;            /* 讓子層可以絕對定位在卡片內 */
+  overflow: hidden;              /* 文字不會跑出卡片 */
+}
+
+/* 讓文字容器鋪滿整張圖，用 Flex 置中 */
+.tile__overlay{
+  position: absolute;
+  inset: 0;                      /* 等於 top/right/bottom/left: 0; */
+  display: flex;
+  align-items: center;           /* 垂直置中 */
+  justify-content: center;       /* 水平置中 */
+  pointer-events: none;          /* 讓整張卡片仍可點擊（事件交給 <a>） */
+  text-align: center;
+}
+
+/* 兩行文字的樣式 */
+.tile__text{ padding: 0 16px; }  /* 手機時留點左右安全距 */
+
+.tile__title{
+  font-size: 28px;              
+  font-weight: 800;              /* 依設計偏粗；可調 */
+  letter-spacing: .08em;         /* 大寫字更穩 */
+  color: #fff;                   /* 預設白色 */
+  line-height: 1.2;
+  transition: color .2s ease;    /* hover 顏色平滑變化 */
+}
+
+.tile__subtitle{
+  margin-top: 12px;              /* 兩行之間距 */
+  font-size: 24px;               /* 需求：24px */
+  font-weight: 700;              /* 看起來更扎實，可改 600/500 */
+  color: #fff;                   /* 維持白色 */
+  line-height: 1.3;
+}
+
+/* 滑鼠懸停時，只改第一行字為 #C0FA73（專案的品牌綠） */
+.tile:hover .tile__title{
+  color: #C0FA73;
+}
+
+/* 如果想讓圖更暗，文字更清楚，可開這段遮罩 */
+ /*
+.tile::before{
+  content: "";
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.28);   // 視覺想更暗就調大，例如 .35
+  pointer-events: none;
+}
+*/
+
+/* ===== 穿搭靈感（拼貼網格） ===== */
+/* === Lookbook：6 欄、8px 間距、與標題左右齊 === */
+.lookbook-grid{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* ← 6 欄（4小 + 1大=2單位 = 6） */
+  gap: 8px;                              /* ← 固定 8px 間距 */
+}
+
+/* 讓 figure 不要有預設外距，才能跟標題左右對齊 */
+.lookbook-grid .look{
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  aspect-ratio: 1 / 1;                   /* ← 關鍵：每一格先做成「正方形」 */
+}
+
+/* 圖片鋪滿格子（不變形） */
+.lookbook-grid .look img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 大圖 = 2x2 單位（仍是正方形，但放大） */
+.lookbook-grid .look--big{
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* --- RWD（保持拼貼、但欄數變少） --- */
+@media (max-width: 960px){
+  .lookbook-grid{ grid-template-columns: repeat(2, 1fr); }
+  .lookbook-grid .look--big{ grid-column: span 2; grid-row: span 2; }
+}
+@media (max-width: 480px){
+  .lookbook-grid{ grid-template-columns: repeat(2, 1fr); }
+  .lookbook-grid .look--big{ grid-column: span 2; grid-row: span 2; }
+}
+
+/* ===== CTA & Footer ===== */
+.cta{ background:#E8FEC5; padding:24px 0; margin-top: 48px;}
+.page-about .cta{ background:#E8FEC5; padding:24px 0; margin-top: 0px;}
+.cta__inner{ 
+  display:flex; 
+  justify-content:center; 
+  align-items:center; 
+  gap:24px; 
+}
+/* === CTA 主文案 加入會員=== */
+.cta__text{
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+               -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 700;        /* 粗體 */
+  font-size: 24px;         /* 字級 24px */
+  line-height: 1.2;        /* 行高 120% */
+  letter-spacing: 0.05em;  /* 字距 5% */
+  margin: 0;               /* 清掉預設外距，避免上下位移 */
+}
+
+/* 與上方綠色 CTA 區塊間距 64px */
+.footer{
+  background: #F8F9FA;
+  margin-top: 0px;     /* ← 跟上方區塊的空隙 */
+  padding: 64px 0 64px;    /* 底部內距 */
+}
+
+/* 上排：Logo 與選單同排，左右貼齊 */
+.footer__top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 左右各靠 container 邊 */
+  gap: 24px;                      /* 有需要時兩側留個保險間距 */
+}
+
+/* 讓 logo 不受 baseline 影響，垂直看起來更齊 */
+.footer__brand img{
+  display: block;
+  height: 46px; 
+}
+
+
+/* 右邊選單：字級 16px、兩個連結間距 40px、hover 顏色與導覽列一致 */
+.footer__links{
+  list-style: none;
+  display: flex;
+  gap: 40px;              /* ← 兩個連結之間的距離 */
+  margin: 0;
+  padding: 0;
+  font-size: 16px;        /* ← 文字大小 16px */
+}
+.footer__links a{
+  color: inherit;
+  text-decoration: none;
+}
+.footer__links a:hover{
+  color: #6C757D;         /* ← 與導覽列 hover 顏色一致 */
+}
+
+/* 灰色分隔線：#6C757D；與上排間距 24px */
+.footer__rule{
+  height: 1px;
+  border: 0;
+  background: #DEE2E6;  
+  margin: 24px 0;         /* ← 與上排/下排的距離 = 24px */
+}
+
+/* 下排：兩行文字；兩行間距 4px；與分隔線間距 32px */
+.footer__bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: center;    /* 置中 */
+  gap: 4px;               /* ← 兩行之間的距離 4px */
+  margin-top: 32px;       /* ← 與分隔線距離 32px */
+}
+
+/* 版權字樣：14px、#6C757D */
+.footer__copy{
+  margin: 0;
+  font-size: 14px;        /* ← 文字大小 14px */
+  color: #6C757D;         /* ← 文字顏色 #6C757D */
+}
+
+
+
+
+
+/* =============================================================
+   【components.css】
+   - 可重用元件：商品卡 / 側邊欄 / 分頁器 / PDP / 登入卡
+   ============================================================= */
+
+.product-card{ display:block; color:inherit; text-decoration:none; }
+.product-card__thumb{ background:#EEF3F6; border-radius:10px; margin-bottom:12px; }
+.product-card__title{ font-weight:700; margin:0; }
+.product-card__price{ color:#6B7280; font-size:14px; margin-top:4px; }
+
+.sidebar{ width:220px; }
+.sidebar__title{ font-weight:700; margin:0 0 8px; }
+.sidebar__nav{ list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+.sidebar__nav a{ color:inherit; text-decoration:none; font-size:14px; }
+
+.pagination{ display:flex; gap:8px; align-items:center; justify-content:center; }
+.pagination a,.pagination span{ width:36px; height:36px; border-radius:8px; border:0px solid #E5E7EB; display:grid; place-items:center; text-decoration:none; color:inherit; }
+.pagination .is-active{ background:#111827; color:#fff; border-color:#111827; }
+
+.pdp{ display:grid; grid-template-columns:1.5fr 1fr; gap:32px; }
+.pdp__thumbs{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.pdp__price{ font-weight:700; margin:0 0 16px; }
+.pdp__options{ display:grid; gap:8px; margin:16px 0; }
+.pdp__actions{ display:flex; gap:12px; margin:16px 0 24px; }
+
+.auth-card{ background:#F3F5F4; padding:24px; border-radius:14px; }
+.auth-providers{ display:grid; gap:12px; }
+
+/* 安全性：避免 .hero 在這裡覆蓋 layout.css */
+
+
+/* ================== 品牌故事：Hero ==================
+   - hero--brand 只換背景圖；其餘屬性沿用 layout.css 的 .hero
+*/
+.hero--brand{
+  background-image: linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+  url('../assets/img/hero-sm.png'); 
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  min-height: 400px;
+}
+.hero__content--center{ text-align:center; }
+.hero--brand .hero__title{ 
+  font-size: 40px; 
+  font-weight: 800; 
+  color: #fff; 
+  margin: 0 0 16px; }
+
+.hero--brand .hero__subtitle{ color: #fff; opacity: .95; margin: 0; }
+
+/* ================== 提示框（淡綠底） ==================
+   - narrow：限制欄寬，以符合設計的內文寬度
+*/
+.narrow{ width: min(860px, 100%); margin-inline: auto; }
+.note--brand{
+  background: #E9F8D9;
+  border-radius: 12px;
+  padding: 32px 32px;
+  text-align: center;
+}
+.note--brand .note__title{ 
+  color:#57A203; 
+  font-weight:800; 
+  margin:0 0 12px; }
+
+.note--brand p {
+  margin: 0px;; 
+  color:#212529; 
+  font-size:16px; 
+  line-height:1.5;
+ }
+
+/* ================== 大型情境圖 ================== */
+
+/* 置中寬度：容器裡的盒寬 */
+.hero-photo{ width: 100%; margin: 48px 0px 0px; } /* 預設 */
+
+.hero-photo--narrow{  width: min(100%, 860px);   margin-inline:auto; }  /* 窄欄 */
+.hero-photo--normal{  width: min(100%, 1076px);  margin-inline:auto; margin-bottom:8px;}  /* 稍寬 */
+.hero-photo--wide{    width: min(100%, 1200px);  margin-inline:auto; }  /* 近滿容器 */
+.hero-photo--full{    width: 100%; }                                   /* 滿容器寬 */
+
+
+.hero-photo .media{ border-radius: 0px; }
+
+/* ================== 內文欄與段落 ==================
+   - measure：易讀欄寬（字每行）
+   - content-block：標題 + 內文 + 分隔線 的節
+*/
+.measure{ width:min(856px, 100%); }
+.content-block{ margin: 0px 0; }
+.lead{ color:#212529; font-weight: 500; }
+
+/* ================== 品牌故事｜品牌簡介（桌機） ==================
+   - 只影響 .about-intro 區塊，不會動到其他段落
+*/
+.about-intro{
+  /* 欄寬 */
+  max-width: 856px;
+} 
+/* 標題與段落的節奏 */
+.about-intro .section__title{
+  margin: 0 0 24px;            /* 標題與首段距離 */
+  font-size: 24px;
+  color: #212529;
+  text-align: left;     
+}
+
+/* 首段（導語） */
+.about-intro .lead{
+  font-size: 20px;             /* 首段大一點 */
+  line-height: 1.5;            /* 行高舒適 */
+  letter-spacing: 0.2px;       /* 微字距，避免擁擠 */
+  color: #57A203;            
+  margin: 0 0 16px;
+}
+
+/* 一般段落 */
+.about-intro p{
+  font-size: 16px;
+  line-height: 1.5;
+  color: #212529;
+  letter-spacing: 0.5px;       /* 微字距，避免擁擠 */
+  margin: 0;                   /* 先歸零，下面統一控距 */
+}
+
+/* 段落間距：p 之後接 p 才加距離 */
+.about-intro p + p{
+  margin-top: 16px;
+}
+
+/* 文字強調：粗體改品牌綠，斜體微灰 */
+.about-intro strong{ color:#57A203; font-weight: 600; }
+.about-intro em{ color:#374151; font-style: italic; }
+
+/* 連結樣式 */
+.about-intro a{
+  color:#1F2937; text-decoration: underline dotted; text-underline-offset: 3px;
+}
+.about-intro a:hover{ text-decoration-style: solid; }
+
+/* 小字註解（如需要） */
+.about-intro small{ font-size: 14px; color:#6B7280; }
+
+
+/* ================== 時間軸列表 ================== */
+.timeline{ 
+  list-style:none;  /* 移除 ul 的預設圓點 */
+  padding:0;        /* 清掉內縮 */
+  margin: 0px 0 0;  /* 上0px，下左右0：把清單貼齊上方 */
+  display:grid;     /* 用 Grid 排列每個 li（比 block 好控制間距） */
+  gap:12px;         /* li 與 li 之間的間距為 12px */
+}
+.timeline li{ 
+  display: grid;
+  grid-template-columns: 4ch 8px 1fr;    /* 年份4ch、分隔線列寬16px（含左右留白）、內容自動 */
+  align-items: baseline;
+  column-gap: 0;                         /* 欄間距由第二欄的寬度負責 */
+  position:relative;                     /* 為了讓裡面的 .dot 可以用絕對定位 */
+  padding-left: 12px;                     /* 預留空間給圓點 */
+  align-items: center;
+}
+
+.timeline .dot{
+  position:absolute;        /* 讓圓點在 li 裡自由定位 */
+  left:0;                   /* 圓點貼齊左邊 */
+  top:.6em;                 /* 圓點垂直向下 0.6 個字高，讓圓點與文字行中線對齊 */
+  width:4px; height:4px;    /* 圓點大小 */
+  border-radius:50%;        /* 把方形變成圓形 */
+  background:#212529;     /* 圓點的主色 */
+}
+.timeline time{ 
+  justify-self: end;                     /* 年份右對齊 */
+  font-variant-numeric: tabular-nums;    /* 等寬數字 */
+}
+
+/* 第二欄畫直線（置中） */
+.timeline .tl-sep{
+  display: block;
+  width: 1px; height: 1.2em;
+  background: #212529;
+  margin: 0 auto;                        /* 在 16px 欄寬中置中，左右各留 7~8px 空白 */
+}
+
+/* ================== 品牌理念 ================== */
+
+.bullets{ 
+  list-style: none;            /* 不要原生圓點 */
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;                   /* 各條理念之間間距 */
+}
+
+/* 每一條理念 */
+.bullets li{
+  position: relative;
+  color: #212529;              /* 文字顏色統一 */
+  font-size: 16px;             /* 文字大小 16px */
+  line-height: 1.5;            /* 舒適行高 */
+  padding-left: calc(3px + 12px); /* 3px 直線 + 12px 與文字間隔 = 15px 左內距 */
+}
+
+/* 開頭直線（高度與字行差不多） */
+.bullets li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .2em;                  /* 微調垂直位置，貼近第一行的中線 */
+  width: 3px;                  /* 粗度：3px */
+  height: 1.2em;               /* 直線高度（約等於一行字高） */
+  background: #DEE2E6;         /* 直線顏色 */
+}
+
+/* 若條目開頭有 <strong>，也維持同色但保留粗體 */
+.bullets strong{
+  color: inherit;
+  font-weight: 500;
+}
+
+
+/* ================== 品牌小故事連結 ================== */
+.links{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;                         /* 每個連結距離 */
+}
+
+/* 品牌小故事連結 */
+a.link-story{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #57A203;                    /* 文字顏色 */
+  text-decoration-line: underline;     /* 明確指定底線樣式 */
+  text-decoration-style: solid;        /* 不是 dotted */
+  text-decoration-thickness: 1px;      /* 粗度 1px */
+  text-underline-offset: 8px;          /* 與文字距離 */
+  text-decoration-color: currentColor; /* 底線跟著字色 */
+  transition: color .15s ease;
+}
+
+/* 滑鼠懸浮：改成品牌深綠 */
+a.link-story:hover{
+  color: #477A11;
+}
+
+/* Icon */
+.link-story__icon{ 
+  width:20px; 
+  height:20px; 
+  flex:0 0 20px; 
+  color: currentColor; }
+
+ .page-about .section{ padding-bottom: 16px; }
+
+
+/* ================== 商品列表 ================== */
+
+/* 產品列表：兩欄結構 */
+.catalog{ 
+  display:grid; 
+  grid-template-columns:196px 1fr; 
+  column-gap:24px; 
+  align-items:start; 
+}
+.catalog__sidebar{ width:172px; }
+.side-filter{ display:flex; flex-direction:column; gap:16px; }
+.side-filter__link{ display:flex; align-items:center; height:48px; font-size:16px; color:#212529; text-decoration:none; }
+.side-filter__link.is-active{ color:#57A203; font-weight:600; }
+
+/* 產品區格線 */
+.catalog__products{ 
+  display:grid; 
+  grid-template-columns:repeat(3, minmax(0,1fr)); 
+  column-gap:24px; 
+  row-gap:48px; 
+}
+
+/* 商品卡片 */
+.product-card__media{
+  aspect-ratio: 1 / 1;              /* 方形容器 */
+  background:#F1F3F7; 
+  overflow:hidden; 
+  margin: 0px;
+}
+
+.product-card__media img{ 
+  width:100%; 
+  height:100%; 
+  object-fit: contain;              /* ▶ 不裁切、不變形（鞋子完整） */
+  display: block;                   /* 去掉底部空白 */
+}
+.product-card__body{ margin-top:12px; }
+.product-card__title{ 
+  margin:0 0 4px; 
+  font-size:16px; 
+  font-weight:700; 
+  color:#212529; 
+  line-height:1.4; }
+.product-card__price{ 
+  margin:0; 
+  font-size:16px; 
+  font-weight:500; 
+  color:#212529; }
+
+/* =========================================
+   Pagination（分頁）
+   ========================================= */
+
+.page-products .pagination{ 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  gap: 12px;                  /* 左/右箭頭 與 數字群組 的距離 */
+  width: 100%;
+  grid-column: 1 / -1;;
+}
+
+/* 左右箭頭：40x40 */
+.page-products .pagination__arrow{
+  width: 40px; height: 40px;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  color: var(--ink);             /* 一般：墨色 */
+  background: transparent;
+  border: 0; cursor: pointer;
+}
+.page-products .pagination__arrow:hover{ 
+  color: var(--brand) }              /* Hover：品牌綠 */
+
+.page-products .pagination__arrow:focus-visible{ 
+  outline: none; 
+  box-shadow: inset 0 -4px 0 #F5FEE7; } /* Focus 底部色塊 */
+
+.page-products .pagination__arrow[disabled]{ 
+  opacity: .4; 
+  cursor: default; 
+  pointer-events: none; }     /* Disabled：40% 透明 */
+
+/* 數字群組本身與箭頭距 12，群組內各頁間距 10 */
+.page-products .pagination__list{ 
+  display: inline-flex; 
+  gap: 10px; 
+  align-items: center; 
+  justify-content: center;
+}
+
+/* 單顆數字的尺寸與樣式（未選） */
+.page-products .pagination__page{
+  min-width: 40px; height: 40px;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  font-size: 16px; 
+  color: var(--ink); 
+  text-decoration: none;
+  background: transparent; 
+}
+.page-products .pagination__page:hover{ 
+  background: #F8F9FA; }          /* Hover：淺灰底 */
+
+.page-products .pagination__page:focus-visible{ 
+  outline: none; 
+  box-shadow: inset 0 -4px 0 #F5FEE7; }    /* Focus 底部色塊 */
+
+/* 已選中頁碼 */
+.page-products .pagination__page.is-current{
+  background: #C0FA73;                              /* 選中底色 */
+  font-weight: 700;
+}
+
+/* 省略號 */
+.page-products .pagination__ellipsis{
+  min-width: 40px; height: 40px;
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  color: var(--ink); 
+}
+

@@ -1,0 +1,730 @@
+
+/* =========================================
+   responsive.css
+   只放通用斷點覆寫
+   ========================================= */
+@media (max-width: 1024px){
+  .grid--4{ grid-template-columns: repeat(3, 1fr); }
+  .pdp{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px){
+  .navbar{ height:64px; }
+  .sidebar{ width:100%; margin-bottom:16px; }
+  .grid--4{ grid-template-columns: repeat(2, 1fr); }
+  .grid--3{ grid-template-columns: repeat(2, 1fr); }
+  .hero{ min-height: 36vh; }
+}
+
+@media (max-width: 480px){
+  .grid--4{ grid-template-columns: 1fr; }
+  .grid--3{ grid-template-columns: 1fr; }
+}
+
+/* ====== original mobile_tablet.css appended ====== */
+
+/* =====================================================
+   URBNSTEP — RWD add‑on (append to the end of styles.css)
+   - 1200px 以下：縮內距、縮字級
+   - 960px 以下（平板）：調整格線、Hero 高度
+   - 768px 以下（手機）：導覽列改兩排、熱銷改橫滑、四宮格改兩欄
+===================================================== */
+
+/* -------- 共用（先解掉常見的「橫向捲動」） -------- */
+html, body{
+  overflow-x: hidden; /* 防止某些固定寬度造成的水平捲動 */
+}
+@media (max-width: 1900px){
+/* 裝飾圖別擋字 */
+  .promo__deco--star{ left: 18%; top: 48px; width: 72px; }
+  .promo__deco--rays{ right: 20%; top: 268px; width: 96px; }
+}
+/* Container 左右安全距：把原本很大的 padding 收斂 */
+@media (max-width: 1200px){
+  .container{ width: min(100% - 24px, var(--container-max)); } /* 左右各 24px */
+  :root{ --gap: 32px 20px; } /* 區塊間距微縮 */
+  .section{ padding: 40px 0; }
+  .hero__content{ padding: 40px 40px; }
+
+   /* 裝飾圖別擋字 */
+  .promo__deco--star{ left: 24px; top: 48px; width: 72px; }
+  .promo__deco--rays{ right: 48px; top: 268px; width: 96px; }
+
+}
+
+/* =====================================================
+   960px 以下（平板）
+   - Hero 高度縮小
+   - New Arrival 卡片間距
+   - 聯名區塊內距
+===================================================== */
+@media (max-width: 960px){
+
+  /* 導覽列：內距縮小 */
+  .navbar__inner{
+    height: 72px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  /* 首屏 Hero */
+  .hero{
+    min-height: 560px;            /* 由 800 → 520 */
+    background-position: center;  /* 正中央對齊即可 */
+  }
+
+  .hero__content{ padding: 0px 40px; }
+
+  /* 新品網格與卡片間距再小一點 */
+  :root{ --gap: 28px 20px; }
+  .card__title{ font-size: 16px; }
+  .card__price{ font-size: 16px; }
+
+  /* 聯名區塊：內距縮，說明寬度收斂 */
+  .promo{ padding-bottom: 24px; }
+  .promo__box{ padding: 72px 24px; }
+  .promo__desc{ max-width: 760px; }
+
+  /* 裝飾圖別擋字 */
+  .promo__deco--star{ left: 24px; top: 48px; width: 72px; }
+  .promo__deco--rays{ right: 48px; top: 268px; width: 96px; }
+
+  /* 依系列選購：4 欄 → 2 欄 */
+  .grid--4{ grid-template-columns: repeat(2, 1fr); }
+
+  /* 分頁：作為 grid item，要跨滿兩欄並置中 */
+  .catalog__products .pagination{
+    grid-column: 1 / -1;         /* 重要：跨滿兩欄 */
+    display: flex;               /* 保證能 flex 置中 */
+    justify-content: center;     /* 置中 */
+    gap: 12px;
+    margin-top: 8px;             /* 與上一列卡片的間距 */
+    width: 100%;                 /* 避免被內容寬度影響 */
+  }
+
+}
+
+/* =====================================================
+   768px 以下（手機）
+===================================================== */
+@media (max-width: 768px){
+
+  /* === 導覽列（兩排） ===
+     作法：讓 .navbar__inner 可以換行；把選單放到下一排做兩個「分頁鈕」。
+  */
+  .navbar__inner{
+    display: flex;
+    flex-direction: column;
+    height: auto;                /* 由固定 80px → 自動撐高 */
+    padding: 12px 16px;          /* 左右 16px 安全距 */
+    gap: 12px;
+    flex-wrap: wrap;             /* 允許換行 */
+  }
+
+  .navbar__left { 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 左：Logo，右：留空，由 .navbar__right 負責 */
+    gap: 12px;
+    flex-wrap: wrap; 
+  }
+
+ .navbar__right{
+   display: flex;
+    order: 1;                    /* 仍在第一行，靠右 */
+    margin-left: auto;
+  }
+
+  .icon-btn{ width: 36px; height: 36px; }
+
+  /* === 首屏 Hero === */
+  .hero{ 
+  background-image: url('../assets/img/hero_sm.png');
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+  .hero--brand{
+    background-image:
+      linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+      url('../assets/img/hero-sm.png'); /* 手機專用圖 */
+  }
+
+  .hero__content{ padding: 40px 24px; }
+  .hero__subtitle{ font-size: 20px; margin-bottom: 32px; }
+  .hero__cta{ padding: 10px 14px; font-size: 16px; }
+  
+  /* 品牌故事 hero（有黑遮罩） */
+.hero--brand{
+  background-image:
+    linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+    url('../assets/img/hero-sm.png');  /* 手機版圖 */
+  background-size: cover, cover;
+  background-position: center, center;
+  min-height: 240px;                 /* ← 手機高度 240px */
+}
+
+  /* === New Arrival：2 欄，間距更小 === */
+  :root{ --gap: 24px 12px; }
+  .grid--2{ grid-template-columns: repeat(2, 1fr); }
+  .card__body{ padding: 8px 0 0; }
+
+
+/* ===========================
+   熱銷補貨
+   目標：大張卡片、左右滑、圖置中、不裁切
+=========================== */
+
+  .promo--collab {background-image: url('assets/img/banner-co-branded-sm.png');}
+
+  /* 1) 整排改成「水平滑動」且貼齊螢幕邊 */
+  .product-strip{
+    display: flex;                    /* grid → flex：更好做水平卡片 */
+    gap: 16px;                        /* 卡片間距 */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;    /* 滑動貼齊 */
+    -webkit-overflow-scrolling: touch;
+
+    /* 讓卡片視覺貼齊螢幕左右邊（吃掉 container 的左右 16px） */
+    margin-left: 0px;
+    margin-right: -16px;
+    padding: 0px 16px 12px;             /* 補回安全內距 */
+  }
+
+  /* 2) 每張卡片占螢幕約 85% 寬（看起來一張一張滑） */
+  .product{
+    flex: 0 0 85%;                    /* ← 一張卡佔 85% 螢幕寬 */
+    background: #F1F3F7;              /* 淺灰底 */
+    border-radius: 6px;
+    padding: 16px;                     /* 讓鞋圖四周留白 */
+    position: relative;                /* 給角標定位用 */
+    scroll-snap-align: start;          /* 滑到卡片開頭 */
+  }
+
+  /* 3) 圖片不裁切、維持比例 */
+  .product img{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;         
+    object-fit: contain;               /* 不裁切，完整呈現鞋子 */
+    display: block;
+  }
+
+  /* 4) 左上角角標（與卡片邊緣保持距離） */
+  .product .badge{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 8px 12px;
+    background: #F5FEE7;               /* 淡綠底 */
+    color: #57A203;                    /* 深綠字 */
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 2px;
+  }
+
+  .typo-display-2 { 
+    font-size: 24px;  /* 主標字級縮小 */
+    margin: 0px;
+  }
+  .section__header{ margin-bottom:16px; }
+
+
+  /* === 聯名 Banner === */
+  .promo__box{
+    padding: 64px 12px 64px;     /* 讓上下留白更像設計稿 */
+    text-align: center;
+    position: relative;          /* 給 dots 定位用 */
+  }
+
+  /* 標題分三行：URBNSTEP / x / Kevin Chen */
+  .promo__title{
+    margin: 0;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+  }
+  .promo__brand,
+  .promo__x,
+  .promo__name{
+    display: block;              /* 一行一個 */
+  }
+  .promo__brand{
+    font-size: clamp(28px, 9vw, 44px);
+    font-weight: 800;
+  }
+  .promo__x{
+    color: #B8F34A;
+    font-size: clamp(18px, 6vw, 24px);
+    margin: 8px 0;
+    font-weight: 800;
+  }
+  .promo__name{
+    font-size: clamp(28px, 9vw, 44px);
+    font-weight: 800;
+  }
+
+  /* 副標粗體、置中 */
+  .promo__subtitle{
+    margin-top: 16px;
+    font-size: clamp(16px, 4.6vw, 20px);
+    font-weight: 800;
+  }
+
+  /* 說明文字縮窄、置中 */
+  .promo__desc{
+    margin: 24px auto 0;
+    max-width: 32ch;             /* 縮短行寬更像設計稿 */
+    font-size: clamp(16px, 3.8vw, 18px);
+    color: #ADB5BD;
+  }
+
+  /* CTA 置中、放大一些 */
+  .promo__cta{
+    display: inline-block;
+    margin-top: 32px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+  }
+
+  /* dots 固定在最底置中 */
+  .promo .promo__dots{
+    display: none; 
+  }
+
+  /* 裝飾圖別擋字 */
+  .promo__deco--star{ left: -42px; top: 24px; width: 72px; }
+  .promo__deco--rays{ right: -48px; top: 268px; width: 96px; }
+
+  .promo { padding: 0px; margin: 24px 0px;}
+
+  /* === 依系列選購：兩欄 === */
+  .grid--4{ 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 12px 12px;
+  }
+  .tile__title{ font-size: 16px; margin: 0; font-weight: 500;}
+  .tile__subtitle{ font-size: 16px; margin-top: 8px; font-weight: 500;}
+
+  /* 需要更清楚可開遮罩 */
+  /*
+  .tile::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.28); }
+  */
+
+  /* === 穿搭靈感 === */
+
+  /* 1) 容器改水平捲動，並貼齊螢幕左右邊 */
+  .lookbook-grid{
+    display: flex;                      /* grid → flex，方便做水平卡片 */
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;      /* 滑動對齊卡片開頭 */
+    -webkit-overflow-scrolling: touch;
+
+    /* 吃掉 container 的左右 16px，視覺貼齊邊緣 */
+    margin-left: 0px;
+    margin-right: -16px;
+    padding: 0 16px 12px;               /* 補回安全內距、不被裁切 */
+  }
+
+  /* 2) 每張卡片寬度、比例與對齊 */
+  .lookbook-grid .look{
+    flex: 0 0 90%;                      /* 一張卡 ~85% 螢幕寬；80~90% 都可 */
+    aspect-ratio: 1 / 1;                /* 橫幅比例，較像設計稿；要更長用 3/2 */
+    border-radius: 0px;
+    overflow: hidden;
+    scroll-snap-align: start;
+    display: block !important;          /* ← 抵銷你前面 nth-child 隱藏規則 */
+  }
+
+  /* 3) 圖片鋪滿卡片（不變形） */
+  .lookbook-grid .look img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* 4) 抵銷先前「只顯示前 2 張」的設定 */
+  .lookbook-grid .look:nth-child(n+3){
+    display: block !important;          /* 重新顯示第 3 張之後的圖片 */
+  }
+
+  /* 5) 以前大圖 2x2 的設定在此情境無效化，避免佔位錯亂 */
+  .lookbook-grid .look--big{
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  /* === CTA === */
+  .cta{ padding: 24px 0; margin-top: 32px;}
+  .cta__inner{ gap: 16px; }
+  .cta__text{ font-size: 20px; }
+
+  /* === Footer === */
+  .footer{ padding: 32px 0; }
+  .footer__top{ flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer__links{ 
+    display: flex;
+    flex-direction: column;
+    gap: 28px; 
+    font-size: 16px; 
+    padding: 12px 12px 12px;
+  }
+  .footer__brand img{ height: 46px; }
+  .btn--dark{ padding: 8px 16px; font-size: 16px; }
+  .footer__copy{ padding: 0px 0 4px; }
+}
+
+/* =====================================================
+   480px 以下（超小手機）— 安全策略
+===================================================== */
+@media (max-width: 480px){
+  .hero{ min-height: 480px; }
+  .hero__content{ padding: 0px 12px; }
+  .promo__title{ font-size: 32px; }
+  .promo__subtitle{ font-size: 20px; }
+  .cta__text{ font-size: 20px; }
+  .section__title{ font-size: 32px;}
+  .section__subtitle{ font-size: 24px;  }
+}
+
+
+/* =====================================================
+   ✅ 導覽列：桌機 / 手機雙版本控制與樣式（新增段落）
+===================================================== */
+
+/* 預設只顯示桌機版 */
+.navbar--mobile { display: none; overflow: hidden;}
+.navbar--desktop { display: block; }
+
+/* 768px 以下（手機）：隱藏桌機導覽列、顯示手機版導覽列 */
+@media (max-width: 768px){
+  .navbar--desktop { display: none; }
+  .navbar--mobile { display: block; border-bottom:0;}
+
+  .navbar{ height: auto; }
+  .navbar--mobile{ overflow: visible; }  /* 取消 hidden，讓第二排能顯示 */
+  .navbar--mobile .navbar__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    padding: 12px 0px 0px; /* 上下 12px */
+  }
+
+  .navbar--mobile .navbar__left {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px 0px;
+  }
+
+  .navbar--mobile .navbar__right .icon-btn {
+    width: 48px;
+    height: 48px;
+    background: none;
+    border: none;
+  }
+
+  .navbar--mobile .navbar__menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    background: #F7FEE7;
+    border: 0px solid #E9F3D7;
+    overflow: hidden;
+    gap: 0;
+  }
+
+  .navbar--mobile .navbar__menu .btn--ghost {
+    padding: 10px 0;
+    text-align: center;
+    font-weight: 700;
+    border-right: 0px solid #E9F3D7;
+    border-bottom: 3px solid transparent;
+    background: transparent;
+  }
+
+  .navbar--mobile .navbar__menu .btn--ghost:first-child {
+    background: #E8FEC5;
+  }
+
+  .navbar--mobile .navbar__menu .btn--ghost:last-child {
+    border-right: none;
+  }
+}
+
+/* =============================================================
+   【responsive.css】
+   - 只放共用斷點覆寫
+   ============================================================= */
+
+/* 960px 以下（平板） */
+@media (max-width: 960px){
+  .hero{ min-height: 560px; background-position: center; }
+  .pdp{ grid-template-columns: 1fr; }
+}
+
+/* 480px 以下（小手機） */
+@media (max-width: 480px){
+  .hero{ min-height: 480px; }
+  .hero--brand{ min-height: 240px; }
+}
+
+/* ====== 品牌故事 ====== */
+
+/* ====== 淡綠提示框 ====== */
+@media (max-width: 768px){
+  /* 外框：四周留白 24px，靠左對齊 */
+  .page-about .note--brand{
+    padding: 24px;
+    text-align: left;       /* 由原本置中改為靠左 */
+  }
+
+  /* 標題：20px，與內文間距 12px */
+  .note--brand .note__title{
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0 0 12px;
+  }
+
+  /* 內文：16px、段落間距 4px */
+  .note--brand p{
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 5%;
+    margin: 0;              /* 先歸零，下面統一控距 */
+  }
+  .note--brand p + p{
+    margin-top: 4px;        /* 段落之間 4px */
+  }
+
+  /* 若外層有窄欄 .narrow，手機改為滿寬 */
+  .narrow{ width: 100%; }
+
+  /* ====== 情境圖 ====== */
+  .page-about .note--brand{ margin-bottom: 0 !important; }
+  .page-about .hero-photo{ 
+    margin-top: 32px !important; 
+    display:block;     /* 去掉 <img> 預設的底部空隙 */
+    width:min(auto, 343px); 
+    height:auto;       /* 依比例縮放 */
+  }
+  
+  /* ===== 品牌簡介 ===== */
+
+  /* 區塊上下間距 */
+  .content-block.about-intro{ margin: 0px 0; }
+
+  /* 標題：20px */
+    .page-about .about-intro .section__title{
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 16px;
+  }
+
+  /* 副標：16px、品牌綠；兩段相距 8px；與內文相距 12px */
+   .page-about .about-intro .lead{
+    font-size: 16px;
+    line-height: 1.6;
+    color: #57A203;
+    margin: 0;                     /* 先清掉，下面加距 */
+    line-break: strict;        /* 避免標點跑到行首（CJK） */
+    text-wrap: pretty;         /* 讓分行更自然（新瀏覽器生效） */
+  }
+  /* 副標拆成兩段：第二段與第一段間距 8px */
+   .page-about .about-intro .lead + .lead{ margin-top: 8px; }
+
+  /* 副標與內文的距離 12px（抓最後一個 .lead） */
+  .page-about .about-intro .lead-group{ margin-bottom: 12px; }
+
+  /* 內文：16px、墨色；段落間距 12px（p 接 p 才套用） */
+  .page-about .about-intro p{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #212529;
+    margin: 0;
+  }
+  .page-about .about-intro p + p{ margin-top: 12px; }
+
+  /* 分隔線：手機縮短為 32px 的上下間距（設計節奏一致） */
+  .about-intro .hr{ margin: 32px 0; }
+
+  /* 手機：拿掉品牌內文群組這個 section 的上內距 */
+  .page-about .section.section--pt-16{ padding: 0 !important; }
+  /* 內距清掉 */
+  .page-about .section.section--pb-0{ padding-bottom: 0 !important; }
+
+}
+
+
+/* 桌機：整組不換行、並排成一行 */
+@media (min-width: 769px){
+  .about-intro .lead-group{
+    white-space: nowrap;     /* 不換行 */
+    display: block;          /* 容器仍是區塊元素，才能有下外距 */
+    margin: 0 0 16px;        /* ← 副標整組與內文的距離 */
+  }
+  .about-intro .lead-group .lead{
+    display: inline;
+    margin: 0;               /* 單段本身不需要外距 */
+  }
+}
+
+
+/* 手機：品牌歷程（時間軸）— 改成一般條列版，穩定顯示圓點與「｜」 */
+@media (max-width: 768px){
+
+  /* 1) 取消桌機的 Grid 版型，改成一般清單 */
+  .page-about .timeline{
+    display: block !important;    /* ← 蓋掉 components.css 的 display:grid */
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  /* 2) 每條紀錄的排列與間距 */
+  .page-about .timeline li{
+    position: relative;
+    display: block;
+    padding-left: 18px;            /* 給自製圓點留空間 */
+    margin: 0 0 12px;
+  }
+  .page-about .timeline li:last-child{ margin-bottom: 0; }
+
+  /* 3) 把桌機用的 .dot 隱藏，避免雙重圓點 */
+  .page-about .timeline .dot{ display: none !important; }
+
+  /* 4) 用 CSS 畫「實心圓」— 不用字元，跨字型最穩 */
+  .page-about .timeline li::before{
+    content: "";
+    position: absolute;
+    left: 0; top: .55em;           /* 對齊第一行中線 */
+    width: 4px; height: 4px;
+    border-radius: 50%;
+    background: #212529;
+  }
+
+  /* 5) 年份與內文之間的分隔線：用文字「｜」，跟著行高走 */
+  .page-about .timeline .tl-sep{
+    display: inline-block;
+    margin: 0 8px;
+    width: auto; height: auto;
+    background: none;             /* 關掉桌機那條 1px 背景線 */
+    vertical-align: baseline;
+  }
+  .page-about .timeline .tl-sep::before{
+    content: "|";
+    color: #212529;
+  }
+
+  /* 6) 年份用等寬數字，三條「｜」視覺對齊 */
+  .page-about .timeline time{
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* =====================================================
+   商品列表頁（手機版）
+===================================================== */
+
+@media (max-width: 768px){
+
+  /* 1) 主容器：從桌機 grid 轉為垂直排版，避免殘留 240px 側欄欄位 */
+  .u-pb-32{ padding-top:0 ; padding-bottom:16px !important; }
+  .catalog{
+    display: flex;
+    flex-direction: column;
+    gap: 0;                     /* 避免 grid 的間距殘留 */
+  }
+
+  /* 2) 側邊選單 */
+  .catalog__sidebar{
+    display: none;
+  }
+
+  /* 3) 商品列表：手機版改為 2 欄 */
+  .catalog__products{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 兩欄、不可溢出 */
+    gap: 24px 12px;                                   /* 列 24px、欄 12px */
+    padding: 0 0px;
+  }
+
+  /* 4) 商品卡：移除桌機固定寬，充滿格子；背景 */
+  .product-card{
+    width: auto;              /* 若桌機有固定寬，手機覆寫掉 */
+    max-width: none;
+    text-align: left;
+  }
+
+  /* 5) 縮圖容器與圖片行為：保持比例不裁圖 */
+  .product-card__thumb{
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;      /* 正方形效果 */
+    overflow: hidden;
+  }
+  .product-card__thumb img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;      /* 不裁切，完整呈現鞋子 */
+    display: block;
+    background: #F1F3F7;
+  }
+
+  .product-card__body{ margin-top:8px; }
+
+  /* 6) 文字：依設計圖（名稱16px粗、價格16px、上下間距） */
+  .product-card__title{
+    font-size: 16px;
+    font-weight: 700;
+    color: #212529;
+    margin: 0px;
+    letter-spacing: 0;
+  }
+  .product-card__price{
+    font-size: 16px;
+    font-weight: 500;
+    color: #212529;
+    margin: 0px;
+  }
+
+  /* 7) 麵包屑與頁面標題 */
+  .breadcrumb{ font-size: 14px; padding-top: 16px; gap: 8px;}
+  .breadcrumb a{ color: #6C757D; }
+  .breadcrumb .breadcrumb__sep{ margin: 0 8px; color: #DEE2E6; }
+  .breadcrumb [aria-current="page"]{ color: #212529; font-weight: 500; }
+  .u-mt-32{ margin-top:0px !important; }
+  .u-mt-24{ margin-top:12px !important; }
+  .u-mb-24{ margin-bottom:12px !important; }
+  .page-title h1{ font-size: 24px; margin: 0; }
+
+  /* 8) 分頁 */
+
+  .pagination__item,
+  .pagination__arrow{
+    width: 40px; height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+/* 數字群組本身與箭頭距 12，群組內各頁間距 10 */
+.page-products .pagination__list{ 
+  gap: 8px; 
+}
+
+/* 分頁：作為 grid item，要跨滿兩欄並置中 */
+  .catalog__products .pagination{
+    grid-column: 1 / -1;         /* 重要：跨滿兩欄 */
+    display: flex;               /* 保證能 flex 置中 */
+    justify-content: center;     /* 置中 */
+    gap: 12px;
+    margin-top: 8px;             /* 與上一列卡片的間距 */
+    width: 100%;                 /* 避免被內容寬度影響 */
+  }
+}

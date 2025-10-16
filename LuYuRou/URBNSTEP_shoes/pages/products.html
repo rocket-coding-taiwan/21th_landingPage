@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>products｜URBNSTEP</title>
+  <meta name="theme-color" content="#C0FA73" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/responsive.css" />
+</head>
+
+<body class="page-products">
+ <!-- ============ 導覽列（網站最上方那條） ============ -->
+<header class="navbar navbar--desktop">
+<div class="container navbar__inner">
+<div class="navbar__left">
+<a aria-label="URBNSTEP 首頁" class="navbar__brand" href="../index.html">
+<img alt="URBNSTEP" height="28" src="../assets/logo/logo.svg"/>
+</a>
+<nav aria-label="主選單" class="navbar__menu">
+<a class="btn--ghost" href="products.html">商品列表</a>
+<a class="btn--ghost" href="about.html">品牌故事</a>
+</nav>
+</div>
+
+<div class="navbar__right">
+  <a class="icon-btn nav-login" href="login.html" aria-label="會員登入">
+    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" aria-hidden="true">
+      <path fill="currentColor" d="M24 24c1.194 0 2.338-.474 3.182-1.318A4.5 4.5 0 0 0 28.5 19.5a4.5 4.5 0 0 0-1.318-3.182A4.5 4.5 0 0 0 24 15a4.5 4.5 0 0 0-3.182 1.318A4.5 4.5 0 0 0 19.5 19.5a4.5 4.5 0 0 0 1.318 3.182A4.5 4.5 0 0 0 24 24Zm3-4.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM33 31.5C33 33 31.5 33 31.5 33h-15s-1.5 0-1.5-1.5S16.5 25.5 24 25.5 33 30 33 31.5Zm-1.5-.006c-.001-.369-.231-1.479-1.248-2.496C29.274 28.02 27.434 27 24 27s-5.274 1.02-6.252 1.998c-1.017 1.017-1.245 2.127-1.248 2.496h15Z"/>
+    </svg>
+  </a>
+</div>
+
+</div>
+</header>
+
+<!-- ✅ 手機版導覽列 -->
+<header class="navbar navbar--mobile">
+<div class="navbar__inner">
+<div class="navbar__left">
+<a class="navbar__brand" href="../index.html">
+<img alt="URBNSTEP" height="28" src="../assets/logo/logo.svg"/>
+</a>
+
+<div class="navbar__right">
+  <a class="icon-btn nav-login" href="login.html" aria-label="會員登入">
+    <svg viewBox="0 0 48 48" width="48" height="48" fill="none" aria-hidden="true">
+      <path fill="currentColor" d="M24 24c1.194 0 2.338-.474 3.182-1.318A4.5 4.5 0 0 0 28.5 19.5a4.5 4.5 0 0 0-1.318-3.182A4.5 4.5 0 0 0 24 15a4.5 4.5 0 0 0-3.182 1.318A4.5 4.5 0 0 0 19.5 19.5a4.5 4.5 0 0 0 1.318 3.182A4.5 4.5 0 0 0 24 24Zm3-4.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM33 31.5C33 33 31.5 33 31.5 33h-15s-1.5 0-1.5-1.5S16.5 25.5 24 25.5 33 30 33 31.5Zm-1.5-.006c-.001-.369-.231-1.479-1.248-2.496C29.274 28.02 27.434 27 24 27s-5.274 1.02-6.252 1.998c-1.017 1.017-1.245 2.127-1.248 2.496h15Z"/>
+    </svg>
+  </a>
+</div>
+
+</div>
+
+</div>
+</header>
+
+<!-- 版心：整頁容器 -->
+  <main class="container section u-pb-32">
+
+<!-- ============ 麵包屑 ============ -->
+<nav class="breadcrumb u-mt-32" aria-label="breadcrumb">
+  <a href="../index.html" aria-current="false">首頁</a>
+  <span class="breadcrumb__sep">/</span>
+  <a href="#" aria-current="false">女鞋</a>
+  <span class="breadcrumb__sep">/</span>
+  <span aria-current="page">所有商品</span>
+</nav>
+
+<!-- 頁面標題（在麵包屑下一行） -->
+<header class="page-title u-mb-24 u-mt-24">
+  <h1 class="u-fs-32 u-strong u-text">女鞋</h1>
+</header>
+
+    <!-- 兩欄：左側選單 / 右側商品 -->
+    <section class="catalog">
+
+      <!-- 左：側邊選單（172 寬、每項 48 高、項間距 16） -->
+      <aside class="catalog__sidebar" aria-label="商品分類">
+        <nav class="side-filter">
+          <a class="side-filter__link is-active" href="#">所有商品</a>
+          <a class="side-filter__link" href="#">慢跑鞋</a>
+          <a class="side-filter__link" href="#">滑板鞋</a>
+          <a class="side-filter__link" href="#">厚底鞋</a>
+          <a class="side-filter__link" href="#">限定/聯名企劃</a>
+        </nav>
+      </aside>
+
+      <!-- 右：商品列表 -->
+      <section class="catalog__products" id="productGrid">
+
+      <!-- 卡片1 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p1.png" alt="PLATFORM 404" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">PLATFORM 404</h3>
+            <p class="product-card__price">NT$2,600</p>
+          </div>
+         </article>
+
+      <!-- 卡片2 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p2.png" alt="PLATFORM 404" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">PLATFORM 404</h3>
+            <p class="product-card__price">NT$2,600</p>
+          </div>
+         </article>
+
+      <!-- 卡片3 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p3.png" alt="VM001" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">VM001</h3>
+            <p class="product-card__price">NT$2,600</p>
+          </div>
+         </article>      
+
+      <!-- 卡片4 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p4.png" alt="Melty Kiss" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Melty Kiss</h3>
+            <p class="product-card__price">NT$4,000</p>
+          </div>
+         </article>
+
+      <!-- 卡片5 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p5.png" alt="BOOMBLOK" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">BOOMBLOK</h3>
+            <p class="product-card__price">NT$3,200</p>
+          </div>
+         </article>   
+
+      <!-- 卡片6 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p6.png" alt="BOOMBLOK" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">BOOMBLOK</h3>
+            <p class="product-card__price">NT$3,200</p>
+          </div>
+         </article>   
+
+      <!-- 卡片7 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p7.png" alt="R:UNER" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">R:UNER</h3>
+            <p class="product-card__price">NT$4,000</p>
+          </div>
+         </article>   
+         
+      <!-- 卡片8 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p8.png" alt="Sugar Snap" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Sugar Snap</h3>
+            <p class="product-card__price">NT$4,000</p>
+          </div>
+         </article> 
+
+      <!-- 卡片9 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p9.png" alt="Neofoam" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Neofoam</h3>
+            <p class="product-card__price">NT$4,000</p>
+          </div>
+         </article>         
+
+      <!-- 卡片10 -->
+        <article class="product-card">
+          <figure class="product-card__media">
+            <img src="../assets/img/p10.png" alt="Neofoam" />
+          </figure>
+          <div class="product-card__body">
+            <h3 class="product-card__title">Neofoam</h3>
+            <p class="product-card__price">NT$4,000</p>
+          </div>
+         </article>  
+
+
+ <!-- 分頁 -->
+<nav class="pagination" id="pager" aria-label="頁碼導覽">
+  <!-- 上一頁 -->
+  <button class="pagination__arrow" type="button" aria-label="上一頁" disabled>
+    <!-- 左箭頭 -->
+    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M12.5 4.5L7.5 10l5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </button>
+
+  <!-- 數字群組（≤ 5 頁：全部顯示） -->
+<div class="pagination__list">
+  <span class="pagination__page is-current" aria-current="page" tabindex="0">1</span>
+  <a class="pagination__page" href="?page=2">2</a>
+  <a class="pagination__page" href="?page=3">3</a>
+  <a class="pagination__page" href="?page=3">4</a>
+  <span class="pagination__ellipsis" aria-hidden="true">…</span>
+  <a class="pagination__page" href="?page=10">10</a>
+</div>
+
+
+  <!-- 下一頁 -->
+  <a class="pagination__arrow" href="?page=2" aria-label="下一頁">
+    <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M7.5 4.5L12.5 10l-5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+  </a>
+</nav>
+
+      </section>
+    </section>
+  </main>
+
+
+
+
+
+
+ <!-- ============ 會員 CTA & Footer ============ -->
+<section class="cta">
+<div class="container cta__inner">
+<p class="cta__text">加入會員取得 9 折優惠</p>
+<a class="btn btn--dark" href="register.html">馬上註冊</a>
+</div></section>
+<footer class="footer">
+<div class="container footer__inner">
+<!-- 上排：左右各一邊（Logo 靠左、選單靠右） -->
+<div class="footer__top">
+<div class="footer__brand">
+<img alt="URBNSTEP" height="20" src="../assets/logo/logo.svg"/>
+</div>
+<ul aria-label="頁尾選單" class="footer__links">
+<li><a href="products.html">商品列表</a></li>
+<li><a href="about.html">品牌故事</a></li>
+</ul>
+</div>
+<!-- 灰色分隔線 -->
+<hr class="footer__rule"/>
+<!-- 下排：版權兩行 -->
+<div class="footer__bottom">
+<p class="footer__copy">Copyright ©2025 URBNSTYLE</p>
+<p class="footer__copy">All Rights Reserved.</p>
+</div>
+</div>
+</footer> 
+</body>
+
+</html>

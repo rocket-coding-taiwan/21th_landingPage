@@ -1,0 +1,108 @@
+/* ====================================================================
+   design-system.css （全站設計系統）
+   ==================================================================== */
+
+/* 以 cascade layer 隔離，避免未來衝突 */
+@layer design-system{
+  /* ----------------------------
+     A. 設計 Tokens（只宣告）
+     ---------------------------- */
+  :root{
+    /* 色彩 */
+    --brand: #C0FA73;          /* 主綠 */
+    --brand-600:#A2EB60;       /* 主綠（深一階） */
+    --brand-accent:#57A203;    /* 重點綠（按鈕/連結/徽章） */
+    --brand-deep:#477A11;      /* 深綠（hover） */
+    --ink:#212529;             /* 內文文字 */
+    --ink-2:#6B7280;           /* 次要文字 */
+    --paper:#FFFFFF;           /* 頁面底色 */
+    --paper-alt:#F8F9FA;       /* 輔助底色（Footer） */
+    --bg:#F7F9F7;              /* 區塊淺底 */
+    --muted:#DEE2E6;           /* 分隔/邊線 */
+    --success:#198754;         /* 成功色（備用） */
+    --danger:#DC2626;          /* 錯誤色（備用） */
+
+    /* 版面尺寸 */
+    --container: 1200px;       /* 版心寬 */
+    --radius: 14px;            /* 預設圓角 */
+
+    /* 字級（可依站上常用尺寸調整） */
+    --fs-12: 12px; --fs-14: 14px; --fs-16: 16px;
+    --fs-18: 18px; --fs-20: 20px; --fs-24: 24px;
+    --fs-28: 28px; --fs-32: 32px; --fs-40: 40px;
+
+    /* 斷點（JS 或 @media 皆可共用） */
+    --bp-lg: 1200px;
+    --bp-md: 960px;
+    --bp-sm: 768px;
+    --bp-xs: 480px;
+  }
+
+  /* --------------------------------
+     B. 工具類（.u-* 命名，安心使用）
+     -------------------------------- */
+
+  /* 容器與區塊節奏 */
+  .container{ width:min(100% - 48px, var(--container)); margin-inline:auto; }
+  .section{ padding-block:64px; }
+  .u-section--tight{ padding-block:32px; }
+  .u-section--flush{ padding-block:0; }
+  .u-pt-0{ padding-top:0 !important; }
+  .u-pb-0{ padding-bottom:0 !important; }
+
+  /* 排版格線 */
+  .u-grid{ display:grid; gap:24px; }
+  .u-grid-2{ grid-template-columns: repeat(2, 1fr); }
+  .u-grid-3{ grid-template-columns: repeat(3, 1fr); }
+  .u-grid-4{ grid-template-columns: repeat(4, 1fr); }
+
+  /* 文字與字級 */
+  .u-text{ color:var(--ink); }
+  .u-muted{ color:var(--ink-2); }
+  .u-fs-12{ font-size:var(--fs-12); }
+  .u-fs-14{ font-size:var(--fs-14); }
+  .u-fs-16{ font-size:var(--fs-16); }
+  .u-fs-18{ font-size:var(--fs-18); }
+  .u-fs-20{ font-size:var(--fs-20); }
+  .u-fs-24{ font-size:var(--fs-24); }
+  .u-fs-28{ font-size:var(--fs-28); }
+  .u-fs-32{ font-size:var(--fs-32); }
+  .u-fs-40{ font-size:var(--fs-40); }
+  .u-strong{ font-weight:700; }
+
+  /* 色彩背景/邊線（不會自動套用到元素） */
+  .u-bg-paper{ background:var(--paper); }
+  .u-bg-alt{ background:var(--paper-alt); }
+  .u-bg-brand{ background:var(--brand); }
+  .u-bg-cta{ background:var(--cta-bg, #E8FEC5); } /* 若沒宣告也給預設 */
+  .u-border{ border:1px solid var(--muted); }
+  .u-radius{ border-radius:var(--radius); }
+
+  /* 常用間距（只做外距，避免破版） */
+  .u-mt-8{ margin-top:8px !important; }
+  .u-mt-12{ margin-top:12px !important; }
+  .u-mt-16{ margin-top:16px !important; }
+  .u-mt-24{ margin-top:24px !important; }
+  .u-mt-32{ margin-top:32px !important; }
+  .u-mt-48{ margin-top:48px !important; }
+  .u-mb-8{ margin-bottom:8px !important; }
+  .u-mb-12{ margin-bottom:12px !important; }
+  .u-mb-16{ margin-bottom:16px !important; }
+  .u-mb-24{ margin-bottom:24px !important; }
+  .u-mb-32{ margin-bottom:32px !important; }
+  .u-mb-48{ margin-bottom:48px !important; }
+
+  /* 圖片比例 */
+  .u-media{ width:100%; display:block; }
+  .u-ar-1-1{ aspect-ratio:1/1; }
+  .u-ar-4-3{ aspect-ratio:4/3; }
+  .u-ar-16-9{ aspect-ratio:16/9; }
+
+  /* RWD 幫手（只改格線，不動你現有樣式） */
+  @media (max-width: 960px){
+    .u-grid-4{ grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 768px){
+    .u-grid-4{ grid-template-columns: repeat(2, 1fr); }
+  }
+}

@@ -1,0 +1,299 @@
+/* =========================================
+   css去掉預設樣式
+   ========================================= */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    box-sizing: border-box;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    line-height: inherit;
+}
+
+/* remember to define focus styles! */
+:focus {
+    outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* inputs, textarea */
+input[type="text"],input[type="password"], textarea {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: bottom;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    border: 1px solid #999;
+    width: 13px;
+    height: 13px;
+    outline: none;
+}
+
+/* buttons */
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 100%;
+    vertical-align: middle;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+/* images */
+img {
+    border: none;
+    outline: none;
+    vertical-align: middle;
+}
+
+
+/* =========================================
+   base.css
+   設計 Tokens / Reset / 容器 / 工具類
+   ========================================= */
+
+@layer design-system{
+  /* ----------------------------
+     A. 設計 Tokens（只宣告）
+     ---------------------------- */
+  :root{
+    /* 色彩 */
+    --brand: #C0FA73;          /* 主綠 */
+    --brand-600:#A2EB60;       /* 主綠（深一階） */
+    --brand-accent:#57A203;    /* 重點綠（按鈕/連結/徽章） */
+    --brand-deep:#477A11;      /* 深綠（hover） */
+    --ink:#212529;             /* 內文文字 */
+    --ink-2:#6B7280;           /* 次要文字 */
+    --paper:#FFFFFF;           /* 頁面底色 */
+    --paper-alt:#F8F9FA;       /* 輔助底色（Footer） */
+    --bg:#F7F9F7;              /* 區塊淺底 */
+    --muted:#DEE2E6;           /* 分隔/邊線 */
+    --success:#198754;         /* 成功色（備用） */
+    --danger:#DC2626;          /* 錯誤色（備用） */
+
+    /* 版面尺寸 */
+    --container: 1200px;       /* 版心寬 */
+    --radius: 14px;            /* 預設圓角 */
+
+    /* 字級（可依站上常用尺寸調整） */
+    --fs-12: 12px; --fs-14: 14px; --fs-16: 16px;
+    --fs-18: 18px; --fs-20: 20px; --fs-24: 24px;
+    --fs-28: 28px; --fs-32: 32px; --fs-40: 40px;
+
+    /* 斷點（JS 或 @media 皆可共用） */
+    --bp-lg: 1200px;
+    --bp-md: 960px;
+    --bp-sm: 768px;
+    --bp-xs: 480px;
+  }
+}
+
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font: 400 16px/1.6, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", "Helvetica Neue", Arial;
+}
+
+img{ max-width:100%; display:block; }
+
+.container{ width: min(100% - 48px, var(--container)); margin-inline:auto; }
+
+/* section 預設：整頁統一的上下間距 */
+.section{ padding-block: 64px; }
+
+/* 修飾：取消/縮小 padding（只改用到的那一段） */
+.section--flush { padding-block: 0px !important; padding: 0 !important; }       /* 上下都 0 */
+.section--pt-0  { padding-top: 0 !important; }         /* 上 0，下維持 */
+.section--pb-0  { padding-bottom: 0  !important; }      /* 下 0，上維持 */
+.section--pt-16 { padding-top: 16px; }     /* 上16 */
+.section--tight { padding-block: 32px; }    /* 比預設緊一些 */
+
+
+.section__title{ font-size:var(--fs-24); font-weight:700; margin:0 0 12px; }
+.section__subtitle{ color:var(--ink-2); margin:0 0 24px; }
+
+/* Buttons */
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border:1px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration:none;
+  cursor:pointer;
+}
+.btn--brand{ border-color:transparent; background:var(--brand); }
+
+/* Aspect-ratio helpers */
+.media{ width:100%; display:block; border-radius: 10px; }
+.ar-1-1{ aspect-ratio:1/1; object-fit:cover; }
+.ar-4-3{ aspect-ratio:4/3; object-fit:fill; }
+.ar-16-9{ aspect-ratio:16/9; object-fit:cover; }
+
+/* Divider */
+.hr{ height:1px; background:var(--muted); border:0; margin:48px 0; }
+
+/* Breadcrumb麵包屑 
+.breadcrumb{ display:flex; gap:8px; font-size:var(--fs-14); color:var(--ink-2); }
+.breadcrumb a{ color:inherit; text-decoration:none; }
+.breadcrumb .breadcrumb__sep{ opacity:.4; }
+*/
+
+/* ===== Breadcrumb（麵包屑）— 依設計系統 ===== */
+.breadcrumb{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;                     /* 元素間距 12px */
+  font-size: var(--fs-16);       /* 16px */
+  line-height: 1;                /* 讓斜槓垂直對齊 */
+}
+
+/* 非本頁：連結或一般節點 → #6C757D */
+.breadcrumb a,
+.breadcrumb span:not(.sep)[aria-current="false"]{
+  color: #6C757D;
+  text-decoration: none;
+}
+
+/* 分隔符號（斜槓）→ #DEE2E6 */
+.breadcrumb .breadcrumb__sep{
+  color: var(--muted);           /* --muted = #DEE2E6 */
+  font-size: var(--fs-16);
+}
+
+/* 本頁（最後一個節點）→ #212529、可粗體 */
+.breadcrumb [aria-current="page"],
+.breadcrumb strong{
+  color: var(--ink);             /* --ink = #212529 */
+  font-weight: 700;
+}
+
+
+
+
+  /* --------------------------------
+     B. 工具類（.u-*）
+     -------------------------------- */
+
+  /* 容器與區塊節奏 */
+  .container{ width:min(100% - 48px, var(--container)); margin-inline:auto; }
+  .section{ padding-block:64px; }
+  .u-section--tight{ padding-block:32px; }
+  .u-section--flush{ padding-block:0; }
+  .u-pt-0{ padding-top:0 !important; }
+  .u-pb-0{ padding-bottom:0 !important; }
+  .u-pb-32{ padding-top:0 ; padding-bottom:32px !important; }
+
+  /* 排版格線 */
+  .u-grid{ display:grid; gap:24px; }
+  .u-grid-2{ grid-template-columns: repeat(2, 1fr); }
+  .u-grid-3{ grid-template-columns: repeat(3, 1fr); }
+  .u-grid-4{ grid-template-columns: repeat(4, 1fr); }
+
+  /* 文字與字級 */
+  .u-text{ color:var(--ink); }
+  .u-muted{ color:var(--ink-2); }
+  .u-fs-12{ font-size:var(--fs-12); }
+  .u-fs-14{ font-size:var(--fs-14); }
+  .u-fs-16{ font-size:var(--fs-16); }
+  .u-fs-18{ font-size:var(--fs-18); }
+  .u-fs-20{ font-size:var(--fs-20); }
+  .u-fs-24{ font-size:var(--fs-24); }
+  .u-fs-28{ font-size:var(--fs-28); }
+  .u-fs-32{ font-size:var(--fs-32); }
+  .u-fs-40{ font-size:var(--fs-40); }
+  .u-strong{ font-weight:700; }
+
+  /* 色彩背景/邊線（不會自動套用到元素） */
+  .u-bg-paper{ background:var(--paper); }
+  .u-bg-alt{ background:var(--paper-alt); }
+  .u-bg-brand{ background:var(--brand); }
+  .u-bg-cta{ background:var(--cta-bg, #E8FEC5); } /* 若沒宣告也給預設 */
+  .u-border{ border:1px solid var(--muted); }
+  .u-radius{ border-radius:var(--radius); }
+
+  /* 常用間距（只做外距，避免破版） */
+  .u-mt-8{ margin-top:8px !important; }
+  .u-mt-12{ margin-top:12px !important; }
+  .u-mt-16{ margin-top:16px !important; }
+  .u-mt-24{ margin-top:24px !important; }
+  .u-mt-32{ margin-top:32px !important; }
+  .u-mt-48{ margin-top:48px !important; }
+  .u-mb-8{ margin-bottom:8px !important; }
+  .u-mb-12{ margin-bottom:12px !important; }
+  .u-mb-16{ margin-bottom:16px !important; }
+  .u-mb-24{ margin-bottom:24px !important; }
+  .u-mb-32{ margin-bottom:32px !important; }
+  .u-mb-48{ margin-bottom:48px !important; }
+
+  /* RWD 幫手（只改格線，不動你現有樣式） */
+  @media (max-width: 960px){
+    .u-grid-4{ grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 768px){
+    .u-grid-4{ grid-template-columns: repeat(2, 1fr); }
+  }
+
+
+
